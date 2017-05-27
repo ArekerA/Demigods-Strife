@@ -52,10 +52,9 @@ public class Obraz extends JPanel{
 		this.szerokoœæ = szerokoœæ;
 		this.wysokoœæ = wysokoœæ;
 	}
-
 	public void paintComponent(Graphics g) {
 		Graphics2D g2d = (Graphics2D) g;
-		g2d.drawImage(image, x, y, szerokoœæ, wysokoœæ, (ImageObserver) this);
+		g2d.drawImage(image, x, y, szerokoœæ, wysokoœæ, this);
 	}
     public void Rysuj() {
 
