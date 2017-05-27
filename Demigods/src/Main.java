@@ -1,12 +1,13 @@
-import javax.swing.JFrame;
-
-import interfejs.Frame;
+import interfejs.Obraz;
+import interfejs.Ramka;
  
 public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		new Frame();
+		
+		
+		Ramka ramkaglowna=new Ramka();
 	}
 
 }
