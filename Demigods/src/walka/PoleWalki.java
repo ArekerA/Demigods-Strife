@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import kreator.*;
 
 class PoleWalki {
-    private int[][] pole = new int[12][15];
+    private int[][] pole = new int[12][20];//+7
     private PostaæWalcz¹ca[] postacieGracz1;
     private PostaæWalcz¹ca[] postacieGracz2;
     private String t³o;

@@ -1,5 +1,4 @@
 import interfejs.Obraz;
-import interfejs.Ramka;
  
 public class Main {
 

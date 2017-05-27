@@ -1,6 +1,8 @@
-package interfejs;
+
 
 import javax.swing.JFrame;
+
+import interfejs.Obraz;
 
 public class Ramka extends JFrame{
 
