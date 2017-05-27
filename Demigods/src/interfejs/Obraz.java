@@ -20,17 +20,17 @@ public class Obraz extends JPanel{
 	public Obraz(String grafika, int x, int y, int szerokoœæ, int wysokoœæ) {
 		super();
 		this.grafika = grafika;
-		this.x = x;
-		this.y = y;
 		this.szerokoœæ = szerokoœæ;
 		this.wysokoœæ = wysokoœæ;
 	}
 	private BufferedImage image;
 
-	public Obraz() {
+	public Obraz(String grafika, int x, int y) {
 		//super();
 
-		File imageFile = new File("img/t³o.png");
+		this.x = x;
+		this.y = y;
+		File imageFile = new File(grafika);
 		try {
 			image = ImageIO.read(imageFile);
 		} catch (IOException e) {
@@ -44,7 +44,7 @@ public class Obraz extends JPanel{
 
 	public void paintComponent(Graphics g) {
 		Graphics2D g2d = (Graphics2D) g;
-		g2d.drawImage(image, 0, 0, (ImageObserver) this);
+		g2d.drawImage(image, x, y, (ImageObserver) this);
 	}
     public void Rysuj() {
 
