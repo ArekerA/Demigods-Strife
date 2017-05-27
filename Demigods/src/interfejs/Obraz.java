@@ -3,6 +3,7 @@ package interfejs;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.awt.image.ImageObserver;
 import java.io.File;
@@ -17,17 +18,11 @@ public class Obraz extends JPanel{
     private int y;
     private int szerokoœæ;
     private int wysokoœæ;
-	public Obraz(String grafika, int x, int y, int szerokoœæ, int wysokoœæ) {
-		super();
-		this.grafika = grafika;
-		this.szerokoœæ = szerokoœæ;
-		this.wysokoœæ = wysokoœæ;
-	}
 	private BufferedImage image;
 
 	public Obraz(String grafika, int x, int y) {
-		//super();
-
+		super();
+		
 		this.x = x;
 		this.y = y;
 		File imageFile = new File(grafika);
@@ -37,14 +32,30 @@ public class Obraz extends JPanel{
 			System.err.println("Blad odczytu obrazka");
 			e.printStackTrace();
 		}
-
-		Dimension dimension = new Dimension(image.getWidth(), image.getHeight());
-		setPreferredSize(dimension);
+		this.szerokoœæ = image.getWidth();
+		this.wysokoœæ = image.getHeight();
+		
+	}
+	public Obraz(String grafika, int x, int y, int szerokoœæ, int wysokoœæ) {
+		super();
+		this.x = x;
+		this.y = y;
+		File imageFile = new File(grafika);
+		try {
+			image = ImageIO.read(imageFile);
+		} catch (IOException e) {
+			System.err.println("Blad odczytu obrazka");
+			e.printStackTrace();
+		}
+		image.getScaledInstance(szerokoœæ, wysokoœæ, Image.SCALE_DEFAULT);
+		this.grafika = grafika;
+		this.szerokoœæ = szerokoœæ;
+		this.wysokoœæ = wysokoœæ;
 	}
 
 	public void paintComponent(Graphics g) {
 		Graphics2D g2d = (Graphics2D) g;
-		g2d.drawImage(image, x, y, (ImageObserver) this);
+		g2d.drawImage(image, x, y, szerokoœæ, wysokoœæ, (ImageObserver) this);
 	}
     public void Rysuj() {
 
