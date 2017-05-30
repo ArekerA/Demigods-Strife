@@ -3,12 +3,12 @@ package interfejs;
 class Button{
     private int x;
     private int y;
-    private int szerokoœæ;
-    private int wysokoœæ;
+    private int szerokoÅ›Ä‡;
+    private int wysokoÅ›Ä‡;
     private String tekst;
-    private int[] kolorT³a = new int[4];
+    private int[] kolorTÅ‚a = new int[4];
     private int[] kolorTekstu = new int[4];
-    private int[] kolorT³aAktywny = new int[4];
+    private int[] kolorTÅ‚aAktywny = new int[4];
     private int[] kolorTekstuAktywny = new int[4];
     public Button(){
 
@@ -16,16 +16,16 @@ class Button{
     public Button(int x, int y, String tekst){
 
     }
-    public Button(int x, int y, int szerokoœæ, int wysokoœæ, String tekst){
+    public Button(int x, int y, int szerokoÅ›Ä‡, int wysokoÅ›Ä‡, String tekst){
 
     }
-    public Button(int x, int y, int szerokoœæ, int wysokoœæ, String tekst, int[] kolorT³a, int[] kolorTekstu, int[] kolorT³aAktywny, int[] kolorTekstuAktywny){
+    public Button(int x, int y, int szerokoÅ›Ä‡, int wysokoÅ›Ä‡, String tekst, int[] kolorTÅ‚a, int[] kolorTekstu, int[] kolorTÅ‚aAktywny, int[] kolorTekstuAktywny){
 
     }
     public void Rysuj(){
 
     }
-    /*public void DodajAkcjê(ActionListener a)
+    /*public void DodajAkcjï¿½(ActionListener a)
     {
 
     }*/
@@ -41,17 +41,17 @@ class Button{
 	public void setY(int y) {
 		this.y = y;
 	}
-	public int getSzerokoœæ() {
-		return szerokoœæ;
+	public int getSzerokoÅ›Ä‡() {
+		return szerokoÅ›Ä‡;
 	}
-	public void setSzerokoœæ(int szerokoœæ) {
-		this.szerokoœæ = szerokoœæ;
+	public void setSzerokoÅ›Ä‡(int szerokoÅ›Ä‡) {
+		this.szerokoÅ›Ä‡ = szerokoÅ›Ä‡;
 	}
-	public int getWysokoœæ() {
-		return wysokoœæ;
+	public int getWysokoÅ›Ä‡() {
+		return wysokoÅ›Ä‡;
 	}
-	public void setWysokoœæ(int wysokoœæ) {
-		this.wysokoœæ = wysokoœæ;
+	public void setWysokoÅ›Ä‡(int wysokoÅ›Ä‡) {
+		this.wysokoÅ›Ä‡ = wysokoÅ›Ä‡;
 	}
 	public String getTekst() {
 		return tekst;
@@ -59,11 +59,11 @@ class Button{
 	public void setTekst(String tekst) {
 		this.tekst = tekst;
 	}
-	public int[] getKolorT³a() {
-		return kolorT³a;
+	public int[] getKolorTÅ‚a() {
+		return kolorTÅ‚a;
 	}
-	public void setKolorT³a(int[] kolorT³a) {
-		this.kolorT³a = kolorT³a;
+	public void setKolorTÅ‚a(int[] kolorTÅ‚a) {
+		this.kolorTÅ‚a = kolorTÅ‚a;
 	}
 	public int[] getKolorTekstu() {
 		return kolorTekstu;
@@ -71,11 +71,11 @@ class Button{
 	public void setKolorTekstu(int[] kolorTekstu) {
 		this.kolorTekstu = kolorTekstu;
 	}
-	public int[] getKolorT³aAktywny() {
-		return kolorT³aAktywny;
+	public int[] getKolorTÅ‚aAktywny() {
+		return kolorTÅ‚aAktywny;
 	}
-	public void setKolorT³aAktywny(int[] kolorT³aAktywny) {
-		this.kolorT³aAktywny = kolorT³aAktywny;
+	public void setKolorTÅ‚aAktywny(int[] kolorTÅ‚aAktywny) {
+		this.kolorTÅ‚aAktywny = kolorTÅ‚aAktywny;
 	}
 	public int[] getKolorTekstuAktywny() {
 		return kolorTekstuAktywny;

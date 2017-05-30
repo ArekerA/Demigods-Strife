@@ -1,19 +1,19 @@
 package kreator;
 
 
-public class PostaæWalcz¹ca extends Postaæ {
+public class PostaÄ‡WalczÄ…ca extends PostaÄ‡ {
     private int x;
     private int y;
     private int aAtak;
     private int aObrona;
     private int aHp;
     private int aMana;
-    private int aSzybkoœæ;
-    public PostaæWalcz¹ca(Postaæ p, int x, int y) {
+    private int aSzybkoÅ›Ä‡;
+    public PostaÄ‡WalczÄ…ca(PostaÄ‡ p, int x, int y) {
 	}
     public void Ruch(int x, int y) {
 	}
-    public boolean CzyRuchDostêpny(int x, int y) {
+    public boolean CzyRuchDostÄ™pnyy(int x, int y) {
 		return false;
 	}
     public int X() {
@@ -25,12 +25,12 @@ public class PostaæWalcz¹ca extends Postaæ {
     public int Zaatakuj() {
 		return 0;
 	}
-    public int OtrzymajObra¿enia(int o) {
+    public int OtrzymajObraÅ¼enia(int o) {
 		return 0;
 	}
     public void Umrzyj() {
 	}
-    public void PrzyjmijUmiejêtnoœæ(Umiejêtnoœæ u){
+    public void PrzyjmijUmiejÄ™tnoÅ›Ä‡(UmiejÄ™tnoÅ›Ä‡ u){
 
     }
 	public int getX() {
@@ -69,10 +69,10 @@ public class PostaæWalcz¹ca extends Postaæ {
 	public void setaMana(int aMana) {
 		this.aMana = aMana;
 	}
-	public int getaSzybkoœæ() {
-		return aSzybkoœæ;
+	public int getaSzybkoÅ›Ä‡() {
+		return aSzybkoÅ›Ä‡;
 	}
-	public void setaSzybkoœæ(int aSzybkoœæ) {
-		this.aSzybkoœæ = aSzybkoœæ;
+	public void setaSzybkoÅ›Ä‡(int aSzybkoÅ›Ä‡) {
+		this.aSzybkoÅ›Ä‡ = aSzybkoÅ›Ä‡;
 	}
 }

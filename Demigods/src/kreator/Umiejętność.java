@@ -1,7 +1,7 @@
 package kreator;
 
 
-class Umiejêtnoœæ {
+class UmiejÄ™tnoÅ›Ä‡ {
     private String nazwa;
     private String opis;
     private String grafika;
@@ -17,11 +17,11 @@ class Umiejêtnoœæ {
     private int minusObronaProcent;
     private int czasTrwania;
     private int koszt;
-    public Umiejêtnoœæ(String nazwa, String opis, String grafika, int obrazenia, int plusObrazenia, int plusObrazeniaProcent, int manaRegen, int hpRegen, int lifeSteal,  int szybkosc,  int unik,  int minusObrona,  int minusObronaProcentc,  int czasTrwania,  int koszt )
+    public UmiejÄ™tnoÅ›Ä‡(String nazwa, String opis, String grafika, int obrazenia, int plusObrazenia, int plusObrazeniaProcent, int manaRegen, int hpRegen, int lifeSteal,  int szybkosc,  int unik,  int minusObrona,  int minusObronaProcentc,  int czasTrwania,  int koszt )
     {
 
     }
-    public Umiejêtnoœæ ZwróæUmiejêtnoœæ(){
+    public UmiejÄ™tnoÅ›Ä‡ ZwrÃ³Ä‡UmiejÄ™tnoÅ›Ä‡(){
 		return null;
 
     }

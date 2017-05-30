@@ -4,24 +4,24 @@ class Input{
     private String tekst;
     private int x;
     private int y;
-    private int szerokoœæ;
-	private int wysokoœæ;
-    private int[] kolorT³a = new int[4];
+    private int szerokoÅ›Ä‡;
+	private int wysokoÅ›Ä‡;
+    private int[] kolorTÅ‚a = new int[4];
     private int[] kolorTekstu = new int[4];
-    public Input(String tekst, int x, int y, int szerokoœæ, int wysokoœæ) {
+    public Input(String tekst, int x, int y, int szerokoÅ›Ä‡, int wysokoÅ›Ä‡) {
 		this.tekst = tekst;
 		this.x = x;
 		this.y = y;
-		this.szerokoœæ = szerokoœæ;
-		this.wysokoœæ = wysokoœæ;
+		this.szerokoÅ›Ä‡ = szerokoÅ›Ä‡;
+		this.wysokoÅ›Ä‡ = wysokoÅ›Ä‡;
 	}
-	public Input(String tekst, int x, int y, int szerokoœæ, int wysokoœæ, int[] kolorT³a, int[] kolorTekstu) {
+	public Input(String tekst, int x, int y, int szerokoÅ›Ä‡, int wysokoÅ›Ä‡, int[] kolorTÅ‚a, int[] kolorTekstu) {
 		this.tekst = tekst;
 		this.x = x;
 		this.y = y;
-		this.szerokoœæ = szerokoœæ;
-		this.wysokoœæ = wysokoœæ;
-		this.kolorT³a = kolorT³a;
+		this.szerokoÅ›Ä‡ = szerokoÅ›Ä‡;
+		this.wysokoÅ›Ä‡ = wysokoÅ›Ä‡;
+		this.kolorTÅ‚a = kolorTÅ‚a;
 		this.kolorTekstu = kolorTekstu;
 	}
     public void Rysuj() {
@@ -45,23 +45,23 @@ class Input{
 	public void setY(int y) {
 		this.y = y;
 	}
-	public int getSzerokoœæ() {
-		return szerokoœæ;
+	public int getSzerokoÅ›Ä‡() {
+		return szerokoÅ›Ä‡;
 	}
-	public void setSzerokoœæ(int szerokoœæ) {
-		this.szerokoœæ = szerokoœæ;
+	public void setSzerokoÅ›Ä‡(int szerokoÅ›Ä‡) {
+		this.szerokoÅ›Ä‡ = szerokoÅ›Ä‡;
 	}
-	public int getWysokoœæ() {
-		return wysokoœæ;
+	public int getWysokoÅ›Ä‡() {
+		return wysokoÅ›Ä‡;
 	}
-	public void setWysokoœæ(int wysokoœæ) {
-		this.wysokoœæ = wysokoœæ;
+	public void setWysokoÅ›Ä‡(int wysokoÅ›Ä‡) {
+		this.wysokoÅ›Ä‡ = wysokoÅ›Ä‡;
 	}
-	public int[] getKolorT³a() {
-		return kolorT³a;
+	public int[] getKolorTÅ‚a() {
+		return kolorTÅ‚a;
 	}
-	public void setKolorT³a(int[] kolorT³a) {
-		this.kolorT³a = kolorT³a;
+	public void setKolorTÅ‚a(int[] kolorTÅ‚a) {
+		this.kolorTÅ‚a = kolorTÅ‚a;
 	}
 	public int[] getKolorTekstu() {
 		return kolorTekstu;

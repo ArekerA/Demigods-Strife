@@ -1,3 +1,4 @@
+package interfejs;
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -9,7 +10,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import kreator.RamkaKreatora;
+import walka.FrameWalka;
 
 public class Ramka extends Application {
 
@@ -65,7 +66,7 @@ public class Ramka extends Application {
 
 			@Override
 			public void handle(ActionEvent event) {
-				RamkaKreatora walka=new RamkaKreatora();
+				FrameWalka walka=new FrameWalka();
 				 try {
 					walka.start(primaryStage);
 				} catch (Exception e) {

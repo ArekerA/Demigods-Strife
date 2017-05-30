@@ -4,26 +4,26 @@ class Tekst{
     private String tekst;
     private int x;
     private int y;
-    private int szerokoœæ;
-	private int wysokoœæ;
+    private int szerokoÅ›Ä‡;
+	private int wysokoÅ›Ä‡;
     private int[] kolor = new int[4];
-    public Tekst(String tekst, int x, int y, int szerokoœæ, int wysokoœæ) {
+    public Tekst(String tekst, int x, int y, int szerokoÅ›Ä‡, int wysokoÅ›Ä‡) {
 		this.tekst = tekst;
 		this.x = x;
 		this.y = y;
-		this.szerokoœæ = szerokoœæ;
-		this.wysokoœæ = wysokoœæ;
+		this.szerokoÅ›Ä‡ = szerokoÅ›Ä‡;
+		this.wysokoÅ›Ä‡ = wysokoÅ›Ä‡;
 		this.kolor[0] = 0;
 		this.kolor[1] = 0;
 		this.kolor[2] = 0;
 		this.kolor[3] = 1;
 	}
-    public Tekst(String tekst, int x, int y, int szerokoœæ, int wysokoœæ, int[] kolor) {
+    public Tekst(String tekst, int x, int y, int szerokoÅ›Ä‡, int wysokoÅ›Ä‡, int[] kolor) {
 		this.tekst = tekst;
 		this.x = x;
 		this.y = y;
-		this.szerokoœæ = szerokoœæ;
-		this.wysokoœæ = wysokoœæ;
+		this.szerokoÅ›Ä‡ = szerokoÅ›Ä‡;
+		this.wysokoÅ›Ä‡ = wysokoÅ›Ä‡;
 		this.kolor = kolor;
 	}
     public void Rysuj() {
@@ -47,17 +47,17 @@ class Tekst{
 	public void setY(int y) {
 		this.y = y;
 	}
-	public int getSzerokoœæ() {
-		return szerokoœæ;
+	public int getSzerokoÅ›Ä‡() {
+		return szerokoÅ›Ä‡;
 	}
-	public void setSzerokoœæ(int szerokoœæ) {
-		this.szerokoœæ = szerokoœæ;
+	public void setSzerokoÅ›Ä‡(int szerokoÅ›Ä‡) {
+		this.szerokoÅ›Ä‡ = szerokoÅ›Ä‡;
 	}
-	public int getWysokoœæ() {
-		return wysokoœæ;
+	public int getWysokoÅ›Ä‡() {
+		return wysokoÅ›Ä‡;
 	}
-	public void setWysokoœæ(int wysokoœæ) {
-		this.wysokoœæ = wysokoœæ;
+	public void setWysokoÅ›Ä‡(int wysokoÅ›Ä‡) {
+		this.wysokoÅ›Ä‡ = wysokoÅ›Ä‡;
 	}
 	public int[] getKolor() {
 		return kolor;

@@ -16,8 +16,8 @@ public class Obraz extends JPanel{
     private String grafika;
     private int x;
     private int y;
-    private int szerokoœæ;
-    private int wysokoœæ;
+    private int szerokoÅ›Ä‡;
+    private int wysokoÅ›Ä‡;
 	private BufferedImage image;
 
 	public Obraz(String grafika, int x, int y) {
@@ -32,11 +32,11 @@ public class Obraz extends JPanel{
 			System.err.println("Blad odczytu obrazka");
 			e.printStackTrace();
 		}
-		this.szerokoœæ = image.getWidth();
-		this.wysokoœæ = image.getHeight();
+		this.szerokoÅ›Ä‡ = image.getWidth();
+		this.wysokoÅ›Ä‡ = image.getHeight();
 		
 	}
-	public Obraz(String grafika, int x, int y, int szerokoœæ, int wysokoœæ) {
+	public Obraz(String grafika, int x, int y, int szerokoÅ›Ä‡, int wysokoÅ›Ä‡) {
 		super();
 		this.x = x;
 		this.y = y;
@@ -47,14 +47,14 @@ public class Obraz extends JPanel{
 			System.err.println("Blad odczytu obrazka");
 			e.printStackTrace();
 		}
-		image.getScaledInstance(szerokoœæ, wysokoœæ, Image.SCALE_DEFAULT);
+		image.getScaledInstance(szerokoÅ›Ä‡, wysokoÅ›Ä‡, Image.SCALE_DEFAULT);
 		this.grafika = grafika;
-		this.szerokoœæ = szerokoœæ;
-		this.wysokoœæ = wysokoœæ;
+		this.szerokoÅ›Ä‡ = szerokoÅ›Ä‡;
+		this.wysokoÅ›Ä‡ = wysokoÅ›Ä‡;
 	}
 	public void paintComponent(Graphics g) {
 		Graphics2D g2d = (Graphics2D) g;
-		g2d.drawImage(image, x, y, szerokoœæ, wysokoœæ, this);
+		g2d.drawImage(image, x, y, szerokoÅ›Ä‡, wysokoÅ›Ä‡, this);
 	}
     public void Rysuj() {
 
@@ -77,18 +77,17 @@ public class Obraz extends JPanel{
 	public void setY(int y) {
 		this.y = y;
 	}
-	public int getSzerokoœæ() {
-		return szerokoœæ;
+	public int getSzerokoÅ›Ä‡() {
+		return szerokoÅ›Ä‡;
 	}
-	public void setSzerokoœæ(int szerokoœæ) {
-		this.szerokoœæ = szerokoœæ;
+	public void setSzerokoÅ›Ä‡(int szerokoÅ›Ä‡) {
+		this.szerokoÅ›Ä‡ = szerokoÅ›Ä‡;
 	}
-	public int getWysokoœæ() {
-		return wysokoœæ;
+	public int getWysokoÅ›Ä‡() {
+		return wysokoÅ›Ä‡;
 	}
-	public void setWysokoœæ(int wysokoœæ) {
-		this.wysokoœæ = wysokoœæ;
+	public void setWysokoÅ›Ä‡(int wysokoÅ›Ä‡) {
+		this.wysokoÅ›Ä‡ = wysokoÅ›Ä‡;
 	}
-
 }
 

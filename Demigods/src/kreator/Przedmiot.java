@@ -7,20 +7,20 @@ class Przedmiot {
     private String grafika;
     private int atak;
     private int obrona;
-    private int szybkoœæ;
+    private int szybkoÅ›Ä‡;
     private int hp;
     private int mana;
-    private Umiejêtnoœæ umiejêtnoœæ;
+    private UmiejÄ™tnoÅ›Ä‡ umiejÄ™tnoÅ›Ä‡;
 
     public Przedmiot()
     {
         
     }
-    public Przedmiot(String nazwa, String opis, String grafika, int atak, int obrona, int szybkoœæ, int hp, int mana)
+    public Przedmiot(String nazwa, String opis, String grafika, int atak, int obrona, int szybkoÅ›Ä‡, int hp, int mana)
     {
 
     }
-    public Przedmiot(String nazwa, String opis, String grafika, int atak, int obrona, int szybkoœæ, int hp, int mana, Umiejêtnoœæ umiejêtnoœæ)
+    public Przedmiot(String nazwa, String opis, String grafika, int atak, int obrona, int szybkoÅ›Ä‡, int hp, int mana, UmiejÄ™tnoÅ›Ä‡ umiejÄ™tnoÅ›Ä‡)
     {
 
     }
@@ -39,8 +39,8 @@ class Przedmiot {
 	public int getObrona() {
 		return obrona;
 	}
-	public int getSzybkoœæ() {
-		return szybkoœæ;
+	public int getSzybkoÅ›Ä‡() {
+		return szybkoÅ›Ä‡;
 	}
 	public int getHp() {
 		return hp;
@@ -48,8 +48,8 @@ class Przedmiot {
 	public int getMana() {
 		return mana;
 	}
-	public Umiejêtnoœæ getUmiejêtnoœæ() {
-		return umiejêtnoœæ;
+	public UmiejÄ™tnoÅ›Ä‡ getUmiejÄ™tnoÅ›Ä‡() {
+		return umiejÄ™tnoÅ›Ä‡;
 	}
     
 }

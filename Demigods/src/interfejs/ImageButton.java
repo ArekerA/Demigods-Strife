@@ -9,7 +9,7 @@ class ImageButton extends Button {
     public ImageButton(int x, int y, String tekst, String obraz, String obrazAktywny){
 
     }
-    public ImageButton(int x, int y, int szerokoœæ, int wysokoœæ, String tekst, String obraz, String obrazAktywny){
+    public ImageButton(int x, int y, int szerokoÅ›Ä‡, int wysokoÅ›Ä‡, String tekst, String obraz, String obrazAktywny){
 
     }
     public void Rysuj(){

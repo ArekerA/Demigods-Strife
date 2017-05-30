@@ -1,4 +1,6 @@
+package kreator;
 
+import interfejs.Ramka;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -9,18 +11,18 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import kreator.RamkaKreatora;
+import walka.FrameWalka;
 
-public class Ramka extends Application {
-
+public class RamkaKreatora extends Ramka{
+	
 	@Override
 	public void start(Stage primaryStage) {
 		Button btn1 = new Button();
 		Button btn2 = new Button();
 		Button btn3 = new Button();
 		Image Obraz = new Image("tło.png");
-		btn1.setText("Graj!");
-		btn2.setText("Usuń Drużynę");
+		btn1.setText("Stwórz Drużynę");
+		btn2.setText("Kontynuj");
 		btn3.setText("Wyjdź");
 		btn3.setOnAction(new EventHandler<ActionEvent>() {
 
@@ -61,11 +63,11 @@ public class Ramka extends Application {
 		btn3.setPrefWidth(300);
 		btn3.setPrefHeight(80);
 		btn3.setStyle("-fx-font: 25 arial; -fx-base: #b6e7c9;");
-		btn1.setOnAction(new EventHandler<ActionEvent>() {
+		btn2.setOnAction(new EventHandler<ActionEvent>() {
 
 			@Override
 			public void handle(ActionEvent event) {
-				RamkaKreatora walka=new RamkaKreatora();
+				FrameWalka walka=new FrameWalka();
 				 try {
 					walka.start(primaryStage);
 				} catch (Exception e) {
@@ -74,22 +76,14 @@ public class Ramka extends Application {
 				}
 			}
 		});
-		
-//		root.getChildren().add(Obraz);
-		
-//		 Rectangle2D viewportRect = new Rectangle2D(40, 35, 110, 110);
-//		 btn2.setViewport(viewportRect);
-	
 		Scene scene = new Scene(root, 800, 600);
 		
 
 		primaryStage.setTitle("Demigoods Strife");
 		primaryStage.setScene(scene);
 		primaryStage.show();
-	}
-
-	public static void main(String[] args) {
-		Application.launch(args);
-	}
-
+		Application.launch();
 }
+}
+
+

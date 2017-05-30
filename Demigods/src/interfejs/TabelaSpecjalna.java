@@ -3,28 +3,28 @@ package interfejs;
 import java.util.ArrayList;
 
 class TabelaSpecialna extends Tabela{
-    private int[] kolorT³aDrugi = new int[4];
-    private int[] kolorObramowaniaWewnêtrzny = new int[4];
-	public TabelaSpecialna(ArrayList<ArrayList<String>> tekst, int x, int y, int szerokoœæ, int wysokoœæ, int[] kolorT³aDrugi, int[] kolorObramowaniaWewnêtrzny) {
-		super(tekst, x, y, szerokoœæ, wysokoœæ);
-		this.kolorT³aDrugi = kolorT³aDrugi;
-		this.kolorObramowaniaWewnêtrzny = kolorObramowaniaWewnêtrzny;
+    private int[] kolorTÅ‚aDrugi = new int[4];
+    private int[] kolorObramowaniaWewnÄ™trzny = new int[4];
+	public TabelaSpecialna(ArrayList<ArrayList<String>> tekst, int x, int y, int szerokoÅ›Ä‡, int wysokoÅ›Ä‡, int[] kolorTÅ‚aDrugi, int[] kolorObramowaniaWewnÄ™trzny) {
+		super(tekst, x, y, szerokoÅ›Ä‡, wysokoÅ›Ä‡);
+		this.kolorTÅ‚aDrugi = kolorTÅ‚aDrugi;
+		this.kolorObramowaniaWewnÄ™trzny = kolorObramowaniaWewnÄ™trzny;
 	}
-	public TabelaSpecialna(ArrayList<ArrayList<String>> tekst, int x, int y, int szerokoœæ, int wysokoœæ, int[] kolorT³a, int[] kolorTekstu, int[] kolorObramowania, int[] kolorT³aDrugi, int[] kolorObramowaniaWewnêtrzny) {
-		super(tekst, x, y, szerokoœæ, wysokoœæ, kolorT³a, kolorTekstu, kolorObramowania);
-		this.kolorT³aDrugi = kolorT³aDrugi;
-		this.kolorObramowaniaWewnêtrzny = kolorObramowaniaWewnêtrzny;
+	public TabelaSpecialna(ArrayList<ArrayList<String>> tekst, int x, int y, int szerokoÅ›Ä‡, int wysokoÅ›Ä‡, int[] kolorTÅ‚a, int[] kolorTekstu, int[] kolorObramowania, int[] kolorTÅ‚aDrugi, int[] kolorObramowaniaWewnÄ™trzny) {
+		super(tekst, x, y, szerokoÅ›Ä‡, wysokoÅ›Ä‡, kolorTÅ‚a, kolorTekstu, kolorObramowania);
+		this.kolorTÅ‚aDrugi = kolorTÅ‚aDrugi;
+		this.kolorObramowaniaWewnÄ™trzny = kolorObramowaniaWewnÄ™trzny;
 	}
-	public int[] getKolorT³aDrugi() {
-		return kolorT³aDrugi;
+	public int[] getKolorTÅ‚aDrugi() {
+		return kolorTÅ‚aDrugi;
 	}
-	public void setKolorT³aDrugi(int[] kolorT³aDrugi) {
-		this.kolorT³aDrugi = kolorT³aDrugi;
+	public void setKolorTÅ‚aDrugi(int[] kolorTÅ‚aDrugi) {
+		this.kolorTÅ‚aDrugi = kolorTÅ‚aDrugi;
 	}
-	public int[] getKolorObramowaniaWewnêtrzny() {
-		return kolorObramowaniaWewnêtrzny;
+	public int[] getKolorObramowaniaWewnÄ™trzny() {
+		return kolorObramowaniaWewnÄ™trzny;
 	}
-	public void setKolorObramowaniaWewnêtrzny(int[] kolorObramowaniaWewnêtrzny) {
-		this.kolorObramowaniaWewnêtrzny = kolorObramowaniaWewnêtrzny;
+	public void setKolorObramowaniaWewnÄ™trzny(int[] kolorObramowaniaWewnÄ™trzny) {
+		this.kolorObramowaniaWewnÄ™trzny = kolorObramowaniaWewnÄ™trzny;
 	}
 }

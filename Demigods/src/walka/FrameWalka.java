@@ -1,26 +1,55 @@
 package walka;
 
-import javax.swing.BoxLayout;
-import javax.swing.JPanel;
+import java.util.ArrayList;
 
-import interfejs.Obraz;
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 
-public class FrameWalka extends JPanel {
-	public FrameWalka() {
-		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-		/*for(int y = 0; y < 2; y++)
-			for(int x = 0; x < 3; x++)
-			{
-				add(new Obraz("img/hex.png",x*40+20*(y%2),y*34));
-			}*/
-		add(new Obraz("img/hex.png",0,0));
-		add(new Obraz("img/hex.png",40,0));
-		add(new Obraz("img/hex.png",80,0));
-		add(new Obraz("img/hex.png",20,34));
-		add(new Obraz("img/hex.png",60,34));
-		/*add(new Obraz("img/hex.png",100,34));
-		add(new Obraz("img/hex.png",0,68));
-		add(new Obraz("img/hex.png",40,68));
-		add(new Obraz("img/hex.png",80,68));*/
-    }
-}
+public class FrameWalka extends Application {
+	
+
+	public void start(Stage primaryStage) throws Exception {
+		
+		Image Obraz = new Image("hex.png");
+		ArrayList<ImageView> hexy=new ArrayList();
+		
+		ImageView iv1 = new ImageView();
+		iv1.setImage(Obraz);
+		iv1.setPreserveRatio(true);
+		iv1.setSmooth(true);
+		for(int i=0; i<10; i++)
+		{
+			hexy.add(iv1);
+		}
+		HBox box = new HBox();
+		
+		Pane root = new Pane();
+		root.getChildren().add(box);
+		
+		
+		/*for(int x=0; x<10; x++)
+		{
+			box.getChildren().add(hexy.get(x));
+		}*/
+		box.getChildren().add(iv1);
+		
+		Scene scene = new Scene(root, 800, 600);
+
+		primaryStage.setTitle("Demigoods Strife");
+		primaryStage.setScene(scene);
+		primaryStage.show();
+		Application.launch();
+	}
+	
+	public static void majn(String[] args) {
+		Application.launch(args);
+	}
+	}
+
+	
+
