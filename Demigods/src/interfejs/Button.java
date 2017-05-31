@@ -19,13 +19,13 @@ class Button{
     public Button(int x, int y, int szerokosc, int wysokosc, String tekst){
 
     }
-    public Button(int x, int y, int szerokosc, int wysokosc, String tekst, int[] kolorTła, int[] kolorTekstu, int[] kolorTlaAktywny, int[] kolorTekstuAktywny){
+    public Button(int x, int y, int szerokosc, int wysokosc, String tekst, int[] kolorTła, int[] kolorTekstu, int[] kolorTłaAktywny, int[] kolorTekstuAktywny){
 
     }
     public void Rysuj(){
 
     }
-    /*public void DodajAkcj�(ActionListener a)
+    /*public void DodajAkcję(ActionListener a)
     {
 
     }*/

@@ -10,7 +10,7 @@ class Przedmiot {
     private int szybkosc;
     private int hp;
     private int mana;
-    private Umiejetnosc umiejetnosc;
+    private Umiejetność umiejetność;
 
     public Przedmiot()
     {
@@ -20,7 +20,7 @@ class Przedmiot {
     {
 
     }
-    public Przedmiot(String nazwa, String opis, String grafika, int atak, int obrona, int szybkosc, int hp, int mana, Umiejetnosc umiejetnosc)
+    public Przedmiot(String nazwa, String opis, String grafika, int atak, int obrona, int szybkosc, int hp, int mana, Umiejetność umiejetność)
     {
 
     }
@@ -48,8 +48,8 @@ class Przedmiot {
 	public int getMana() {
 		return mana;
 	}
-	public Umiejetnosc getUmiejetnosc() {
-		return umiejetnosc;
+	public Umiejetność getUmiejetnosc() {
+		return umiejetność;
 	}
     
 }
