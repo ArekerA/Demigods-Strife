@@ -4,11 +4,11 @@ import kreator.*;
 
 public final class Dane {
 
-    public static Postać[] OdczytPostaci() {
+    public static Postac[] OdczytPostaci() {
 		return null;
 
     }
-    public static void ZapisPostaci(Postać p) {
+    public static void ZapisPostaci(Postac p) {
 
     }
 }

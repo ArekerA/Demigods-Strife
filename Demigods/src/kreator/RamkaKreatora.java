@@ -76,6 +76,19 @@ public class RamkaKreatora extends Ramka{
 				}
 			}
 		});
+		btn1.setOnAction(new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(ActionEvent event) {
+				OknoKreatora okno=new OknoKreatora();
+				 try {
+					okno.start(primaryStage);
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		});
 		Scene scene = new Scene(root, 800, 600);
 		
 

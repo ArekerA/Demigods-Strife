@@ -4,26 +4,26 @@ class Tekst{
     private String tekst;
     private int x;
     private int y;
-    private int szerokość;
-	private int wysokość;
+    private int szerokosc;
+	private int wysokosc;
     private int[] kolor = new int[4];
-    public Tekst(String tekst, int x, int y, int szerokość, int wysokość) {
+    public Tekst(String tekst, int x, int y, int szerokosc, int wysokosc) {
 		this.tekst = tekst;
 		this.x = x;
 		this.y = y;
-		this.szerokość = szerokość;
-		this.wysokość = wysokość;
+		this.szerokosc = szerokosc;
+		this.wysokosc = wysokosc;
 		this.kolor[0] = 0;
 		this.kolor[1] = 0;
 		this.kolor[2] = 0;
 		this.kolor[3] = 1;
 	}
-    public Tekst(String tekst, int x, int y, int szerokość, int wysokość, int[] kolor) {
+    public Tekst(String tekst, int x, int y, int szerokosc, int wysokosc, int[] kolor) {
 		this.tekst = tekst;
 		this.x = x;
 		this.y = y;
-		this.szerokość = szerokość;
-		this.wysokość = wysokość;
+		this.szerokosc = szerokosc;
+		this.wysokosc = wysokosc;
 		this.kolor = kolor;
 	}
     public void Rysuj() {
@@ -47,17 +47,17 @@ class Tekst{
 	public void setY(int y) {
 		this.y = y;
 	}
-	public int getSzerokość() {
-		return szerokość;
+	public int getSzerokosc() {
+		return szerokosc;
 	}
-	public void setSzerokość(int szerokość) {
-		this.szerokość = szerokość;
+	public void setSzerokosc(int szerokosc) {
+		this.szerokosc = szerokosc;
 	}
-	public int getWysokość() {
-		return wysokość;
+	public int getWysokosc() {
+		return wysokosc;
 	}
-	public void setWysokość(int wysokość) {
-		this.wysokość = wysokość;
+	public void setWysokosc(int wysokosc) {
+		this.wysokosc = wysokosc;
 	}
 	public int[] getKolor() {
 		return kolor;

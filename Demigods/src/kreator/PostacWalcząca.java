@@ -1,15 +1,15 @@
 package kreator;
 
 
-public class PostaćWalcząca extends Postać {
+public class PostacWalcząca extends Postac {
     private int x;
     private int y;
     private int aAtak;
     private int aObrona;
     private int aHp;
     private int aMana;
-    private int aSzybkość;
-    public PostaćWalcząca(Postać p, int x, int y) {
+    private int aSzybkosc;
+    public PostacWalcząca(Postac p, int x, int y) {
 	}
     public void Ruch(int x, int y) {
 	}
@@ -25,12 +25,12 @@ public class PostaćWalcząca extends Postać {
     public int Zaatakuj() {
 		return 0;
 	}
-    public int OtrzymajObrażenia(int o) {
+    public int OtrzymajObrazenia(int o) {
 		return 0;
 	}
     public void Umrzyj() {
 	}
-    public void PrzyjmijUmiejętność(Umiejętność u){
+    public void PrzyjmijUmiejetnosc(Umiejetnosc u){
 
     }
 	public int getX() {
@@ -69,10 +69,10 @@ public class PostaćWalcząca extends Postać {
 	public void setaMana(int aMana) {
 		this.aMana = aMana;
 	}
-	public int getaSzybkość() {
-		return aSzybkość;
+	public int getaSzybkosc() {
+		return aSzybkosc;
 	}
-	public void setaSzybkość(int aSzybkość) {
-		this.aSzybkość = aSzybkość;
+	public void setaSzybkosc(int aSzybkosc) {
+		this.aSzybkosc = aSzybkosc;
 	}
 }

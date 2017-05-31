@@ -3,12 +3,12 @@ package interfejs;
 class Button{
     private int x;
     private int y;
-    private int szerokość;
-    private int wysokość;
+    private int szerokosc;
+    private int wysokosc;
     private String tekst;
-    private int[] kolorTła = new int[4];
+    private int[] kolorTla = new int[4];
     private int[] kolorTekstu = new int[4];
-    private int[] kolorTłaAktywny = new int[4];
+    private int[] kolorTlaAktywny = new int[4];
     private int[] kolorTekstuAktywny = new int[4];
     public Button(){
 
@@ -16,10 +16,10 @@ class Button{
     public Button(int x, int y, String tekst){
 
     }
-    public Button(int x, int y, int szerokość, int wysokość, String tekst){
+    public Button(int x, int y, int szerokosc, int wysokosc, String tekst){
 
     }
-    public Button(int x, int y, int szerokość, int wysokość, String tekst, int[] kolorTła, int[] kolorTekstu, int[] kolorTłaAktywny, int[] kolorTekstuAktywny){
+    public Button(int x, int y, int szerokosc, int wysokosc, String tekst, int[] kolorTła, int[] kolorTekstu, int[] kolorTlaAktywny, int[] kolorTekstuAktywny){
 
     }
     public void Rysuj(){
@@ -41,17 +41,17 @@ class Button{
 	public void setY(int y) {
 		this.y = y;
 	}
-	public int getSzerokość() {
-		return szerokość;
+	public int getSzerokosc() {
+		return szerokosc;
 	}
-	public void setSzerokość(int szerokość) {
-		this.szerokość = szerokość;
+	public void setSzerokosc(int szerokosc) {
+		this.szerokosc = szerokosc;
 	}
-	public int getWysokość() {
-		return wysokość;
+	public int getWysokosc() {
+		return wysokosc;
 	}
-	public void setWysokość(int wysokość) {
-		this.wysokość = wysokość;
+	public void setWysokosc(int wysokosc) {
+		this.wysokosc = wysokosc;
 	}
 	public String getTekst() {
 		return tekst;
@@ -59,11 +59,11 @@ class Button{
 	public void setTekst(String tekst) {
 		this.tekst = tekst;
 	}
-	public int[] getKolorTła() {
-		return kolorTła;
+	public int[] getKolorTla() {
+		return kolorTla;
 	}
-	public void setKolorTła(int[] kolorTła) {
-		this.kolorTła = kolorTła;
+	public void setKolorTla(int[] kolorTla) {
+		this.kolorTla = kolorTla;
 	}
 	public int[] getKolorTekstu() {
 		return kolorTekstu;
@@ -71,11 +71,11 @@ class Button{
 	public void setKolorTekstu(int[] kolorTekstu) {
 		this.kolorTekstu = kolorTekstu;
 	}
-	public int[] getKolorTłaAktywny() {
-		return kolorTłaAktywny;
+	public int[] getKolorTlaAktywny() {
+		return kolorTlaAktywny;
 	}
-	public void setKolorTłaAktywny(int[] kolorTłaAktywny) {
-		this.kolorTłaAktywny = kolorTłaAktywny;
+	public void setKolorTlaAktywny(int[] kolorTlaAktywny) {
+		this.kolorTlaAktywny = kolorTlaAktywny;
 	}
 	public int[] getKolorTekstuAktywny() {
 		return kolorTekstuAktywny;

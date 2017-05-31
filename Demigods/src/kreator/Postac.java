@@ -1,13 +1,13 @@
 package kreator;
 
-public class Postać {
+public class Postac {
     private static int maxId = 0;
     private int id;
     private int atak;
     private int obrona;
     private int hp;
     private int mana;
-    private int szybkość;
+    private int szybkosc;
     private String nazwa;
     private String opis;
     private String grafika;
@@ -15,18 +15,18 @@ public class Postać {
     private int rasa;//0-cz�owiek, 1-elf, 2-ork
     private int klasa;//0-wojownik, 1-�ucznik, 2-mag
 
-    public Postać()
+    public Postac()
     {
         this(10,10,100,20,4);
     }
-    public Postać(int atak, int obrona, int hp, int mana, int szybkość)
+    public Postac(int atak, int obrona, int hp, int mana, int szybkosc)
     {
         id = maxId++;
         this.atak = atak;
         this.obrona = obrona;
         this.hp = hp;
         this.mana = mana;
-        this.szybkość = szybkość;
+        this.szybkosc = szybkosc;
     }
 	public int getAtak() {
 		return atak;
@@ -52,11 +52,11 @@ public class Postać {
 	public void setMana(int mana) {
 		this.mana = mana;
 	}
-	public int getSzybkość() {
-		return szybkość;
+	public int getSzybkosc() {
+		return szybkosc;
 	}
-	public void setSzybkość(int szybkość) {
-		this.szybkość = szybkość;
+	public void setSzybkosc(int szybkosc) {
+		this.szybkosc = szybkosc;
 	}
 	public String getNazwa() {
 		return nazwa;

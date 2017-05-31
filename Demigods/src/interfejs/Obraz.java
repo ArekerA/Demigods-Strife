@@ -16,8 +16,8 @@ public class Obraz extends JPanel{
     private String grafika;
     private int x;
     private int y;
-    private int szerokość;
-    private int wysokość;
+    private int szerokosc;
+    private int wysokosc;
 	private BufferedImage image;
 
 	public Obraz(String grafika, int x, int y) {
@@ -32,11 +32,11 @@ public class Obraz extends JPanel{
 			System.err.println("Blad odczytu obrazka");
 			e.printStackTrace();
 		}
-		this.szerokość = image.getWidth();
-		this.wysokość = image.getHeight();
+		this.szerokosc = image.getWidth();
+		this.wysokosc = image.getHeight();
 		
 	}
-	public Obraz(String grafika, int x, int y, int szerokość, int wysokość) {
+	public Obraz(String grafika, int x, int y, int szerokosc, int wysokosc) {
 		super();
 		this.x = x;
 		this.y = y;
@@ -47,14 +47,14 @@ public class Obraz extends JPanel{
 			System.err.println("Blad odczytu obrazka");
 			e.printStackTrace();
 		}
-		image.getScaledInstance(szerokość, wysokość, Image.SCALE_DEFAULT);
+		image.getScaledInstance(szerokosc, wysokosc, Image.SCALE_DEFAULT);
 		this.grafika = grafika;
-		this.szerokość = szerokość;
-		this.wysokość = wysokość;
+		this.szerokosc = szerokosc;
+		this.wysokosc = wysokosc;
 	}
 	public void paintComponent(Graphics g) {
 		Graphics2D g2d = (Graphics2D) g;
-		g2d.drawImage(image, x, y, szerokość, wysokość, this);
+		g2d.drawImage(image, x, y, szerokosc, wysokosc, this);
 	}
     public void Rysuj() {
 
@@ -77,17 +77,17 @@ public class Obraz extends JPanel{
 	public void setY(int y) {
 		this.y = y;
 	}
-	public int getSzerokość() {
-		return szerokość;
+	public int getSzerokosc() {
+		return szerokosc;
 	}
-	public void setSzerokość(int szerokość) {
-		this.szerokość = szerokość;
+	public void setSzerokosc(int szerokosc) {
+		this.szerokosc = szerokosc;
 	}
-	public int getWysokość() {
-		return wysokość;
+	public int getWysokosc() {
+		return wysokosc;
 	}
-	public void setWysokość(int wysokość) {
-		this.wysokość = wysokość;
+	public void setWysokosc(int wysokosc) {
+		this.wysokosc = wysokosc;
 	}
 }
 

@@ -7,20 +7,20 @@ class Przedmiot {
     private String grafika;
     private int atak;
     private int obrona;
-    private int szybkość;
+    private int szybkosc;
     private int hp;
     private int mana;
-    private Umiejętność umiejętność;
+    private Umiejetnosc umiejetnosc;
 
     public Przedmiot()
     {
         
     }
-    public Przedmiot(String nazwa, String opis, String grafika, int atak, int obrona, int szybkość, int hp, int mana)
+    public Przedmiot(String nazwa, String opis, String grafika, int atak, int obrona, int szybkosc, int hp, int mana)
     {
 
     }
-    public Przedmiot(String nazwa, String opis, String grafika, int atak, int obrona, int szybkość, int hp, int mana, Umiejętność umiejętność)
+    public Przedmiot(String nazwa, String opis, String grafika, int atak, int obrona, int szybkosc, int hp, int mana, Umiejetnosc umiejetnosc)
     {
 
     }
@@ -39,8 +39,8 @@ class Przedmiot {
 	public int getObrona() {
 		return obrona;
 	}
-	public int getSzybkość() {
-		return szybkość;
+	public int getSzybkosc() {
+		return szybkosc;
 	}
 	public int getHp() {
 		return hp;
@@ -48,8 +48,8 @@ class Przedmiot {
 	public int getMana() {
 		return mana;
 	}
-	public Umiejętność getUmiejętność() {
-		return umiejętność;
+	public Umiejetnosc getUmiejetnosc() {
+		return umiejetnosc;
 	}
     
 }

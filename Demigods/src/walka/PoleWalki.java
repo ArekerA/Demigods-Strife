@@ -5,19 +5,19 @@ import kreator.*;
 
 class PoleWalki {
     private int[][] pole = new int[12][20];//+7
-    private PostaćWalcząca[] postacieGracz1;
-    private PostaćWalcząca[] postacieGracz2;
-    private String tło;
+    private PostacWalcząca[] postacieGracz1;
+    private PostacWalcząca[] postacieGracz2;
+    private String tlo;
     private int tura;
     private ArrayList<String> przebieg = new ArrayList<String>();
-	public PoleWalki(PostaćWalcząca[] postacieGracz1, PostaćWalcząca[] postacieGracz2, String tło) {
+	public PoleWalki(PostacWalcząca[] postacieGracz1, PostacWalcząca[] postacieGracz2, String tlo) {
 		this.postacieGracz1 = postacieGracz1;
 		this.postacieGracz2 = postacieGracz2;
-		this.tło = tło;
+		this.tlo = tlo;
 	}
-	public void PrzesuńPostać(int gracz, int postać) {
+	public void PrzesunPostać(int gracz, int postac) {
 	}
-	public void ZaatakujPostać(int aGracz, int aPostać, int bGracz, int bPostać) {
+	public void ZaatakujPostać(int aGracz, int aPostac, int bGracz, int bPostac) {
 	}
     public void Rysuj() {
 
