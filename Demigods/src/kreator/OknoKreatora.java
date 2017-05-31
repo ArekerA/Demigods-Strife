@@ -72,7 +72,7 @@ public class OknoKreatora extends Ramka{
 		
 		HBox box = new HBox();
 		box.getChildren().add(iv1);
-		
+		//a
 		Pane root = new Pane();
 		root.getChildren().add(box);
 		root.getChildren().add(btn1);
