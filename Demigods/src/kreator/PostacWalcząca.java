@@ -13,7 +13,7 @@ public class PostacWalcząca extends Postac {
 	}
     public void Ruch(int x, int y) {
 	}
-    public boolean CzyRuchDostępnyy(int x, int y) {
+    public boolean CzyRuchDostępny(int x, int y) {
 		return false;
 	}
     public int X() {
@@ -30,7 +30,7 @@ public class PostacWalcząca extends Postac {
 	}
     public void Umrzyj() {
 	}
-    public void PrzyjmijUmiejetnosc(Umiejetnosc u){
+    public void PrzyjmijUmiejetnosc(Umiejetność u){
 
     }
 	public int getX() {

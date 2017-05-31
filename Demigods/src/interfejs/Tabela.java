@@ -6,25 +6,25 @@ class Tabela{
     private ArrayList<ArrayList<String>> tekst = new ArrayList<ArrayList<String>>();
     private int x;
     private int y;
-    private int szerokosc;
-    private int wysokosc;
-    private int[] kolorTla = new int[4];
+    private int szerokość;
+    private int wysokość;
+    private int[] kolorTła = new int[4];
     private int[] kolorTekstu = new int[4];
     private int[] kolorObramowania = new int[4];
-	public Tabela(ArrayList<ArrayList<String>> tekst, int x, int y, int szerokosc, int wysokosc) {
+	public Tabela(ArrayList<ArrayList<String>> tekst, int x, int y, int szerokość, int wysokość) {
 		this.tekst = tekst;
 		this.x = x;
 		this.y = y;
-		this.szerokosc = szerokosc;
-		this.wysokosc = wysokosc;
+		this.szerokość = szerokość;
+		this.wysokość = wysokość;
 	}
-	public Tabela(ArrayList<ArrayList<String>> tekst, int x, int y, int szerokosc, int wysokosc, int[] kolorTla, int[] kolorTekstu, int[] kolorObramowania) {
+	public Tabela(ArrayList<ArrayList<String>> tekst, int x, int y, int szerokość, int wysokość, int[] kolorTła, int[] kolorTekstu, int[] kolorObramowania) {
 		this.tekst = tekst;
 		this.x = x;
 		this.y = y;
-		this.szerokosc= szerokosc;
-		this.wysokosc = wysokosc;
-		this.kolorTla = kolorTla;
+		this.szerokość= szerokość;
+		this.wysokość = wysokość;
+		this.kolorTła = kolorTła;
 		this.kolorTekstu = kolorTekstu;
 		this.kolorObramowania = kolorObramowania;
 	}
@@ -49,23 +49,23 @@ class Tabela{
 	public void setY(int y) {
 		this.y = y;
 	}
-	public int getSzerokosc() {
-		return szerokosc;
+	public int getSzerokość() {
+		return szerokość;
 	}
-	public void setSzerokosc(int szerokosc) {
-		this.szerokosc = szerokosc;
+	public void setSzerokość(int szerokość) {
+		this.szerokość = szerokość;
 	}
-	public int getWysokosc() {
-		return wysokosc;
+	public int getWysokość() {
+		return wysokość;
 	}
-	public void setWysokosc(int wysokosc) {
-		this.wysokosc= wysokosc;
+	public void setWysokość(int wysokość) {
+		this.wysokość= wysokość;
 	}
-	public int[] getKolorTla() {
-		return kolorTla;
+	public int[] getKolorTła() {
+		return kolorTła;
 	}
-	public void setKolorTla(int[] kolorTła) {
-		this.kolorTla = kolorTła;
+	public void setKolorTła(int[] kolorTła) {
+		this.kolorTła = kolorTła;
 	}
 	public int[] getKolorTekstu() {
 		return kolorTekstu;
