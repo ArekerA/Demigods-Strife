@@ -8,48 +8,33 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.Priority;
 import javafx.stage.Stage;
 
 public class FrameWalka extends Application {
-	
-
 	public void start(Stage primaryStage) throws Exception {
-		
-		Image Obraz = new Image("hex.png");
-		ArrayList<ImageView> hexy=new ArrayList();
-		
-		ImageView iv1 = new ImageView();
-		iv1.setImage(Obraz);
-		iv1.setPreserveRatio(true);
-		iv1.setSmooth(true);
-		for(int i=0; i<10; i++)
-		{
-			hexy.add(iv1);
-		}
-		HBox box = new HBox();
-		
+		Image Obraz = new Image("img/hex.png");
 		Pane root = new Pane();
-		root.getChildren().add(box);
-		
-		
-		/*for(int x=0; x<10; x++)
-		{
-			box.getChildren().add(hexy.get(x));
-		}*/
-		box.getChildren().add(iv1);
-		
+		for (int y = 0; y < 12; y++)
+			for (int x = 0; x < 15; x++) {
+				ImageView iv1 = new ImageView();
+				iv1.setImage(Obraz);
+				iv1.setPreserveRatio(true);
+				iv1.setSmooth(true);
+				iv1.setLayoutX(x * 76 + (y % 2) * 40);
+				iv1.setLayoutY(y * 65);
+				iv1.prefWidth(80);
+				iv1.prefHeight(92);
+				root.getChildren().add(iv1);
+			}
 		Scene scene = new Scene(root, 800, 600);
 
 		primaryStage.setTitle("Demigoods Strife");
 		primaryStage.setScene(scene);
 		primaryStage.show();
-		Application.launch();
 	}
-	
-	public static void majn(String[] args) {
+
+	/*public static void main(String[] args) {
 		Application.launch(args);
-	}
-	}
-
-	
-
+	}*/
+}

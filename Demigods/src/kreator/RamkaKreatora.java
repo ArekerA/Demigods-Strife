@@ -20,7 +20,7 @@ public class RamkaKreatora extends Ramka{
 		Button btn1 = new Button();
 		Button btn2 = new Button();
 		Button btn3 = new Button();
-		Image Obraz = new Image("tło.png");
+		Image Obraz = new Image("img/tło.png");
 		btn1.setText("Stwórz Drużynę");
 		btn2.setText("Kontynuj");
 		btn3.setText("Wyjdź");

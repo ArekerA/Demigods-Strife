@@ -18,7 +18,7 @@ public class Ramka extends Application {
 		Button btn1 = new Button();
 		Button btn2 = new Button();
 		Button btn3 = new Button();
-		Image Obraz = new Image("tło.png");
+		Image Obraz = new Image("img/tło.png");
 		btn1.setText("Graj!");
 		btn2.setText("Usuń Drużynę");
 		btn3.setText("Wyjdź");
