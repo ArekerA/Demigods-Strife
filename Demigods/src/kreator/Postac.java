@@ -8,18 +8,20 @@ public class Postac {
     private int hp;
     private int mana;
     private int szybkosc;
-    private String nazwa;
+    String nazwa;
     private String opis;
     private String grafika;
+    String rasa;
+    String klasa;
 
-    private int rasa;//0-cz�owiek, 1-elf, 2-ork
-    private int klasa;//0-wojownik, 1-�ucznik, 2-mag
+    static String[] rasy={"Człowiek","Elf","Ork"};//0-cz�owiek, 1-elf, 2-ork
+    final static String[] klasy={"Wojownik","Łucznik","Ork"};//0-wojownik, 1-�ucznik, 2-mag
 
     public Postac()
     {
-        this(10,10,100,20,4);
+      //
     }
-    public Postac(int atak, int obrona, int hp, int mana, int szybkosc)
+    public Postac(int atak, int obrona, int hp, int mana, int szybkosc, String rasa, String klasa)
     {
         id = maxId++;
         this.atak = atak;
@@ -27,6 +29,8 @@ public class Postac {
         this.hp = hp;
         this.mana = mana;
         this.szybkosc = szybkosc;
+        this.rasa=rasa;
+        this.klasa=klasa;
     }
 	public int getAtak() {
 		return atak;
@@ -76,16 +80,16 @@ public class Postac {
 	public void setGrafika(String grafika) {
 		this.grafika = grafika;
 	}
-	public int getRasa() {
+	public String getRasa() {
 		return rasa;
 	}
-	public void setRasa(int rasa) {
+	public void setRasa(String rasa) {
 		this.rasa = rasa;
 	}
-	public int getKlasa() {
+	public String getKlasa() {
 		return klasa;
 	}
-	public void setKlasa(int klasa) {
+	public void setKlasa(String klasa) {
 		this.klasa = klasa;
 	}
 	public static int getMaxId() {

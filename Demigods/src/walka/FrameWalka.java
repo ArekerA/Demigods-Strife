@@ -58,13 +58,13 @@ public class FrameWalka extends Application {
 		root.getChildren().add(hex);
 		Scene scene = new Scene(root, 800, 600);
 
-        primaryStage.initStyle(StageStyle.UNDECORATED);
+        //primaryStage.initStyle(StageStyle.UNDECORATED);
 		primaryStage.setTitle("Demigoods Strife");
 		primaryStage.setScene(scene);
 		primaryStage.show();
 	}
 
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		Application.launch(args);
-	}
+	}*/
 }
