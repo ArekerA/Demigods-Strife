@@ -56,6 +56,23 @@ public class FrameWalka extends Application {
 		hex.setLayoutX(20);
 		hex.setLayoutY(80);
 		root.getChildren().add(hex);
+		ImageView test = new ImageView();
+		test.setImage(new Image("img/elf-woj.png"));
+		test.setPreserveRatio(true);
+		test.setSmooth(true);
+		test.setLayoutX(poleWalki[7][0].getLayoutX()-20);
+		test.setLayoutY(poleWalki[7][0].getLayoutX()-8);
+		test.setFitWidth(30);
+		root.getChildren().add(test);
+		ImageView test2 = new ImageView();
+		test2.setImage(new Image("img/elf-woj.png"));
+		test2.setPreserveRatio(true);
+		test2.setSmooth(true);
+		test2.setLayoutX(poleWalki[15][0].getLayoutX()-20);
+		test2.setLayoutY(poleWalki[15][0].getLayoutX()-8);
+		test2.setFitWidth(30);
+		test2.setScaleX(-1);
+		root.getChildren().add(test2);
 		Scene scene = new Scene(root, 800, 600);
 
         //primaryStage.initStyle(StageStyle.UNDECORATED);
@@ -64,7 +81,7 @@ public class FrameWalka extends Application {
 		primaryStage.show();
 	}
 
-	/*public static void main(String[] args) {
+	public static void main(String[] args) {
 		Application.launch(args);
-	}*/
+	}
 }

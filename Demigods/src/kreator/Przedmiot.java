@@ -11,6 +11,11 @@ class Przedmiot {
     private int hp;
     private int mana;
     private Umiejetnosc umiejetność;
+    String rodzaj;
+    
+    String[] broniewojownik={"Miecz","Topór"};
+    String[] bronielucznik;
+    String[] broniemag;
 
     public Przedmiot()
     {

@@ -243,7 +243,7 @@ public class OknoKreatora extends Ramka {
 		});
 	}
 
-	static void TworzeniePostaci(Stage primaryStage) throws FileNotFoundException {
+	static Postac TworzeniePostaci(Stage primaryStage) throws FileNotFoundException {
 		Postac postac = new Postac();
 		Pane root = new Pane();
 		Scene scene = new Scene(root, 800, 600);
@@ -275,9 +275,7 @@ public class OknoKreatora extends Ramka {
 		textarea1.setPrefWidth(200);
 		textarea1.setPrefHeight(20);
 
-		PrintWriter zapis = new PrintWriter("postaci1.txt");
-
-		zapis.close();
+		
 		ChoiceBox cb1 = new ChoiceBox(FXCollections.observableArrayList("Człowiek", "Elf", "Ork"));
 		cb1.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
 			public void changed(ObservableValue ov, Number value, Number new_value) {
@@ -316,6 +314,8 @@ public class OknoKreatora extends Ramka {
 		dalej.setLayoutY(530);
 		dalej.setPrefWidth(90);
 		dalej.setPrefHeight(40);
+		
+
 
 		cb2.setLayoutX(150);
 		cb2.setLayoutY(260);
@@ -351,7 +351,6 @@ public class OknoKreatora extends Ramka {
 			public void handle(ActionEvent event) {
 				try {
 					ImageView iv2 = new ImageView();
-					// iv2.setImage(Obraz1);
 					iv2.setPreserveRatio(true);
 					iv2.setSmooth(true);
 					iv2.setScaleX(0.5);
@@ -359,10 +358,11 @@ public class OknoKreatora extends Ramka {
 					iv2.setLayoutX(450);
 					iv2.setLayoutY(-150);
 					iv2.setImage(orkwoj);
+
 					if (postac.rasa == "Ork" && postac.klasa == "Wojownik")
 						iv2.setImage(orkwoj);
 					else if (postac.rasa == "Ork" && postac.klasa == "Łucznik")
-						iv2.setImage(orklucz);
+						iv2.setImage(orkwoj);
 					else if (postac.rasa == "Ork" && postac.klasa == "Mag")
 						iv2.setImage(orkmag);
 					else if (postac.rasa == "Człowiek" && postac.klasa == "Wojownik")
@@ -382,10 +382,27 @@ public class OknoKreatora extends Ramka {
 					root.getChildren().add(iv2);
 					root.getChildren().add(dalej);
 					postac.nazwa = textarea1.getText();
-				/*	zapis.println(postac.klasa);
-					zapis.println(postac.rasa);
-					zapis.println(postac.nazwa);
-					zapis.close();*/
+					
+					
+					/*
+					 * zapis.println(postac.klasa); zapis.println(postac.rasa);
+					 * zapis.println(postac.nazwa); zapis.close();
+					 */
+
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		});
+		dalej.setOnAction(new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(ActionEvent event) {
+				try {
+					
+					OknoKreatora.WyborBroni(postac, primaryStage);
+					
 
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
@@ -407,6 +424,83 @@ public class OknoKreatora extends Ramka {
 		root.getChildren().add(cb2);
 		root.getChildren().add(textarea3);
 
+		primaryStage.setTitle("Demigoods Strife");
+		primaryStage.setScene(scene);
+		primaryStage.show();
+		
+		return postac;
+	}
+	
+	static void WyborBroni(Postac postac, Stage primaryStage)
+	{
+		Pane root = new Pane();
+		Scene scene = new Scene(root, 800, 600);
+		Image Obraz = new Image("img/tło.png");
+		ImageView iv1 = new ImageView();
+		iv1.setImage(Obraz);
+		iv1.setPreserveRatio(true);
+		iv1.setSmooth(true);
+		
+		Przedmiot przedmiot=new Przedmiot();
+		
+		Text text1 = new Text();
+		text1.setLayoutX(300);
+		text1.setLayoutY(40);
+		text1.setStyle("-fx-font: 30 verdana; -fx-base: #b6e7c9;");
+		text1.setText("Wybór Broni");
+		Button zatwierdz = new Button();
+		zatwierdz.setText("Zatwierdź");
+		zatwierdz.setLayoutX(20);
+		zatwierdz.setLayoutY(480);
+		zatwierdz.setPrefWidth(90);
+		zatwierdz.setPrefHeight(40);
+
+		Button powrot = new Button();
+		powrot.setText("Powrot");
+		powrot.setLayoutX(20);
+		powrot.setLayoutY(530);
+		powrot.setPrefWidth(90);
+		powrot.setPrefHeight(40);
+
+		Button dalej = new Button();
+		dalej.setText("Dalej");
+		dalej.setLayoutX(270);
+		dalej.setLayoutY(530);
+		dalej.setPrefWidth(90);
+		dalej.setPrefHeight(40);
+		
+		TextArea textarea3 = new TextArea();
+		textarea3.setLayoutX(20);
+		textarea3.setLayoutY(320);
+		textarea3.setPrefWidth(340);
+		textarea3.setPrefHeight(150);
+		textarea3.setText("Opis...");
+		
+		ChoiceBox cb1 = new ChoiceBox(FXCollections.observableArrayList("Człowiek", "Elf", "Ork"));
+		cb1.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+			public void changed(ObservableValue ov, Number value, Number new_value) {
+				// Label.setText(postac.rasy[new_value.intValue()]);
+				przedmiot.rodzaj = przedmiot.broniewojownik[new_value.intValue()];
+			}
+		});
+
+		cb1.setLayoutX(150);
+		cb1.setLayoutY(160);
+		cb1.setPrefWidth(200);
+		cb1.setPrefHeight(40);
+		ChoiceBox cb2 = new ChoiceBox(FXCollections.observableArrayList("Wojownik", "Łucznik", "Mag"));
+		cb1.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+			public void changed(ObservableValue ov, Number value, Number new_value) {
+				postac.klasa = Postac.klasy[new_value.intValue()];
+			}
+		});
+		
+		root.getChildren().add(iv1);
+		root.getChildren().add(textarea3);
+		root.getChildren().add(zatwierdz);
+		root.getChildren().add(powrot);
+
+		
 		primaryStage.setTitle("Demigoods Strife");
 		primaryStage.setScene(scene);
 		primaryStage.show();
