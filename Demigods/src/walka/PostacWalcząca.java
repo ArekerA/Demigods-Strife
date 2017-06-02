@@ -1,5 +1,7 @@
-package kreator;
+package walka;
 
+import kreator.Postac;
+import kreator.Umiejetnosc;
 
 public class PostacWalcząca extends Postac {
     private int x;
@@ -30,7 +32,7 @@ public class PostacWalcząca extends Postac {
 	}
     public void Umrzyj() {
 	}
-    public void PrzyjmijUmiejetnosc(Umiejetność u){
+    public void PrzyjmijUmiejetnosc(Umiejetnosc u){
 
     }
 	public int getX() {

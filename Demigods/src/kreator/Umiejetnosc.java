@@ -1,7 +1,7 @@
 package kreator;
 
 
-class Umiejetność {
+public class Umiejetnosc {
     private String nazwa;
     private String opis;
     private String grafika;
@@ -17,11 +17,11 @@ class Umiejetność {
     private int minusObronaProcent;
     private int czasTrwania;
     private int koszt;
-    public Umiejetność(String nazwa, String opis, String grafika, int obrazenia, int plusObrazenia, int plusObrazeniaProcent, int manaRegen, int hpRegen, int lifeSteal,  int szybkosc,  int unik,  int minusObrona,  int minusObronaProcentc,  int czasTrwania,  int koszt )
+    public Umiejetnosc(String nazwa, String opis, String grafika, int obrazenia, int plusObrazenia, int plusObrazeniaProcent, int manaRegen, int hpRegen, int lifeSteal,  int szybkosc,  int unik,  int minusObrona,  int minusObronaProcentc,  int czasTrwania,  int koszt )
     {
 
     }
-    public Umiejetność ZwrśćUmiejetnosc(){
+    public Umiejetnosc ZwrśćUmiejetnosc(){
 		return null;
 
     }
