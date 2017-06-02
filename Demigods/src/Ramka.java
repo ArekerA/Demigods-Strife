@@ -18,7 +18,7 @@ public class Ramka extends Application {
 		Button btn1 = new Button();
 		Button btn2 = new Button();
 		Button btn3 = new Button();
-		Image Obraz = new Image("img/tło.png");
+		Image Obraz = new Image("img/tlo1.png");
 		btn1.setText("Graj!");
 		btn2.setText("Usuń Drużynę");
 		btn3.setText("Wyjdź");
@@ -35,7 +35,6 @@ public class Ramka extends Application {
 		iv1.setImage(Obraz);
 		iv1.setPreserveRatio(true);
 		iv1.setSmooth(true);
-		
 		
 		
 		HBox box = new HBox();
@@ -86,6 +85,7 @@ public class Ramka extends Application {
 		primaryStage.setTitle("Demigoods Strife");
 		primaryStage.setScene(scene);
 		primaryStage.show();
+		
 	}
 
 	public static void main(String[] args) {

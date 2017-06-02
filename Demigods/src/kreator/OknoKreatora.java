@@ -1,9 +1,19 @@
 package kreator;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+
 import interfejs.Ramka;
-import javafx.application.Application;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -13,11 +23,11 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-public class OknoKreatora extends Ramka{
+public class OknoKreatora extends Ramka {
 	@Override
 	public void start(Stage primaryStage) {
-		
-		Image Obraz = new Image("tło.png");
+
+		Image Obraz = new Image("img/tło.png");
 		Button btn1 = new Button();
 		Button btn2 = new Button();
 		Button btn3 = new Button();
@@ -39,14 +49,14 @@ public class OknoKreatora extends Ramka{
 		Button btn19 = new Button();
 		Button btn20 = new Button();
 		Button btn21 = new Button();
-		Text text1= new Text();
-		Text text2= new Text();
-		Text text3= new Text();
-		Text text4= new Text();
-		TextArea textarea1= new TextArea();
-		TextArea textarea2= new TextArea();
-		Rectangle rect1 = new Rectangle(320,50,200,200);
-		Rectangle rect2 = new Rectangle(320,310,200,200);
+		Text text1 = new Text();
+		Text text2 = new Text();
+		Text text3 = new Text();
+		Text text4 = new Text();
+		TextArea textarea1 = new TextArea();
+		TextArea textarea2 = new TextArea();
+		Rectangle rect1 = new Rectangle(320, 50, 200, 200);
+		Rectangle rect2 = new Rectangle(320, 310, 200, 200);
 		text1.setLayoutX(20);
 		text1.setLayoutY(20);
 		text1.setStyle("-fx-font: 25 arial; -fx-base: #b6e7c9;");
@@ -159,7 +169,6 @@ public class OknoKreatora extends Ramka{
 		btn21.setLayoutY(390);
 		btn21.setPrefWidth(90);
 		btn21.setPrefHeight(40);
-		
 
 		text1.setText("Gracz 1:");
 		text2.setText("Gracz 2:");
@@ -178,12 +187,10 @@ public class OknoKreatora extends Ramka{
 		iv1.setImage(Obraz);
 		iv1.setPreserveRatio(true);
 		iv1.setSmooth(true);
-		
-		
-		
+
 		HBox box = new HBox();
 		box.getChildren().add(iv1);
-		//a
+		// a
 		Pane root = new Pane();
 		root.getChildren().add(box);
 		root.getChildren().add(btn1);
@@ -216,18 +223,192 @@ public class OknoKreatora extends Ramka{
 		root.getChildren().add(textarea2);
 		root.getChildren().add(rect1);
 		root.getChildren().add(rect2);
-		
-		
 
-	
 		Scene scene = new Scene(root, 800, 600);
-		
 
 		primaryStage.setTitle("Demigoods Strife");
 		primaryStage.setScene(scene);
 		primaryStage.show();
-		Application.launch();
-	
+		btn10.setOnAction(new EventHandler<ActionEvent>() {
 
+			@Override
+			public void handle(ActionEvent event) {
+				try {
+					OknoKreatora.TworzeniePostaci(primaryStage);
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	static void TworzeniePostaci(Stage primaryStage) throws FileNotFoundException {
+		Postac postac = new Postac();
+		Pane root = new Pane();
+		Scene scene = new Scene(root, 800, 600);
+		Image Obraz = new Image("img/tło.png");
+		File postaci1 = new File("postaci1.txt");
+		Text text1 = new Text();
+		text1.setLayoutX(300);
+		text1.setLayoutY(40);
+		text1.setStyle("-fx-font: 30 verdana; -fx-base: #b6e7c9;");
+		text1.setText("Tworzenie Postaci");
+		Text text2 = new Text();
+		text2.setLayoutX(20);
+		text2.setLayoutY(85);
+		text2.setStyle("-fx-font: 30 arial; -fx-base: #b6e7c9;");
+		text2.setText("Imie:");
+		Text text3 = new Text();
+		text3.setLayoutX(20);
+		text3.setLayoutY(185);
+		text3.setStyle("-fx-font: 30 arial; -fx-base: #b6e7c9;");
+		text3.setText("Rasa:");
+		Text text4 = new Text();
+		text4.setLayoutX(20);
+		text4.setLayoutY(285);
+		text4.setStyle("-fx-font: 30 arial; -fx-base: #b6e7c9;");
+		text4.setText("Klasa:");
+		TextArea textarea1 = new TextArea();
+		textarea1.setLayoutX(150);
+		textarea1.setLayoutY(60);
+		textarea1.setPrefWidth(200);
+		textarea1.setPrefHeight(20);
+
+		PrintWriter zapis = new PrintWriter("postaci1.txt");
+
+		zapis.close();
+		ChoiceBox cb1 = new ChoiceBox(FXCollections.observableArrayList("Człowiek", "Elf", "Ork"));
+		cb1.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+			public void changed(ObservableValue ov, Number value, Number new_value) {
+				// Label.setText(postac.rasy[new_value.intValue()]);
+				postac.rasa = Postac.rasy[new_value.intValue()];
+			}
+		});
+
+		cb1.setLayoutX(150);
+		cb1.setLayoutY(160);
+		cb1.setPrefWidth(200);
+		cb1.setPrefHeight(40);
+		ChoiceBox cb2 = new ChoiceBox(FXCollections.observableArrayList("Wojownik", "Łucznik", "Mag"));
+		cb1.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+			public void changed(ObservableValue ov, Number value, Number new_value) {
+				postac.klasa = Postac.klasy[new_value.intValue()];
+			}
+		});
+		Button zatwierdz = new Button();
+		zatwierdz.setText("Zatwierdź");
+		zatwierdz.setLayoutX(20);
+		zatwierdz.setLayoutY(480);
+		zatwierdz.setPrefWidth(90);
+		zatwierdz.setPrefHeight(40);
+
+		Button powrot = new Button();
+		powrot.setText("Powrot");
+		powrot.setLayoutX(20);
+		powrot.setLayoutY(530);
+		powrot.setPrefWidth(90);
+		powrot.setPrefHeight(40);
+
+		Button dalej = new Button();
+		dalej.setText("Dalej");
+		dalej.setLayoutX(270);
+		dalej.setLayoutY(530);
+		dalej.setPrefWidth(90);
+		dalej.setPrefHeight(40);
+
+		cb2.setLayoutX(150);
+		cb2.setLayoutY(260);
+		cb2.setPrefWidth(200);
+		cb2.setPrefHeight(40);
+		ImageView iv1 = new ImageView();
+		iv1.setImage(Obraz);
+		iv1.setPreserveRatio(true);
+		iv1.setSmooth(true);
+
+		TextArea textarea3 = new TextArea();
+		textarea3.setLayoutX(20);
+		textarea3.setLayoutY(320);
+		textarea3.setPrefWidth(340);
+		textarea3.setPrefHeight(150);
+		textarea3.setText("Opis...");
+
+		HBox box = new HBox();
+		box.getChildren().add(iv1);
+		Image orkwoj = new Image("img/ork-woj.png");
+		Image orklucz = new Image("img/ork-woj.png");
+		Image orkmag = new Image("img/ork-mag.png");
+		Image czlwoj = new Image("img/ork-woj.png");
+		Image czllucz = new Image("img/ork-woj.png");
+		Image czlmag = new Image("img/ork-woj.png");
+		Image elfwoj = new Image("img/ork-woj.png");
+		Image elflucz = new Image("img/ork-woj.png");
+		Image elfmag = new Image("img/ork-woj.png");
+		HBox box1 = new HBox();
+		zatwierdz.setOnAction(new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(ActionEvent event) {
+				try {
+					ImageView iv2 = new ImageView();
+					// iv2.setImage(Obraz1);
+					iv2.setPreserveRatio(true);
+					iv2.setSmooth(true);
+					iv2.setScaleX(0.5);
+					iv2.setScaleY(0.5);
+					iv2.setLayoutX(450);
+					iv2.setLayoutY(-150);
+					iv2.setImage(orkwoj);
+					if (postac.rasa == "Ork" && postac.klasa == "Wojownik")
+						iv2.setImage(orkwoj);
+					else if (postac.rasa == "Ork" && postac.klasa == "Łucznik")
+						iv2.setImage(orklucz);
+					else if (postac.rasa == "Ork" && postac.klasa == "Mag")
+						iv2.setImage(orkmag);
+					else if (postac.rasa == "Człowiek" && postac.klasa == "Wojownik")
+						iv2.setImage(orkmag);
+					else if (postac.rasa == "Człowiek" && postac.klasa == "Łucznik")
+						iv2.setImage(orkwoj);
+					else if (postac.rasa == "Człowiek" && postac.klasa == "Mag")
+						iv2.setImage(orkwoj);
+					else if (postac.rasa == "Elf" && postac.klasa == "Wojownik")
+						iv2.setImage(orkwoj);
+					else if (postac.rasa == "Elf" && postac.klasa == "Łucznik")
+						iv2.setImage(orkwoj);
+					else if (postac.rasa == "Elf" && postac.klasa == "Mag")
+						iv2.setImage(orkwoj);
+
+					textarea3.setText("dziala");
+					root.getChildren().add(iv2);
+					root.getChildren().add(dalej);
+					postac.nazwa = textarea1.getText();
+				/*	zapis.println(postac.klasa);
+					zapis.println(postac.rasa);
+					zapis.println(postac.nazwa);
+					zapis.close();*/
+
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		});
+
+		root.getChildren().add(iv1);
+		root.getChildren().add(text1);
+		root.getChildren().add(text2);
+		root.getChildren().add(text3);
+		root.getChildren().add(text4);
+		root.getChildren().add(textarea1);
+		root.getChildren().add(zatwierdz);
+		root.getChildren().add(powrot);
+
+		root.getChildren().add(cb1);
+		root.getChildren().add(cb2);
+		root.getChildren().add(textarea3);
+
+		primaryStage.setTitle("Demigoods Strife");
+		primaryStage.setScene(scene);
+		primaryStage.show();
 	}
 }

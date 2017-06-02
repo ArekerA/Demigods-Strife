@@ -91,12 +91,16 @@ public class RamkaKreatora extends Ramka{
 		});
 		Scene scene = new Scene(root, 800, 600);
 		
+		
+		
 
 		primaryStage.setTitle("Demigoods Strife");
 		primaryStage.setScene(scene);
 		primaryStage.show();
-		Application.launch();
+		//Application.launch();
 }
+	
+	
 }
 
 
