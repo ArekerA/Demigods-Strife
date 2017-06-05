@@ -2,8 +2,6 @@ package kreator;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.PrintWriter;
-import java.util.ArrayList;
 
 import interfejs.Ramka;
 import javafx.beans.value.ChangeListener;

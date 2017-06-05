@@ -1,7 +1,3 @@
-import kreator.Zapis;
-import kreator.RamkaKreatora;
-import walka.FrameWalka;
- 
 public class Main {
 
 	public static void main(String[] args) {

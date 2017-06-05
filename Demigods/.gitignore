@@ -1,4 +1,6 @@
 .classpath
+!.gitignore
 .settings/
-/bin/
+/bin
+!/bin/img
 !/bin/img/*
