@@ -2,7 +2,7 @@ package kreator;
 
 
 class Przedmiot {
-    private String nazwa;
+    String nazwa;
     private String opis;
     private String grafika;
     private int atak;
@@ -14,8 +14,15 @@ class Przedmiot {
     String rodzaj;
     
     String[] broniewojownik={"Miecz","Topór"};
-    String[] bronielucznik;
-    String[] broniemag;
+    String[] bronielucznik={"Kusza","Łuk"};
+    String[] broniemag={"Laska","Kostur"};
+    String[] miecze={"Wampirze Gardło", "Zapomniane Ostrze", "Promień Nadziei"};
+    String[] topory={"Młot Grabarze", "Sekator", "Bukiet Strachu"};
+    String[] luki={"Ostatnie Życzenie", "Mantra", "Czwarty Muszkieter"};
+    String[] kusze={"Gałąź Wisielca", "Magiczne Ustrojstwo", "Dar Losu"};
+    String[] laski={"Pierwsza Dama", "Wdowa", "Morowa Dziewica"};
+    String[] kostury={"Konar Potencjału","Kostur Zaparcia", "Noga Enta"};
+    
 
     public Przedmiot()
     {
@@ -46,6 +53,9 @@ class Przedmiot {
 	}
 	public int getSzybkosc() {
 		return szybkosc;
+	}
+	public void setNazwa(String nazwa) {
+		this.nazwa = nazwa;
 	}
 	public int getHp() {
 		return hp;
