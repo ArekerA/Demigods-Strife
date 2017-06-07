@@ -17,7 +17,7 @@ public class FrameWalka extends Application {
 		Image im_hex2 = new Image("img/hex2.png");
 		Image im_hex3 = new Image("img/hex3.png");
 		Pane root = new Pane();
-		Pane hex = new Pane();
+		Pane hexPane = new Pane();
 		ImageView iv = new ImageView();
 		iv.setImage(new Image("img/temp_bg.png"));
 		iv.setPreserveRatio(true);
@@ -28,34 +28,36 @@ public class FrameWalka extends Application {
 		root.getChildren().add(iv);
 		for (int y = 0; y < 12; y++)
 			for (int x = 0; x < 15; x++) {
-				ImageView iv1 = new ImageView();
-				iv1.setImage(im_hex);
-				iv1.setPreserveRatio(true);
-				iv1.setSmooth(true);
-				iv1.setLayoutX(x * 49 + (y % 2) * 25);
-				iv1.setLayoutY(y * 42);
-				iv1.setFitWidth(50);
-				iv1.setFitHeight(57);
-				iv1.setOnMouseEntered(new EventHandler<MouseEvent>(){
+				Hex hex = new Hex();
+				hex.setImage(im_hex);
+				hex.setPreserveRatio(true);
+				hex.setSmooth(true);
+				hex.setLayoutX(x * 49 + (y % 2) * 25);
+				hex.setLayoutY(y * 42);
+				hex.setFitWidth(50);
+				hex.setFitHeight(57);
+				hex.setOnMouseEntered(new EventHandler<MouseEvent>(){
 					 
 		            @Override
 		            public void handle(MouseEvent event) {
-		                iv1.setImage(im_hex3);
+		            	hex.setImage(im_hex3);
 		            }
 		        });
-				iv1.setOnMouseExited(new EventHandler<MouseEvent>(){
+				hex.setOnMouseExited(new EventHandler<MouseEvent>(){
 					 
 		            @Override
 		            public void handle(MouseEvent event) {
-		                iv1.setImage(im_hex);
+		            	hex.setImage(im_hex);
 		            }
 		        });
-				poleWalki[x+6-y/2][y] = iv1;
-				hex.getChildren().add(poleWalki[x+6-y/2][y]);
+				hex.setPosX(x-y/2);
+				hex.setPosY(y);
+				poleWalki[x+6-y/2][y] = hex;
+				hexPane.getChildren().add(poleWalki[x+6-y/2][y]);
 			}
-		hex.setLayoutX(20);
-		hex.setLayoutY(80);
-		root.getChildren().add(hex);
+		hexPane.setLayoutX(20);
+		hexPane.setLayoutY(80);
+		root.getChildren().add(hexPane);
 		ImageView test = new ImageView();
 		test.setImage(new Image("img/elf-woj.png"));
 		test.setPreserveRatio(true);
