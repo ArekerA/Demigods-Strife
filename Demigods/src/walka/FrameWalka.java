@@ -8,7 +8,6 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 public class FrameWalka extends Application {
 	public void start(Stage primaryStage) throws Exception {

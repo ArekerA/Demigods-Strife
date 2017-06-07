@@ -1,7 +1,6 @@
 package walka;
 
 import java.util.ArrayList;
-import kreator.*;
 
 class PoleWalki {
     private int[][] pole = new int[12][20];//+7

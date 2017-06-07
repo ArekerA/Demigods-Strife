@@ -2,10 +2,9 @@ package kreator;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.PrintWriter;
-import java.util.ArrayList;
 
 import interfejs.Ramka;
+import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -26,7 +25,7 @@ import javafx.stage.Stage;
 public class OknoKreatora extends Ramka {
 	@Override
 	public void start(Stage primaryStage) {
-
+		//a
 		Image Obraz = new Image("img/tło.png");
 		Button btn1 = new Button();
 		Button btn2 = new Button();
@@ -289,7 +288,7 @@ public class OknoKreatora extends Ramka {
 		cb1.setPrefWidth(200);
 		cb1.setPrefHeight(40);
 		ChoiceBox cb2 = new ChoiceBox(FXCollections.observableArrayList("Wojownik", "Łucznik", "Mag"));
-		cb1.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+		cb2.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
 			public void changed(ObservableValue ov, Number value, Number new_value) {
 				postac.klasa = Postac.klasy[new_value.intValue()];
 			}
@@ -431,7 +430,7 @@ public class OknoKreatora extends Ramka {
 		return postac;
 	}
 	
-	static void WyborBroni(Postac postac, Stage primaryStage)
+	static void WyborUmiejetnosci(Postac postac, Stage primaryStage)
 	{
 		Pane root = new Pane();
 		Scene scene = new Scene(root, 800, 600);
@@ -441,19 +440,33 @@ public class OknoKreatora extends Ramka {
 		iv1.setPreserveRatio(true);
 		iv1.setSmooth(true);
 		
-		Przedmiot przedmiot=new Przedmiot();
+		/*Przedmiot przedmiot=new Przedmiot();
 		
 		Text text1 = new Text();
 		text1.setLayoutX(300);
 		text1.setLayoutY(40);
 		text1.setStyle("-fx-font: 30 verdana; -fx-base: #b6e7c9;");
 		text1.setText("Wybór Broni");
+		
+		Text text3 = new Text();
+		text3.setLayoutX(20);
+		text3.setLayoutY(145);
+		text3.setStyle("-fx-font: 30 arial; -fx-base: #b6e7c9;");
+		text3.setText("Rodzaj:");
+		
+		Text text4 = new Text();
+		text4.setLayoutX(20);
+		text4.setLayoutY(255);
+		text4.setStyle("-fx-font: 30 arial; -fx-base: #b6e7c9;");
+		text4.setText("Model:");
+		
 		Button zatwierdz = new Button();
 		zatwierdz.setText("Zatwierdź");
 		zatwierdz.setLayoutX(20);
 		zatwierdz.setLayoutY(480);
 		zatwierdz.setPrefWidth(90);
 		zatwierdz.setPrefHeight(40);
+		
 
 		Button powrot = new Button();
 		powrot.setText("Powrot");
@@ -476,7 +489,46 @@ public class OknoKreatora extends Ramka {
 		textarea3.setPrefHeight(150);
 		textarea3.setText("Opis...");
 		
-		ChoiceBox cb1 = new ChoiceBox(FXCollections.observableArrayList("Człowiek", "Elf", "Ork"));
+		Button zatwierdz1 = new Button();
+		zatwierdz1.setText("Ptwierdź...");
+		zatwierdz1.setLayoutX(150);
+		zatwierdz1.setLayoutY(180);
+		zatwierdz1.setPrefWidth(100);
+		zatwierdz1.setPrefHeight(30);
+		
+
+		
+		ChoiceBox cb1;
+		if(postac.klasa=="Wojownik")
+		{
+			cb1 = new ChoiceBox(FXCollections.observableArrayList("Miecz", "Topór"));
+			cb1.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+				public void changed(ObservableValue ov, Number value, Number new_value) {
+					// Label.setText(postac.rasy[new_value.intValue()]);
+					przedmiot.rodzaj = przedmiot.broniewojownik[new_value.intValue()];
+				}
+			});
+		}
+		else if(postac.klasa=="Łucznik")
+		{
+			cb1 = new ChoiceBox(FXCollections.observableArrayList("Kusza", "Łuk"));
+			cb1.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+				public void changed(ObservableValue ov, Number value, Number new_value) {
+					// Label.setText(postac.rasy[new_value.intValue()]);
+					przedmiot.rodzaj = przedmiot.bronielucznik[new_value.intValue()];
+				}
+			});
+		}
+		else
+		{
+			cb1 = new ChoiceBox(FXCollections.observableArrayList("Kostur", "Laska"));
+			cb1.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+				public void changed(ObservableValue ov, Number value, Number new_value) {
+					// Label.setText(postac.rasy[new_value.intValue()]);
+					przedmiot.rodzaj = przedmiot.broniemag[new_value.intValue()];
+				}
+			});
+		}
 		cb1.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
 			public void changed(ObservableValue ov, Number value, Number new_value) {
 				// Label.setText(postac.rasy[new_value.intValue()]);
@@ -485,24 +537,404 @@ public class OknoKreatora extends Ramka {
 		});
 
 		cb1.setLayoutX(150);
-		cb1.setLayoutY(160);
+		cb1.setLayoutY(120);
 		cb1.setPrefWidth(200);
 		cb1.setPrefHeight(40);
-		ChoiceBox cb2 = new ChoiceBox(FXCollections.observableArrayList("Wojownik", "Łucznik", "Mag"));
-		cb1.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
-			public void changed(ObservableValue ov, Number value, Number new_value) {
-				postac.klasa = Postac.klasy[new_value.intValue()];
+		
+		Image miecz2=new Image("img/miecz2.png");
+		
+		zatwierdz.setOnAction(new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(ActionEvent event) {
+				try {
+					
+					textarea3.setText("Doneee");
+					ImageView iv2 = new ImageView();
+					iv2.setPreserveRatio(true);
+					iv2.setSmooth(true);
+					iv2.setScaleX(0.5);
+					iv2.setScaleY(0.5);
+					iv2.setLayoutX(450);
+					iv2.setLayoutY(-150);
+					iv2.setImage(miecz2);
+					root.getChildren().add(iv2);
+					
+
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		});*/
+		
+		
+		root.getChildren().add(iv1);
+		/*root.getChildren().add(text1);
+		root.getChildren().add(text3);
+		root.getChildren().add(text4);
+		root.getChildren().add(textarea3);
+		root.getChildren().add(powrot);
+		root.getChildren().add(cb1);
+		root.getChildren().add(zatwierdz1);
+		root.getChildren().add(dalej);
+		
+		zatwierdz1.setOnAction(new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(ActionEvent event) {
+				try {
+					
+					ChoiceBox cb2 = null;
+					if(przedmiot.rodzaj=="Miecz")
+					{
+						cb2 = new ChoiceBox(FXCollections.observableArrayList("Wampirze Gardło", "Zapomniane Ostrze", "Promień Nadziei"));
+						cb2.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+							public void changed(ObservableValue ov, Number value, Number new_value) {
+								przedmiot.setNazwa(przedmiot.miecze[new_value.intValue()]);
+							}
+						});
+					}
+					else if(przedmiot.rodzaj=="Topór")
+					{
+						cb2 = new ChoiceBox(FXCollections.observableArrayList("Młot Grabarze", "Sekator", "Bukiet Strachu"));
+						cb2.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+							public void changed(ObservableValue ov, Number value, Number new_value) {
+								przedmiot.setNazwa(przedmiot.topory[new_value.intValue()]);
+							}
+						});
+					}
+					else if(przedmiot.rodzaj=="Łuk")
+					{
+						cb2 = new ChoiceBox(FXCollections.observableArrayList("Ostatnie Życzenie", "Mantra", "Czwarty Muszkieter"));
+						cb2.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+							public void changed(ObservableValue ov, Number value, Number new_value) {
+								przedmiot.setNazwa(przedmiot.luki[new_value.intValue()]);
+							}
+						});
+					}
+					else if(przedmiot.rodzaj=="Kusza")
+					{
+						cb2 = new ChoiceBox(FXCollections.observableArrayList("Gałąź Wisielca", "Magiczne Ustrojstwo", "Dar Losu"));
+						cb2.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+							public void changed(ObservableValue ov, Number value, Number new_value) {
+								przedmiot.setNazwa(przedmiot.kusze[new_value.intValue()]);
+							}
+						});
+					}
+					else if(przedmiot.rodzaj=="Kostur")
+					{
+						cb2 = new ChoiceBox(FXCollections.observableArrayList("Pierwsza Dama", "Wdowa", "Morowa Dziewica"));
+						cb2.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+							public void changed(ObservableValue ov, Number value, Number new_value) {
+								przedmiot.setNazwa(przedmiot.kostury[new_value.intValue()]);
+								}
+						});
+					}
+					else //if(przedmiot.rodzaj=="Laska")
+					{
+						cb2 = new ChoiceBox(FXCollections.observableArrayList("Konar Potencjału","Kostur Zaparcia", "Noga Enta"));
+						cb2.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+							public void changed(ObservableValue ov, Number value, Number new_value) {
+								przedmiot.setNazwa(przedmiot.laski[new_value.intValue()]);
+								}
+						});
+					}
+					
+					
+					cb2 = new ChoiceBox(FXCollections.observableArrayList("Wojownik", "Łucznik", "Mag"));
+					cb2.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+						public void changed(ObservableValue ov, Number value, Number new_value) {
+							postac.klasa = Postac.klasy[new_value.intValue()];
+						}
+					});
+					root.getChildren().add(cb2);
+					cb2.setLayoutX(150);
+					cb2.setLayoutY(230);
+					cb2.setPrefWidth(200);
+					cb2.setPrefHeight(40);
+					root.getChildren().add(zatwierdz);
+
+					
+
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 		});
 		
-		root.getChildren().add(iv1);
-		root.getChildren().add(textarea3);
-		root.getChildren().add(zatwierdz);
-		root.getChildren().add(powrot);
-
+		
+		
+		*/
+		
 		
 		primaryStage.setTitle("Demigoods Strife");
 		primaryStage.setScene(scene);
 		primaryStage.show();
+	}
+	
+	static void WyborBroni(Postac postac, Stage primaryStage)
+	{
+		Pane root = new Pane();
+		Scene scene = new Scene(root, 800, 600);
+		Image Obraz = new Image("img/tło.png");
+		ImageView iv1 = new ImageView();
+		iv1.setImage(Obraz);
+		iv1.setPreserveRatio(true);
+		iv1.setSmooth(true);
+		
+		Przedmiot przedmiot=new Przedmiot();
+		
+		Text text1 = new Text();
+		text1.setLayoutX(300);
+		text1.setLayoutY(40);
+		text1.setStyle("-fx-font: 30 verdana; -fx-base: #b6e7c9;");
+		text1.setText("Wybór Broni");
+		
+		Text text3 = new Text();
+		text3.setLayoutX(20);
+		text3.setLayoutY(145);
+		text3.setStyle("-fx-font: 30 arial; -fx-base: #b6e7c9;");
+		text3.setText("Rodzaj:");
+		
+		Text text4 = new Text();
+		text4.setLayoutX(20);
+		text4.setLayoutY(255);
+		text4.setStyle("-fx-font: 30 arial; -fx-base: #b6e7c9;");
+		text4.setText("Model:");
+		
+		Button zatwierdz = new Button();
+		zatwierdz.setText("Zatwierdź");
+		zatwierdz.setLayoutX(20);
+		zatwierdz.setLayoutY(480);
+		zatwierdz.setPrefWidth(90);
+		zatwierdz.setPrefHeight(40);
+		
+
+		Button powrot = new Button();
+		powrot.setText("Powrot");
+		powrot.setLayoutX(20);
+		powrot.setLayoutY(530);
+		powrot.setPrefWidth(90);
+		powrot.setPrefHeight(40);
+
+		Button dalej = new Button();
+		dalej.setText("Dalej");
+		dalej.setLayoutX(270);
+		dalej.setLayoutY(530);
+		dalej.setPrefWidth(90);
+		dalej.setPrefHeight(40);
+		
+		TextArea textarea3 = new TextArea();
+		textarea3.setLayoutX(20);
+		textarea3.setLayoutY(320);
+		textarea3.setPrefWidth(340);
+		textarea3.setPrefHeight(150);
+		textarea3.setText("Opis...");
+		
+		Button zatwierdz1 = new Button();
+		zatwierdz1.setText("Ptwierdź...");
+		zatwierdz1.setLayoutX(150);
+		zatwierdz1.setLayoutY(180);
+		zatwierdz1.setPrefWidth(100);
+		zatwierdz1.setPrefHeight(30);
+		
+
+		
+		ChoiceBox cb1;
+		if(postac.klasa=="Wojownik")
+		{
+			cb1 = new ChoiceBox(FXCollections.observableArrayList("Miecz", "Topór"));
+			cb1.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+				public void changed(ObservableValue ov, Number value, Number new_value) {
+					// Label.setText(postac.rasy[new_value.intValue()]);
+					przedmiot.rodzaj = przedmiot.broniewojownik[new_value.intValue()];
+				}
+			});
+		}
+		else if(postac.klasa=="Łucznik")
+		{
+			cb1 = new ChoiceBox(FXCollections.observableArrayList("Kusza", "Łuk"));
+			cb1.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+				public void changed(ObservableValue ov, Number value, Number new_value) {
+					// Label.setText(postac.rasy[new_value.intValue()]);
+					przedmiot.rodzaj = przedmiot.bronielucznik[new_value.intValue()];
+				}
+			});
+		}
+		else
+		{
+			cb1 = new ChoiceBox(FXCollections.observableArrayList("Kostur", "Laska"));
+			cb1.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+				public void changed(ObservableValue ov, Number value, Number new_value) {
+					// Label.setText(postac.rasy[new_value.intValue()]);
+					przedmiot.rodzaj = przedmiot.broniemag[new_value.intValue()];
+				}
+			});
+		}
+		/*cb1.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+			public void changed(ObservableValue ov, Number value, Number new_value) {
+				// Label.setText(postac.rasy[new_value.intValue()]);
+				przedmiot.rodzaj = przedmiot.broniewojownik[new_value.intValue()];
+			}
+		});*/
+
+		cb1.setLayoutX(150);
+		cb1.setLayoutY(120);
+		cb1.setPrefWidth(200);
+		cb1.setPrefHeight(40);
+		
+		Image miecz2=new Image("img/miecz2.png");
+		
+		zatwierdz.setOnAction(new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(ActionEvent event) {
+				try {
+					
+					textarea3.setText("Doneee");
+					ImageView iv2 = new ImageView();
+					iv2.setPreserveRatio(true);
+					iv2.setSmooth(true);
+					iv2.setScaleX(0.5);
+					iv2.setScaleY(0.5);
+					iv2.setLayoutX(450);
+					iv2.setLayoutY(-150);
+					iv2.setImage(miecz2);
+					root.getChildren().add(iv2);
+					
+
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		});
+		
+		dalej.setOnAction(new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(ActionEvent event) {
+				try {
+					
+					OknoKreatora.WyborUmiejetnosci(postac, primaryStage);
+					
+
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		});
+		
+		
+		root.getChildren().add(iv1);
+		root.getChildren().add(text1);
+		root.getChildren().add(text3);
+		root.getChildren().add(text4);
+		root.getChildren().add(textarea3);
+		root.getChildren().add(powrot);
+		root.getChildren().add(cb1);
+		root.getChildren().add(zatwierdz1);
+		root.getChildren().add(dalej);
+		
+		zatwierdz1.setOnAction(new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(ActionEvent event) {
+				try {
+					
+					ChoiceBox cb2 = null;
+					if(przedmiot.rodzaj=="Miecz")
+					{
+						cb2 = new ChoiceBox(FXCollections.observableArrayList("Wampirze Gardło", "Zapomniane Ostrze", "Promień Nadziei"));
+						cb2.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+							public void changed(ObservableValue ov, Number value, Number new_value) {
+								przedmiot.setNazwa(przedmiot.miecze[new_value.intValue()]);
+							}
+						});
+					}
+					else if(przedmiot.rodzaj=="Topór")
+					{
+						cb2 = new ChoiceBox(FXCollections.observableArrayList("Młot Grabarze", "Sekator", "Bukiet Strachu"));
+						cb2.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+							public void changed(ObservableValue ov, Number value, Number new_value) {
+								przedmiot.setNazwa(przedmiot.topory[new_value.intValue()]);
+							}
+						});
+					}
+					else if(przedmiot.rodzaj=="Łuk")
+					{
+						cb2 = new ChoiceBox(FXCollections.observableArrayList("Ostatnie Życzenie", "Mantra", "Czwarty Muszkieter"));
+						cb2.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+							public void changed(ObservableValue ov, Number value, Number new_value) {
+								przedmiot.setNazwa(przedmiot.luki[new_value.intValue()]);
+							}
+						});
+					}
+					else if(przedmiot.rodzaj=="Kusza")
+					{
+						cb2 = new ChoiceBox(FXCollections.observableArrayList("Gałąź Wisielca", "Magiczne Ustrojstwo", "Dar Losu"));
+						cb2.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+							public void changed(ObservableValue ov, Number value, Number new_value) {
+								przedmiot.setNazwa(przedmiot.kusze[new_value.intValue()]);
+							}
+						});
+					}
+					else if(przedmiot.rodzaj=="Kostur")
+					{
+						cb2 = new ChoiceBox(FXCollections.observableArrayList("Pierwsza Dama", "Wdowa", "Morowa Dziewica"));
+						cb2.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+							public void changed(ObservableValue ov, Number value, Number new_value) {
+								przedmiot.setNazwa(przedmiot.kostury[new_value.intValue()]);
+								}
+						});
+					}
+					else //if(przedmiot.rodzaj=="Laska")
+					{
+						cb2 = new ChoiceBox(FXCollections.observableArrayList("Konar Potencjału","Kostur Zaparcia", "Noga Enta"));
+						cb2.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+							public void changed(ObservableValue ov, Number value, Number new_value) {
+								przedmiot.setNazwa(przedmiot.laski[new_value.intValue()]);
+								}
+						});
+					}
+					
+					
+					/*cb2 = new ChoiceBox(FXCollections.observableArrayList("Wojownik", "Łucznik", "Mag"));
+					cb2.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+						public void changed(ObservableValue ov, Number value, Number new_value) {
+							postac.klasa = Postac.klasy[new_value.intValue()];
+						}
+					});*/
+					root.getChildren().add(cb2);
+					cb2.setLayoutX(150);
+					cb2.setLayoutY(230);
+					cb2.setPrefWidth(200);
+					cb2.setPrefHeight(40);
+					root.getChildren().add(zatwierdz);
+
+					
+
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		});
+		
+		
+		
+		
+		
+		
+		primaryStage.setTitle("Demigoods Strife");
+		primaryStage.setScene(scene);
+		primaryStage.show();
+	}
+	
+	public static void main(String[] args) {
+		Application.launch(args);
 	}
 }

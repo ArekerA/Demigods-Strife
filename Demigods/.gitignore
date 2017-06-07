@@ -1,6 +1,15 @@
+<<<<<<< HEAD
 .classpath
 !.gitignore
 .settings/
 /bin
 !/bin/img
 !/bin/img/*
+=======
+.classpath
+!.gitignore
+.settings/
+/bin
+!/bin/img
+!/bin/img/*
+>>>>>>> branch 'master' of https://github.com/ArekerA/Demigods-Strife
