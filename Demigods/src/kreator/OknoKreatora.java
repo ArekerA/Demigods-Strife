@@ -25,7 +25,7 @@ import javafx.stage.Stage;
 public class OknoKreatora extends Ramka {
 	@Override
 	public void start(Stage primaryStage) {
-
+		//a
 		Image Obraz = new Image("img/tło.png");
 		Button btn1 = new Button();
 		Button btn2 = new Button();
