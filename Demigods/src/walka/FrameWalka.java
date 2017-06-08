@@ -1,5 +1,7 @@
 package walka;
 
+import java.util.ArrayList;
+
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
@@ -11,7 +13,7 @@ import javafx.stage.Stage;
 
 public class FrameWalka extends Application {
 	public void start(Stage primaryStage) throws Exception {
-		ImageView[][] poleWalki = new ImageView[21][12];
+		ArrayList<Hex> poleWalki = new ArrayList<Hex>();
 		Image im_hex = new Image("img/hex.png");
 		Image im_hex2 = new Image("img/hex2.png");
 		Image im_hex3 = new Image("img/hex3.png");
@@ -51,13 +53,18 @@ public class FrameWalka extends Application {
 		        });
 				hex.setPosX(x-y/2);
 				hex.setPosY(y);
-				poleWalki[x+6-y/2][y] = hex;
-				hexPane.getChildren().add(poleWalki[x+6-y/2][y]);
+				poleWalki.add(hex);
+				for(Hex p : poleWalki)
+				{
+					if(true)
+						hex.dodaj(p);
+				}
+				hexPane.getChildren().add(hex);
 			}
 		hexPane.setLayoutX(20);
 		hexPane.setLayoutY(80);
 		root.getChildren().add(hexPane);
-		ImageView test = new ImageView();
+		/*ImageView test = new ImageView();
 		test.setImage(new Image("img/elf-woj.png"));
 		test.setPreserveRatio(true);
 		test.setSmooth(true);
@@ -73,7 +80,7 @@ public class FrameWalka extends Application {
 		test2.setLayoutY(poleWalki[15][0].getLayoutX()-8);
 		test2.setFitWidth(30);
 		test2.setScaleX(-1);
-		root.getChildren().add(test2);
+		root.getChildren().add(test2);*/
 		Scene scene = new Scene(root, 800, 600);
 
         //primaryStage.initStyle(StageStyle.UNDECORATED);
