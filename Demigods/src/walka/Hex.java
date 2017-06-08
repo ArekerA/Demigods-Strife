@@ -3,7 +3,11 @@ package walka;
 import java.util.ArrayList;
 
 import javafx.scene.image.ImageView;
-
+/**
+ * Klasa przechowująca dane hexów rozszerzająca javafx.scene.image.ImageView;
+ * 
+ * @author Zespół
+ */
 public class Hex extends ImageView{
 	int posX;
 	int posY;
