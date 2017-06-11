@@ -32,12 +32,16 @@ public class Postac implements Serializable {
 
 	static String[] rasy = { "Człowiek", "Elf", "Ork" };// 0-cz�owiek, 1-elf,
 														// 2-ork
-	final static String[] klasy = { "Wojownik", "Łucznik", "Ork" };// 0-wojownik,
+	final static String[] klasy = { "Wojownik", "Łucznik", "Mag" };// 0-wojownik,
 																	// 1-�ucznik,
 																	// 2-mag
 
 	public Postac() {
-		//
+		this.atak=10;
+		this.obrona=3;
+		this.hp=50;
+		this.mana=20;
+		this.szybkosc=5;
 	}
 
 	public Postac(int atak, int obrona, int hp, int mana, int szybkosc, String rasa, String klasa) {
