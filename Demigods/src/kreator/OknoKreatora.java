@@ -21,13 +21,14 @@ import javafx.scene.layout.Pane;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import walka.FrameWalka;
 
 public class OknoKreatora extends Ramka {
 	@Override
 	public void start(Stage primaryStage) {
-		
+
 		Image Obraz = new Image("img/tło.png");
-		
+
 		Button btn1 = new Button();
 		Button btn2 = new Button();
 		Button btn3 = new Button();
@@ -49,34 +50,34 @@ public class OknoKreatora extends Ramka {
 		Button btn19 = new Button();
 		Button btn20 = new Button();
 		Button btn21 = new Button();
-		
+
 		Text text1 = new Text();
 		Text text2 = new Text();
 		Text text3 = new Text();
 		Text text4 = new Text();
-		
+
 		TextArea textarea1 = new TextArea();
 		TextArea textarea2 = new TextArea();
-		
+
 		Rectangle rect1 = new Rectangle(320, 50, 200, 200);
 		Rectangle rect2 = new Rectangle(320, 310, 200, 200);
-		
+
 		text1.setLayoutX(20);
 		text1.setLayoutY(20);
 		text1.setStyle("-fx-font: 25 arial; -fx-base: #b6e7c9;");
-		
+
 		text2.setLayoutX(20);
 		text2.setLayoutY(280);
 		text2.setStyle("-fx-font: 25 arial; -fx-base: #b6e7c9;");
-		
+
 		text3.setLayoutX(320);
 		text3.setLayoutY(20);
 		text3.setStyle("-fx-font: 25 arial; -fx-base: #b6e7c9;");
-		
+
 		text4.setLayoutX(320);
 		text4.setLayoutY(280);
 		text4.setStyle("-fx-font: 25 arial; -fx-base: #b6e7c9;");
-		
+
 		btn1.setText("Losowa Drużyna");
 		btn1.setLayoutX(20);
 		btn1.setLayoutY(50);
@@ -198,7 +199,7 @@ public class OknoKreatora extends Ramka {
 
 		HBox box = new HBox();
 		box.getChildren().add(iv1);
-		
+
 		Pane root = new Pane();
 		root.getChildren().add(box);
 		root.getChildren().add(btn1);
@@ -478,6 +479,20 @@ public class OknoKreatora extends Ramka {
 		dalej.setLayoutY(530);
 		dalej.setPrefWidth(90);
 		dalej.setPrefHeight(40);
+		dalej.setOnAction(new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(ActionEvent event) {
+				try {
+					FrameWalka walka=new FrameWalka();
+					walka.start(primaryStage);
+
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		});
 
 		TextArea textarea3 = new TextArea();
 		textarea3.setLayoutX(20);
@@ -493,7 +508,6 @@ public class OknoKreatora extends Ramka {
 		root.getChildren().add(textarea3);
 		root.getChildren().add(powrot);
 		root.getChildren().add(dalej);
-		
 
 		primaryStage.setTitle("Demigoods Strife");
 		primaryStage.setScene(scene);
@@ -556,9 +570,10 @@ public class OknoKreatora extends Ramka {
 		textarea3.setPrefWidth(340);
 		textarea3.setPrefHeight(150);
 		textarea3.setText("Opis...");
-
+		textarea3.setStyle("-fx-font: 20 arial; -fx-base: #b6e7c9;");
+		
 		Button zatwierdz1 = new Button();
-		zatwierdz1.setText("Ptwierdź...");
+		zatwierdz1.setText("Potwierdź...");
 		zatwierdz1.setLayoutX(150);
 		zatwierdz1.setLayoutY(180);
 		zatwierdz1.setPrefWidth(100);
@@ -596,23 +611,134 @@ public class OknoKreatora extends Ramka {
 		cb1.setPrefWidth(200);
 		cb1.setPrefHeight(40);
 
+		Image miecz1 = new Image("img/miecz1.png");
 		Image miecz2 = new Image("img/miecz2.png");
+		Image miecz3 = new Image("img/miecz3.png");
+		
+		Image topor1 = new Image("img/topor1.png");
+		Image topor2 = new Image("img/topor2.png");
+		Image topor3 = new Image("img/topor3.png");
+		
+		Image luk1 = new Image("img/łuk1.png");
+		Image luk2 = new Image("img/łuk2.png");
+		Image luk3 = new Image("img/łuk3.png");
+
+		Image kusza1 = new Image("img/łuk4.png");
+		Image kusza2 = new Image("img/łuk5.png");
+		Image kusza3 = new Image("img/łuk6.png");
+
+		Image kostur1 = new Image("img/kostur1.png");
+		Image kostur2 = new Image("img/kostur2.png");
+		Image kostur3 = new Image("img/kostur3.png");
+
+		Image wend1 = new Image("img/wend1.png");
+		Image wend2= new Image("img/wend2.png");
+		Image wend3 = new Image("img/wend3.png");
+
+		ImageView iv2 = new ImageView();
 
 		zatwierdz.setOnAction(new EventHandler<ActionEvent>() {
 
 			@Override
 			public void handle(ActionEvent event) {
 				try {
-
-					textarea3.setText("Doneee");
-					ImageView iv2 = new ImageView();
+					if(przedmiot.getNazwa()=="Wampirze Gardło")
+						{
+						textarea3.setText("Z każdą kolejna kroplą, stajesz się silniejszy...");
+						iv2.setImage(miecz1);
+						}
+						else if(przedmiot.getNazwa()=="Zapomniane Ostrze")
+						{
+						textarea3.setText("Nikt nie pamięta jego historii, ale każdy może poznać jego siłę...");
+						iv2.setImage(miecz2);
+						}
+						else if(przedmiot.getNazwa()=="Promień Nadziei")
+						{
+						textarea3.setText("Tym razem to ty umrzesz ostatni...");
+						iv2.setImage(miecz3);
+						}
+						else if(przedmiot.getNazwa()=="Młot Grabarza")
+						{
+						textarea3.setText("Następny cios jest gwoździem do trumny...");
+						iv2.setImage(topor1);
+						}
+						else if(przedmiot.getNazwa()=="Sekator")
+						{
+						textarea3.setText("Nie daj się zwieść...");
+						iv2.setImage(topor2);
+						}
+						else if(przedmiot.getNazwa()=="Bukiet Strachu")
+						{
+						textarea3.setText("Dobry prezent na każdą okazję..");
+						iv2.setImage(topor3);
+						}
+						else if(przedmiot.getNazwa()=="Ostatnie Życzenie")
+						{
+						textarea3.setText("Wypowiedz szybko...");
+						iv2.setImage(luk1);
+						}
+						else if(przedmiot.getNazwa()=="Mantra")
+						{
+						textarea3.setText("Powtarzaj do skutku...");
+						iv2.setImage(luk2);
+						}
+						else if(przedmiot.getNazwa()=="Czwarty Muszkieter")
+						{
+						textarea3.setText("Jednym na wszystkich...");
+						iv2.setImage(luk3);
+						}
+						else if(przedmiot.getNazwa()=="Gałąź Wisielca")
+						{
+						textarea3.setText("Podobno okrywa ją klątwa...");
+						iv2.setImage(kusza1);
+						}
+						else if(przedmiot.getNazwa()=="Magiczne Ustrojstwo")
+						{
+						textarea3.setText("Obsługa do końca nie jest bezpieczna...");
+						iv2.setImage(kusza2);
+						}
+						else if(przedmiot.getNazwa()=="Dar Losu")
+						{
+						textarea3.setText("Kto nie strzela, ten nie trafia...");
+						iv2.setImage(kusza3);
+						}
+						else if(przedmiot.getNazwa()=="Pierwsza Dama")
+						{
+						textarea3.setText("Jej życzenie może stać się rozkazem...");
+						iv2.setImage(wend1);
+						}
+						else if(przedmiot.getNazwa()=="Wdowa")
+						{
+						textarea3.setText("Bo to zła kobieta była...");
+						iv2.setImage(wend2);
+						}
+						else if(przedmiot.getNazwa()=="Morowa Dziewica")
+						{
+						textarea3.setText("Od powietrza, głodu, ognia i wojny...");
+						iv2.setImage(wend3);
+						}
+						else if(przedmiot.getNazwa()=="Konar Potencjału")
+						{
+						textarea3.setText("Legenda głosi, że kiedyś zapłonie...");
+						iv2.setImage(kostur1);
+						}
+						else if(przedmiot.getNazwa()=="Kostur Zaparcia")
+						{
+						textarea3.setText("W kupie siła...");
+						iv2.setImage(kostur2);
+						}
+						else if(przedmiot.getNazwa()=="Noga Enta")
+						{
+						textarea3.setText("Szybciej! Szybciej!");
+						iv2.setImage(kostur3);
+						}
+					
 					iv2.setPreserveRatio(true);
 					iv2.setSmooth(true);
-					iv2.setScaleX(0.5);
-					iv2.setScaleY(0.5);
-					iv2.setLayoutX(450);
-					iv2.setLayoutY(-150);
-					iv2.setImage(miecz2);
+					iv2.setFitHeight(400);
+					iv2.setFitWidth(100);
+					iv2.setLayoutX(550);
+					iv2.setLayoutY(100);
 					root.getChildren().add(iv2);
 
 				} catch (Exception e) {
@@ -636,6 +762,8 @@ public class OknoKreatora extends Ramka {
 				}
 			}
 		});
+		
+		
 
 		root.getChildren().add(iv1);
 		root.getChildren().add(text1);
