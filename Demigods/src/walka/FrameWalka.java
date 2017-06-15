@@ -1,8 +1,13 @@
 package walka;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
+import javafx.animation.Animation;
+import javafx.animation.ScaleTransition;
 import javafx.application.Application;
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
@@ -10,13 +15,34 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import javafx.util.Duration;
+import kreator.Postac;
 
 public class FrameWalka extends Application {
+	ArrayList<Hex> poleWalki = new ArrayList<Hex>();
+	ArrayList<Postac> gracz1 = new ArrayList<Postac>();
+	ArrayList<Postac> gracz2 = new ArrayList<Postac>();
+	int punkty[] = {0,0};
+	/**
+	 * Konstruktor domyślny
+	 */
+	public FrameWalka()
+	{
+		super();
+	}
+	/**
+	 * Konstruktor z postaciami
+	 * 
+	 * @param ArrayList<Postac> gracz1 postacie gracza 1
+	 * @param ArrayList<Postac> gracz2 postacie gracza 2
+	 */
+	public FrameWalka(ArrayList<Postac> gracz1, ArrayList<Postac> gracz2)
+	{
+		super();
+		this.gracz1 = gracz1;
+		this.gracz2 = gracz2;
+	}
 	public void start(Stage primaryStage) throws Exception {
-		ArrayList<Hex> poleWalki = new ArrayList<Hex>();
-		Image im_hex = new Image("img/hex.png");
-		Image im_hex2 = new Image("img/hex2.png");
-		Image im_hex3 = new Image("img/hex3.png");
 		Pane root = new Pane();
 		Pane hexPane = new Pane();
 		ImageView iv = new ImageView();
@@ -30,33 +56,19 @@ public class FrameWalka extends Application {
 		for (int y = 0; y < 12; y++)
 			for (int x = 0; x < 15; x++) {
 				Hex hex = new Hex();
-				hex.setImage(im_hex);
 				hex.setPreserveRatio(true);
 				hex.setSmooth(true);
 				hex.setLayoutX(x * 49 + (y % 2) * 25);
 				hex.setLayoutY(y * 42);
 				hex.setFitWidth(50);
 				hex.setFitHeight(57);
-				hex.setOnMouseEntered(new EventHandler<MouseEvent>(){
-					 
-		            @Override
-		            public void handle(MouseEvent event) {
-		            	hex.setImage(im_hex3);
-		            }
-		        });
-				hex.setOnMouseExited(new EventHandler<MouseEvent>(){
-					 
-		            @Override
-		            public void handle(MouseEvent event) {
-		            	hex.setImage(im_hex);
-		            }
-		        });
-				hex.setPosX(x-y/2);
+				hex.setPosX(x - y / 2);
 				hex.setPosY(y);
 				poleWalki.add(hex);
-				for(Hex p : poleWalki)
-				{
-					if(true)
+				for (Hex p : poleWalki) {
+					if ((p.getPosX() == hex.getPosX() + 1 && p.getPosY() == hex.getPosY() - 1)
+							|| (p.getPosX() == hex.getPosX() && p.getPosY() == hex.getPosY() - 1)
+							|| (p.getPosX() == hex.getPosX() - 1 && p.getPosY() == hex.getPosY()))
 						hex.dodaj(p);
 				}
 				hexPane.getChildren().add(hex);
@@ -64,32 +76,66 @@ public class FrameWalka extends Application {
 		hexPane.setLayoutX(20);
 		hexPane.setLayoutY(80);
 		root.getChildren().add(hexPane);
-		/*ImageView test = new ImageView();
-		test.setImage(new Image("img/elf-woj.png"));
-		test.setPreserveRatio(true);
-		test.setSmooth(true);
-		test.setLayoutX(poleWalki[7][0].getLayoutX()-20);
-		test.setLayoutY(poleWalki[7][0].getLayoutX()-8);
-		test.setFitWidth(30);
-		root.getChildren().add(test);
-		ImageView test2 = new ImageView();
-		test2.setImage(new Image("img/elf-woj.png"));
-		test2.setPreserveRatio(true);
-		test2.setSmooth(true);
-		test2.setLayoutX(poleWalki[15][0].getLayoutX()-20);
-		test2.setLayoutY(poleWalki[15][0].getLayoutX()-8);
-		test2.setFitWidth(30);
-		test2.setScaleX(-1);
-		root.getChildren().add(test2);*/
 		Scene scene = new Scene(root, 800, 600);
-
-        //primaryStage.initStyle(StageStyle.UNDECORATED);
+		Aktywuj(6, 6, 3);
+		// primaryStage.initStyle(StageStyle.UNDECORATED);
 		primaryStage.setTitle("Demigoods Strife");
 		primaryStage.setScene(scene);
 		primaryStage.show();
+		
 	}
 
 	public static void main(String[] args) {
 		Application.launch(args);
 	}
+
+	/**
+	 * Aktywuje hexy
+	 * 
+	 * @param int x pozycja x
+	 * @param int y pozycja y
+	 * @param int r zasięg
+	 * @return void
+	 */
+	public void Aktywuj(int x, int y, int r)
+	{
+		Hex temp = null;
+		ArrayList<Hex> dostepne = new ArrayList<Hex>();
+		for(int i = 0; i < poleWalki.size(); i++)
+		{
+			if(poleWalki.get(i).getPosX()==x && poleWalki.get(i).getPosY()==y)
+			{
+				temp = poleWalki.get(i);
+			}
+		}
+		dostepne.add(temp);
+		for(int i = 0; i < r; i++)
+		{
+			ArrayList<Hex> t = dostepne;
+			ArrayList<Hex> t2 = new ArrayList<Hex>();
+			for(int j = 0; j < t.size(); j++)
+			{
+				t2.addAll(t.get(j).Polaczenia());
+			}
+			dostepne.addAll(t2);
+		}
+		for(int i = 0; i < dostepne.size(); i++)
+		{
+			dostepne.get(i).setDostepny(true);
+		}
+		animateUsingScaleTransition(temp);
+	}
+	private void animateUsingScaleTransition(ImageView heart) {
+        ScaleTransition scaleTransition = new ScaleTransition(
+                Duration.seconds(1), heart
+            );
+            scaleTransition.setFromX(1);
+            scaleTransition.setFromY(1);
+            scaleTransition.setFromZ(1);
+            scaleTransition.setToX(0);
+            scaleTransition.setToY(0);
+            scaleTransition.setToZ(0);
+            scaleTransition.setCycleCount(1);
+            scaleTransition.play();
+        }
 }
