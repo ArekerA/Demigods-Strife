@@ -16,6 +16,7 @@ public class Hex extends ImageView {
 	int posX;
 	int posY;
 	boolean dostepny = false;
+	boolean aktywny = true;
 	private Image im_hex = new Image("img/hex.png");
 	private Image im_hex2 = new Image("img/hex2.png");
 	private Image im_hex3 = new Image("img/hex3.png");
@@ -124,10 +125,21 @@ public class Hex extends ImageView {
 	 * @return void
 	 */
 	public void setDostepny(boolean dostepny) {
-		this.dostepny = dostepny;
-		if(dostepny)
-			setImage(im_hex2);
-		else
-			setImage(im_hex);
+		if(aktywny)
+		{
+			this.dostepny = dostepny;
+			if(dostepny)
+				setImage(im_hex2);
+			else
+				setImage(im_hex);
+		}
+	}
+
+	public boolean isAktywny() {
+		return aktywny;
+	}
+
+	public void setAktywny(boolean aktywny) {
+		this.aktywny = aktywny;
 	}
 }

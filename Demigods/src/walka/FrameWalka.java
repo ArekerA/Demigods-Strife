@@ -76,8 +76,46 @@ public class FrameWalka extends Application {
 		hexPane.setLayoutX(20);
 		hexPane.setLayoutY(80);
 		root.getChildren().add(hexPane);
+		gracz1.get(0).setPosX(0);
+		gracz1.get(0).setPosY(0);
+		gracz1.get(1).setPosX(0);
+		gracz1.get(1).setPosY(3);
+		gracz2.get(0).setPosX(14);
+		gracz2.get(0).setPosY(0);
+		gracz2.get(1).setPosX(14);
+		gracz2.get(1).setPosY(5);
+
+		for(int i = 0; i < poleWalki.size(); i++)
+		{
+			if(poleWalki.get(i).getPosX()==-1 && poleWalki.get(i).getPosY()==3)
+			{
+				poleWalki.get(i).setAktywny(false);
+			}
+		}
+		
+		gracz1.get(0).setFitHeight(100);
+		gracz1.get(1).setFitHeight(100);
+		gracz2.get(0).setFitHeight(100);
+		gracz2.get(1).setFitHeight(100);
+		for(int i = 0; i < gracz1.size(); i++)
+		{
+			gracz1.get(i).setLayoutX(gracz1.get(i).getPosX()* 49 + (gracz1.get(i).getPosY() % 2) * 25);
+			gracz1.get(i).setLayoutY(gracz1.get(i).getPosY() * 42 - 70);
+		}
+		for(int i = 0; i < gracz2.size(); i++)
+		{
+			gracz2.get(i).setScaleX(-1);
+			gracz2.get(i).setLayoutX(gracz2.get(i).getPosX()* 49 + (gracz2.get(i).getPosY() % 2) * 25);
+			gracz2.get(i).setLayoutY(gracz2.get(i).getPosY() * 42 - 70);
+		}
+		
+
+		Aktywuj(gracz1.get(0).getPosX(), gracz1.get(0).getPosY(), gracz1.get(0).getSzybkosc());
+		hexPane.getChildren().add(gracz1.get(0));
+		hexPane.getChildren().add(gracz1.get(1));
+		hexPane.getChildren().add(gracz2.get(0));
+		hexPane.getChildren().add(gracz2.get(1));
 		Scene scene = new Scene(root, 800, 600);
-		Aktywuj(6, 6, 3);
 		// primaryStage.initStyle(StageStyle.UNDECORATED);
 		primaryStage.setTitle("Demigoods Strife");
 		primaryStage.setScene(scene);
@@ -123,9 +161,9 @@ public class FrameWalka extends Application {
 		{
 			dostepne.get(i).setDostepny(true);
 		}
-		animateUsingScaleTransition(temp);
+		//animateUsingScaleTransition(temp);
 	}
-	private void animateUsingScaleTransition(ImageView heart) {
+	/*private void animateUsingScaleTransition(ImageView heart) {
         ScaleTransition scaleTransition = new ScaleTransition(
                 Duration.seconds(1), heart
             );
@@ -137,5 +175,5 @@ public class FrameWalka extends Application {
             scaleTransition.setToZ(0);
             scaleTransition.setCycleCount(1);
             scaleTransition.play();
-        }
+        }*/
 }

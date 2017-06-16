@@ -6,12 +6,15 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+
 @SuppressWarnings("serial")
-public class Postac implements Serializable {
+public class Postac extends ImageView implements Serializable {
 	@Override
 	public String toString() {
 		return "Postac [id=" + id + ", atak=" + atak + ", obrona=" + obrona + ", hp=" + hp + ", mana=" + mana
-				+ ", szybkosc=" + szybkosc + ", nazwa=" + nazwa + ", opis=" + opis + ", grafika=" + grafika + ", rasa="
+				+ ", szybkosc=" + szybkosc + ", nazwa=" + nazwa + ", opis=" + opis +  ", rasa="
 				+ rasa + ", klasa=" + klasa + "]" + "\n";
 	}
 
@@ -22,9 +25,10 @@ public class Postac implements Serializable {
 	private int hp;
 	private int mana;
 	private int szybkosc;
+	private int posX;
+	private int posY;
 	String nazwa;
 	private String opis;
-	private String grafika;
 	String rasa;
 	String klasa;
 	
@@ -115,12 +119,9 @@ public class Postac implements Serializable {
 		this.opis = opis;
 	}
 
-	public String getGrafika() {
-		return grafika;
-	}
-
-	public void setGrafika(String grafika) {
-		this.grafika = grafika;
+	public void Grafika(Image im) {
+		setImage(im);
+		setPreserveRatio(true);
 	}
 
 	public String getRasa() {
@@ -143,7 +144,19 @@ public class Postac implements Serializable {
 		return maxId;
 	}
 
-	public int getId() {
-		return id;
+	public int getPosX() {
+		return posX;
+	}
+
+	public void setPosX(int posX) {
+		this.posX = posX;
+	}
+
+	public int getPosY() {
+		return posY;
+	}
+
+	public void setPosY(int posY) {
+		this.posY = posY;
 	}
 }

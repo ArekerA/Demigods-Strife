@@ -494,9 +494,9 @@ public class OknoKreatora extends Ramka {
 		});
 
 		Button dalej = new Button();
-		if (gracz1.size()<2)
+		if (gracz1.size()<1)
 		dalej.setText("Gracz 1 - Zapisz");
-		else if (gracz2.size()<2)
+		else if (gracz2.size()<1)
 		dalej.setText("Gracz 2 - Zapisz");
 		else
 		dalej.setText("Graj");
@@ -616,91 +616,109 @@ public class OknoKreatora extends Ramka {
 				{
 				//textarea3.setText("Z każdą kolejna kroplą, stajesz się silniejszy...");
 				iv2.setImage(czlmiecz1);
+				postac.Grafika(czlmiecz1);
 				}
 				else if(przedmiot.getNazwa()=="Zapomniane Ostrze")
 				{
 				//textarea3.setText("Nikt nie pamięta jego historii, ale każdy może poznać jego siłę...");
 				iv2.setImage(czlmiecz2);
+				postac.Grafika(czlmiecz2);
 				}
 				else if(przedmiot.getNazwa()=="Promień Nadziei")
 				{
 				//textarea3.setText("Tym razem to ty umrzesz ostatni...");
 				iv2.setImage(czlmiecz3);
+				postac.Grafika(czlmiecz3);
 				}
 				else if(przedmiot.getNazwa()=="Młot Grabarza")
 				{
 				//textarea3.setText("Następny cios jest gwoździem do trumny...");
 				iv2.setImage(czltopor1);
+				postac.Grafika(czltopor1);
 				}
 				else if(przedmiot.getNazwa()=="Sekator")
 				{
 				//textarea3.setText("Nie daj się zwieść...");
 				iv2.setImage(czltopor2);
+				postac.Grafika(czltopor2);
 				}
 				else if(przedmiot.getNazwa()=="Bukiet Strachu")
 				{
 				//textarea3.setText("Dobry prezent na każdą okazję..");
 				iv2.setImage(czltopor3);
+				postac.Grafika(czltopor3);
 				}
 				else if(przedmiot.getNazwa()=="Ostatnie Życzenie")
 				{
 				//textarea3.setText("Wypowiedz szybko...");
 				iv2.setImage(czlluk1);
+				postac.Grafika(czlluk1);
 				}
 				else if(przedmiot.getNazwa()=="Mantra")
 				{
 				//textarea3.setText("Powtarzaj do skutku...");
 				iv2.setImage(czlluk2);
+				postac.Grafika(czlluk2);
 				}
 				else if(przedmiot.getNazwa()=="Czwarty Muszkieter")
 				{
 				//textarea3.setText("Jednym na wszystkich...");
 				iv2.setImage(czlluk3);
+				postac.Grafika(czlluk3);
 				}
 				else if(przedmiot.getNazwa()=="Gałąź Wisielca")
 				{
 				//textarea3.setText("Podobno okrywa ją klątwa...");
 				iv2.setImage(czlkusza1);
+				postac.Grafika(czlkusza1);
 				}
 				else if(przedmiot.getNazwa()=="Magiczne Ustrojstwo")
 				{
 				//textarea3.setText("Obsługa do końca nie jest bezpieczna...");
 				iv2.setImage(czlkusza2);
+				postac.Grafika(czlkusza2);
 				}
 				else if(przedmiot.getNazwa()=="Dar Losu")
 				{
 				//textarea3.setText("Kto nie strzela, ten nie trafia...");
 				iv2.setImage(czlkusza3);
+				postac.Grafika(czlkusza3);
 				}
 				else if(przedmiot.getNazwa()=="Pierwsza Dama")
 				{
 				//textarea3.setText("Jej życzenie może stać się rozkazem...");
 				iv2.setImage(czlwend1);
+				postac.Grafika(czlwend1);
 				}
 				else if(przedmiot.getNazwa()=="Wdowa")
 				{
 				//textarea3.setText("Bo to zła kobieta była...");
 				iv2.setImage(czlwend2);
+				postac.Grafika(czlwend2);
 				}
 				else if(przedmiot.getNazwa()=="Morowa Dziewica")
 				{
 				//textarea3.setText("Od powietrza, głodu, ognia i wojny...");
 				iv2.setImage(czlwend3);
+				postac.Grafika(czlwend3);
 				}
 				else if(przedmiot.getNazwa()=="Konar Potencjału")
 				{
 				//textarea3.setText("Legenda głosi, że kiedyś zapłonie...");
 				iv2.setImage(czlkostur1);
+				postac.Grafika(czlkostur1);
 				}
 				else if(przedmiot.getNazwa()=="Kostur Zaparcia")
 				{
 				//textarea3.setText("W kupie siła...");
 				iv2.setImage(czlkostur2);
+				postac.Grafika(czlkostur2);
 				}
 				else if(przedmiot.getNazwa()=="Noga Enta")
 				{
 				//textarea3.setText("Szybciej! Szybciej!");
 				iv2.setImage(czlkostur3);
+				postac.Grafika(czlkostur3);
 				}
 			}
 			else if(postac.getRasa()=="Ork")
@@ -709,91 +727,109 @@ public class OknoKreatora extends Ramka {
 				{
 				//textarea3.setText("Z każdą kolejna kroplą, stajesz się silniejszy...");
 				iv2.setImage(orkmiecz1);
+				postac.Grafika(orkmiecz1);
 				}
 				else if(przedmiot.getNazwa()=="Zapomniane Ostrze")
 				{
 				//textarea3.setText("Nikt nie pamięta jego historii, ale każdy może poznać jego siłę...");
 				iv2.setImage(orkmiecz2);
+				postac.Grafika(orkmiecz2);
 				}
 				else if(przedmiot.getNazwa()=="Promień Nadziei")
 				{
 				//textarea3.setText("Tym razem to ty umrzesz ostatni...");
 				iv2.setImage(orkmiecz3);
+				postac.Grafika(orkmiecz3);
 				}
 				else if(przedmiot.getNazwa()=="Młot Grabarza")
 				{
 				//textarea3.setText("Następny cios jest gwoździem do trumny...");
 				iv2.setImage(orktopor1);
+				postac.Grafika(orktopor1);
 				}
 				else if(przedmiot.getNazwa()=="Sekator")
 				{
 				//textarea3.setText("Nie daj się zwieść...");
 				iv2.setImage(orktopor2);
+				postac.Grafika(orktopor2);
 				}
 				else if(przedmiot.getNazwa()=="Bukiet Strachu")
 				{
 				//textarea3.setText("Dobry prezent na każdą okazję..");
 				iv2.setImage(orktopor3);
+				postac.Grafika(orktopor3);
 				}
 				else if(przedmiot.getNazwa()=="Ostatnie Życzenie")
 				{
 				//textarea3.setText("Wypowiedz szybko...");
 				iv2.setImage(orkluk1);
+				postac.Grafika(orkluk1);
 				}
 				else if(przedmiot.getNazwa()=="Mantra")
 				{
 				//textarea3.setText("Powtarzaj do skutku...");
 				iv2.setImage(orkluk2);
+				postac.Grafika(orkluk2);
 				}
 				else if(przedmiot.getNazwa()=="Czwarty Muszkieter")
 				{
 				//textarea3.setText("Jednym na wszystkich...");
 				iv2.setImage(orkluk3);
+				postac.Grafika(orkluk3);
 				}
 				else if(przedmiot.getNazwa()=="Gałąź Wisielca")
 				{
 				//textarea3.setText("Podobno okrywa ją klątwa...");
 				iv2.setImage(orkkusza1);
+				postac.Grafika(orkkusza1);
 				}
 				else if(przedmiot.getNazwa()=="Magiczne Ustrojstwo")
 				{
 				//textarea3.setText("Obsługa do końca nie jest bezpieczna...");
 				iv2.setImage(orkkusza2);
+				postac.Grafika(orkkusza2);
 				}
 				else if(przedmiot.getNazwa()=="Dar Losu")
 				{
 				//textarea3.setText("Kto nie strzela, ten nie trafia...");
 				iv2.setImage(orkkusza3);
+				postac.Grafika(orkkusza3);
 				}
 				else if(przedmiot.getNazwa()=="Pierwsza Dama")
 				{
 				//textarea3.setText("Jej życzenie może stać się rozkazem...");
 				iv2.setImage(orkwend1);
+				postac.Grafika(orkwend1);
 				}
 				else if(przedmiot.getNazwa()=="Wdowa")
 				{
 				//textarea3.setText("Bo to zła kobieta była...");
 				iv2.setImage(orkwend2);
+				postac.Grafika(orkwend2);
 				}
 				else if(przedmiot.getNazwa()=="Morowa Dziewica")
 				{
 				//textarea3.setText("Od powietrza, głodu, ognia i wojny...");
 				iv2.setImage(orkwend3);
+				postac.Grafika(orkwend3);
 				}
 				else if(przedmiot.getNazwa()=="Konar Potencjału")
 				{
 				//textarea3.setText("Legenda głosi, że kiedyś zapłonie...");
 				iv2.setImage(orkkostur1);
+				postac.Grafika(orkkostur1);
 				}
 				else if(przedmiot.getNazwa()=="Kostur Zaparcia")
 				{
 				//textarea3.setText("W kupie siła...");
 				iv2.setImage(orkkostur2);
+				postac.Grafika(orkkostur2);
 				}
 				else if(przedmiot.getNazwa()=="Noga Enta")
 				{
 				//textarea3.setText("Szybciej! Szybciej!");
 				iv2.setImage(orkkostur3);
+				postac.Grafika(orkkostur3);
 				}
 			}
 			else
@@ -802,91 +838,109 @@ public class OknoKreatora extends Ramka {
 				{
 				//textarea3.setText("Z każdą kolejna kroplą, stajesz się silniejszy...");
 				iv2.setImage(elfmiecz1);
+				postac.Grafika(elfmiecz1);
 				}
 				else if(przedmiot.getNazwa()=="Zapomniane Ostrze")
 				{
 				//textarea3.setText("Nikt nie pamięta jego historii, ale każdy może poznać jego siłę...");
 				iv2.setImage(elfmiecz2);
+				postac.Grafika(elfmiecz2);
 				}
 				else if(przedmiot.getNazwa()=="Promień Nadziei")
 				{
 				//textarea3.setText("Tym razem to ty umrzesz ostatni...");
 				iv2.setImage(elfmiecz3);
+				postac.Grafika(elfmiecz3);
 				}
 				else if(przedmiot.getNazwa()=="Młot Grabarza")
 				{
 				//textarea3.setText("Następny cios jest gwoździem do trumny...");
 				iv2.setImage(elftopor1);
+				postac.Grafika(elftopor1);
 				}
 				else if(przedmiot.getNazwa()=="Sekator")
 				{
 				//textarea3.setText("Nie daj się zwieść...");
 				iv2.setImage(elftopor2);
+				postac.Grafika(elftopor2);
 				}
 				else if(przedmiot.getNazwa()=="Bukiet Strachu")
 				{
 				//textarea3.setText("Dobry prezent na każdą okazję..");
 				iv2.setImage(elftopor3);
+				postac.Grafika(elftopor3);
 				}
 				else if(przedmiot.getNazwa()=="Ostatnie Życzenie")
 				{
 				//textarea3.setText("Wypowiedz szybko...");
 				iv2.setImage(elfluk1);
+				postac.Grafika(elfluk1);
 				}
 				else if(przedmiot.getNazwa()=="Mantra")
 				{
 				//textarea3.setText("Powtarzaj do skutku...");
 				iv2.setImage(elfluk2);
+				postac.Grafika(elfluk2);
 				}
 				else if(przedmiot.getNazwa()=="Czwarty Muszkieter")
 				{
 				//textarea3.setText("Jednym na wszystkich...");
 				iv2.setImage(elfluk3);
+				postac.Grafika(elfluk2);
 				}
 				else if(przedmiot.getNazwa()=="Gałąź Wisielca")
 				{
 				//textarea3.setText("Podobno okrywa ją klątwa...");
 				iv2.setImage(elfkusza1);
+				postac.Grafika(elfkusza1);
 				}
 				else if(przedmiot.getNazwa()=="Magiczne Ustrojstwo")
 				{
 				//textarea3.setText("Obsługa do końca nie jest bezpieczna...");
 				iv2.setImage(elfkusza2);
+				postac.Grafika(elfkusza2);
 				}
 				else if(przedmiot.getNazwa()=="Dar Losu")
 				{
 				//textarea3.setText("Kto nie strzela, ten nie trafia...");
 				iv2.setImage(elfkusza3);
+				postac.Grafika(elfkusza3);
 				}
 				else if(przedmiot.getNazwa()=="Pierwsza Dama")
 				{
 				//textarea3.setText("Jej życzenie może stać się rozkazem...");
 				iv2.setImage(elfwend1);
+				postac.Grafika(elfwend1);
 				}
 				else if(przedmiot.getNazwa()=="Wdowa")
 				{
 				//textarea3.setText("Bo to zła kobieta była...");
 				iv2.setImage(elfwend2);
+				postac.Grafika(elfwend2);
 				}
 				else if(przedmiot.getNazwa()=="Morowa Dziewica")
 				{
 				//textarea3.setText("Od powietrza, głodu, ognia i wojny...");
 				iv2.setImage(elfwend3);
+				postac.Grafika(elfwend3);
 				}
 				else if(przedmiot.getNazwa()=="Konar Potencjału")
 				{
 				//textarea3.setText("Legenda głosi, że kiedyś zapłonie...");
 				iv2.setImage(elfkostur1);
+				postac.Grafika(elfkostur1);
 				}
 				else if(przedmiot.getNazwa()=="Kostur Zaparcia")
 				{
 				//textarea3.setText("W kupie siła...");
 				iv2.setImage(elfkostur2);
+				postac.Grafika(elfkostur2);
 				}
 				else if(przedmiot.getNazwa()=="Noga Enta")
 				{
 				//textarea3.setText("Szybciej! Szybciej!");
 				iv2.setImage(elfkostur3);
+				postac.Grafika(elfkostur3);
 				}
 			}
 		iv2.setPreserveRatio(true);
