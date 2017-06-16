@@ -1,7 +1,7 @@
 package kreator;
 
-import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 
 import interfejs.Ramka;
 import javafx.application.Application;
@@ -24,8 +24,13 @@ import javafx.stage.Stage;
 import walka.FrameWalka;
 
 public class OknoKreatora extends Ramka {
+	
+	static ArrayList<Postac> gracz1 = new ArrayList<Postac>();
+	static ArrayList<Postac> gracz2 = new ArrayList<Postac>();
 	@Override
 	public void start(Stage primaryStage) {
+		
+		
 
 		Image Obraz = new Image("img/tło.png");
 
@@ -474,6 +479,11 @@ public class OknoKreatora extends Ramka {
 		powrot.setPrefHeight(40);
 
 		Button dalej = new Button();
+		if (gracz1.size()<4)
+		dalej.setText("Gracz 1 - Zapisz");
+		else if (gracz1.size()<4)
+		dalej.setText("Gracz 2 - Zapisz");
+		else
 		dalej.setText("Graj");
 		dalej.setLayoutX(270);
 		dalej.setLayoutY(530);
@@ -484,10 +494,24 @@ public class OknoKreatora extends Ramka {
 			@Override
 			public void handle(ActionEvent event) {
 				try {
-					FrameWalka walka=new FrameWalka();
+					if (gracz1.size()<2)
+					{
+						gracz1.add(postac);
+						OknoKreatora.TworzeniePostaci(primaryStage);
+						
+					}
+						else if(gracz2.size()<2)
+					{
+						gracz2.add(postac);
+						OknoKreatora.TworzeniePostaci(primaryStage);
+					}
+					else
+					{
+					FrameWalka walka=new FrameWalka(gracz1, gracz2);
 					walka.start(primaryStage);
-
-				} catch (Exception e) {
+					}
+					} 
+					catch (Exception e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
