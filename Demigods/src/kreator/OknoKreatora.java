@@ -3,6 +3,7 @@ package kreator;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
+import dane.Dane;
 import interfejs.Ramka;
 import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
@@ -477,11 +478,25 @@ public class OknoKreatora extends Ramka {
 		powrot.setLayoutY(530);
 		powrot.setPrefWidth(90);
 		powrot.setPrefHeight(40);
+		powrot.setOnAction(new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(ActionEvent event) {
+				try {
+					OknoKreatora.WyborBroni(postac, primaryStage);
+					}
+					
+					catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		});
 
 		Button dalej = new Button();
-		if (gracz1.size()<4)
+		if (gracz1.size()<2)
 		dalej.setText("Gracz 1 - Zapisz");
-		else if (gracz1.size()<4)
+		else if (gracz2.size()<2)
 		dalej.setText("Gracz 2 - Zapisz");
 		else
 		dalej.setText("Graj");
@@ -497,12 +512,14 @@ public class OknoKreatora extends Ramka {
 					if (gracz1.size()<2)
 					{
 						gracz1.add(postac);
+						Dane.dodaj(postac);
 						OknoKreatora.TworzeniePostaci(primaryStage);
 						
 					}
 						else if(gracz2.size()<2)
 					{
 						gracz2.add(postac);
+						Dane.dodaj(postac);
 						OknoKreatora.TworzeniePostaci(primaryStage);
 					}
 					else
@@ -944,6 +961,20 @@ public class OknoKreatora extends Ramka {
 		powrot.setLayoutY(530);
 		powrot.setPrefWidth(90);
 		powrot.setPrefHeight(40);
+		powrot.setOnAction(new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(ActionEvent event) {
+				try {
+					OknoKreatora.TworzeniePostaci(primaryStage);
+					}
+					
+					catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		});
 
 		Button dalej = new Button();
 		dalej.setText("Dalej");
