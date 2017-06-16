@@ -10,7 +10,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import walka.FrameWalka;
+import kreator.OknoKreatora;
 
 public class Ramka extends Application {
 
@@ -20,8 +20,8 @@ public class Ramka extends Application {
 		Button btn2 = new Button();
 		Button btn3 = new Button();
 		Image Obraz = new Image("img/tło.png");
-		btn1.setText("Graj!");
-		btn2.setText("Usuń Drużynę");
+		btn1.setText("Stwórz postaci");
+		btn2.setText("Wybierz postaci");
 		btn3.setText("Wyjdź");
 		btn3.setOnAction(new EventHandler<ActionEvent>() {
 
@@ -66,7 +66,7 @@ public class Ramka extends Application {
 
 			@Override
 			public void handle(ActionEvent event) {
-				FrameWalka walka=new FrameWalka();
+				OknoKreatora walka=new OknoKreatora();
 				 try {
 					walka.start(primaryStage);
 				} catch (Exception e) {

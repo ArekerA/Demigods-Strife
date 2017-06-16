@@ -68,7 +68,7 @@ public class RamkaKreatora extends Ramka{
 			public void handle(ActionEvent event) {
 				FrameWalka walka=new FrameWalka();
 				 try {
-					walka.start(primaryStage);
+					OknoKreatora okno=new OknoKreatora();
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();

@@ -17,6 +17,7 @@ public final class Dane {
 	 static ArrayList<Postac> tab = new ArrayList();
      // dodanie elementu (obiektu) do listy
      public static void dodaj(Postac p){
+    odczyt();
 	 tab.add(p);
     
      try {
@@ -29,8 +30,13 @@ public final class Dane {
               System.out.println("Error!");
          } 	
      }
+     
+     public static String odczytimion(int indeks)
+     {
+    	 return odczyt().get(indeks).getNazwa();
+     }
 	
-     static ArrayList<Postac> odczyt()
+     public static ArrayList<Postac> odczyt()
      {        
          FileInputStream fis = null;
 		try {
@@ -61,6 +67,11 @@ public final class Dane {
          System.out.println("Zadziałało");
          return tab;
      }
+     
+     public static Postac odczytp(int i)
+     {        
+        return tab.get(i);
+     }
     
     static void PokazWszystkie(ArrayList tab, int size){
     	for(int i = 0; i<size; i++)
@@ -71,7 +82,7 @@ public final class Dane {
      
     public static void main(String[] args)
     {
-    	/*Postac pierwsza=new Postac();
+    	Postac pierwsza=new Postac();
     	pierwsza.setNazwa("Janusz");
     	pierwsza.setRasa("Ork");
     	pierwsza.setKlasa("Wojownik");
@@ -80,7 +91,7 @@ public final class Dane {
     	druga.setRasa("Człowiek");
     	druga.setKlasa("Wojownik");
     	dodaj(pierwsza);
-    	dodaj(druga);*/
+    	dodaj(druga);
     	odczyt();
     	PokazWszystkie(tab, tab.size());
     	

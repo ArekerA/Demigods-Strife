@@ -89,6 +89,20 @@ public class OknoKreatora extends Ramka {
 		btn1.setLayoutY(50);
 		btn1.setPrefWidth(200);
 		btn1.setPrefHeight(50);
+		btn1.setOnAction(new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(ActionEvent event) {
+				try {
+
+					//OknoKreatora.dodajp(primaryStage);
+
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		});
 		btn2.setText("Wczytaj Drużynę");
 		btn2.setLayoutX(20);
 		btn2.setLayoutY(120);
@@ -205,8 +219,63 @@ public class OknoKreatora extends Ramka {
 
 		HBox box = new HBox();
 		box.getChildren().add(iv1);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+			
+		
+		
+		ChoiceBox cb1 = new ChoiceBox(FXCollections.observableArrayList(Dane.odczyt()));
+		cb1.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+			public void changed(ObservableValue ov, Number value, Number new_value) {
+				gracz1.add(Dane.odczytp(new_value.intValue()));				
+			}
+		});
+
+		cb1.setLayoutX(150);
+		cb1.setLayoutY(160);
+		cb1.setPrefWidth(200);
+		cb1.setPrefHeight(40);
+		
+		
+		
+		
 
 		Pane root = new Pane();
+		
 		root.getChildren().add(box);
 		root.getChildren().add(btn1);
 		root.getChildren().add(text1);
@@ -238,6 +307,9 @@ public class OknoKreatora extends Ramka {
 		root.getChildren().add(textarea2);
 		root.getChildren().add(rect1);
 		root.getChildren().add(rect2);
+		root.getChildren().add(cb1);
+		
+	
 
 		Scene scene = new Scene(root, 800, 600);
 
@@ -257,6 +329,538 @@ public class OknoKreatora extends Ramka {
 			}
 		});
 	}
+	
+	/*static void dodajp(Stage primaryStage) {
+		Pane root = new Pane();
+		Scene scene = new Scene(root, 800, 600);
+		Image Obraz = new Image("img/tło.png");
+		ImageView iv1 = new ImageView();
+		iv1.setImage(Obraz);
+		iv1.setPreserveRatio(true);
+		iv1.setSmooth(true);
+		
+
+		ChoiceBox cb1 = new ChoiceBox(FXCollections.observableArrayList(Dane.odczyt()));
+		cb1.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+			public void changed(ObservableValue ov, Number value, Number new_value) {
+				gracz1.add(Dane.odczytp(new_value.intValue()));
+				Postac postac=Dane.odczytp(new_value.intValue());
+			}
+		});
+
+		cb1.setLayoutX(150);
+		cb1.setLayoutY(160);
+		cb1.setPrefWidth(200);
+		cb1.setPrefHeight(40);
+
+		Text text1 = new Text();
+		text1.setLayoutX(300);
+		text1.setLayoutY(40);
+		text1.setStyle("-fx-font: 30 verdana; -fx-base: #b6e7c9;");
+		text1.setText("Podsumowanie");
+
+		Button powrot = new Button();
+		powrot.setText("Powrot");
+		powrot.setLayoutX(20);
+		powrot.setLayoutY(530);
+		powrot.setPrefWidth(90);
+		powrot.setPrefHeight(40);
+		powrot.setOnAction(new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(ActionEvent event) {
+				try {
+					OknoKreatora.WyborBroni(postac, primaryStage);
+					}
+					
+					catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		});
+
+		Button dalej = new Button();
+		if (gracz1.size()<1)
+		dalej.setText("Gracz 1 - Zapisz");
+		else if (gracz2.size()<1)
+		dalej.setText("Gracz 2 - Zapisz");
+		else
+		dalej.setText("Graj");
+		dalej.setLayoutX(270);
+		dalej.setLayoutY(530);
+		dalej.setPrefWidth(90);
+		dalej.setPrefHeight(40);
+		dalej.setOnAction(new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(ActionEvent event) {
+				try {
+					if (gracz1.size()<2)
+					{
+						gracz1.add(postac);
+						Dane.dodaj(postac);
+						OknoKreatora.TworzeniePostaci(primaryStage);
+						
+					}
+						else if(gracz2.size()<2)
+					{
+						gracz2.add(postac);
+						Dane.dodaj(postac);
+						OknoKreatora.TworzeniePostaci(primaryStage);
+					}
+					else
+					{
+					FrameWalka walka=new FrameWalka(gracz1, gracz2);
+					walka.start(primaryStage);
+					}
+					} 
+					catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		});
+		ImageView iv2 = new ImageView();
+		
+		Image czlmiecz1 = new Image("img/czł-woj-miecz1.png");
+		Image czlmiecz2 = new Image("img/czł-woj-miecz2.png");
+		Image czlmiecz3 = new Image("img/czł-woj-miecz3.png");
+		
+		Image czltopor1 = new Image("img/czł-woj-topor1.png");
+		Image czltopor2 = new Image("img/czł-woj-topor2.png");
+		Image czltopor3 = new Image("img/czł-woj-topor3.png");
+		
+		Image czlluk1 = new Image("img/cz strzelec-łuk1.png");
+		Image czlluk2 = new Image("img/cz strzelec-łuk2.png");
+		Image czlluk3 = new Image("img/cz strzelec-łuk3.png");
+
+		Image czlkusza1 = new Image("img/cz strzelec-łuk4.png");
+		Image czlkusza2 = new Image("img/cz strzelec-łuk5.png");
+		Image czlkusza3 = new Image("img/cz strzelec-łuk6.png");
+
+		Image czlkostur1 = new Image("img/czł-mag-kostur1.png");
+		Image czlkostur2 = new Image("img/czł-mag-kostur2.png");
+		Image czlkostur3 = new Image("img/czł-mag-kostur3.png");
+
+		Image czlwend1 = new Image("img/czł-mag-wend1.png");
+		Image czlwend2= new Image("img/czł-mag-wend2.png");
+		Image czlwend3 = new Image("img/czł-mag-wend3.png");
+		
+		Image orkmiecz1 = new Image("img/czł-woj-miecz1.png");
+		Image orkmiecz2 = new Image("img/czł-woj-miecz2.png");
+		Image orkmiecz3 = new Image("img/czł-woj-miecz3.png");
+		
+		Image orktopor1 = new Image("img/czł-woj-topor1.png");
+		Image orktopor2 = new Image("img/czł-woj-topor2.png");
+		Image orktopor3 = new Image("img/czł-woj-topor3.png");
+		
+		Image orkluk1 = new Image("img/ork strzelec-łuk1.png");
+		Image orkluk2 = new Image("img/ork strzelec-łuk2.png");
+		Image orkluk3 = new Image("img/ork strzelec-łuk3.png");
+
+		Image orkkusza1 = new Image("img/ork strzelec-łuk4.png");
+		Image orkkusza2 = new Image("img/ork strzelec-łuk5.png");
+		Image orkkusza3 = new Image("img/ork strzelec-łuk6.png");
+
+		Image orkkostur1 = new Image("img/ork-mag-kostur1.png");
+		Image orkkostur2 = new Image("img/ork-mag-kostur2.png");
+		Image orkkostur3 = new Image("img/ork-mag-kostur3.png");
+
+		Image orkwend1 = new Image("img/ork-mag-wend1.png");
+		Image orkwend2= new Image("img/ork-mag-wend2.png");
+		Image orkwend3 = new Image("img/ork-mag-wend3.png");
+		
+		Image elfmiecz1 = new Image("img/elf-woj-miecz1.png");
+		Image elfmiecz2 = new Image("img/elf-woj-miecz2.png");
+		Image elfmiecz3 = new Image("img/elf-woj-miecz3.png");
+		
+		Image elftopor1 = new Image("img/elf-woj-topor1.png");
+		Image elftopor2 = new Image("img/elf-woj-topor2.png");
+		Image elftopor3 = new Image("img/elf-woj-topor3.png");
+		
+		Image elfluk1 = new Image("img/elf-strzelec-łuk1.png");
+		Image elfluk2 = new Image("img/elf-strzelec-łuk2.png");
+		Image elfluk3 = new Image("img/elf-strzelec-łuk3.png");
+
+		Image elfkusza1 = new Image("img/elf-strzelec-łuk4.png");
+		Image elfkusza2 = new Image("img/elf-strzelec-łuk5.png");
+		Image elfkusza3 = new Image("img/elf-strzelec-łuk6.png");
+
+		Image elfkostur1 = new Image("img/elf-mag-kostur1.png");
+		Image elfkostur2 = new Image("img/elf-mag-kostur2.png");
+		Image elfkostur3 = new Image("img/elf-mag-kostur3.png");
+
+		Image elfwend1 = new Image("img/elf-mag-wend1.png");
+		Image elfwend2= new Image("img/elf-mag-wend2.png");
+		Image elfwend3 = new Image("img/elf-mag-wend3.png");
+
+
+
+	    if(postac.getRasa()=="Człowiek")
+			{
+				if(przedmiot.getNazwa()=="Wampirze Gardło")
+				{
+				//textarea3.setText("Z każdą kolejna kroplą, stajesz się silniejszy...");
+				iv2.setImage(czlmiecz1);
+				postac.Grafika(czlmiecz1);
+				}
+				else if(przedmiot.getNazwa()=="Zapomniane Ostrze")
+				{
+				//textarea3.setText("Nikt nie pamięta jego historii, ale każdy może poznać jego siłę...");
+				iv2.setImage(czlmiecz2);
+				postac.Grafika(czlmiecz2);
+				}
+				else if(przedmiot.getNazwa()=="Promień Nadziei")
+				{
+				//textarea3.setText("Tym razem to ty umrzesz ostatni...");
+				iv2.setImage(czlmiecz3);
+				postac.Grafika(czlmiecz3);
+				}
+				else if(przedmiot.getNazwa()=="Młot Grabarza")
+				{
+				//textarea3.setText("Następny cios jest gwoździem do trumny...");
+				iv2.setImage(czltopor1);
+				postac.Grafika(czltopor1);
+				}
+				else if(przedmiot.getNazwa()=="Sekator")
+				{
+				//textarea3.setText("Nie daj się zwieść...");
+				iv2.setImage(czltopor2);
+				postac.Grafika(czltopor2);
+				}
+				else if(przedmiot.getNazwa()=="Bukiet Strachu")
+				{
+				//textarea3.setText("Dobry prezent na każdą okazję..");
+				iv2.setImage(czltopor3);
+				postac.Grafika(czltopor3);
+				}
+				else if(przedmiot.getNazwa()=="Ostatnie Życzenie")
+				{
+				//textarea3.setText("Wypowiedz szybko...");
+				iv2.setImage(czlluk1);
+				postac.Grafika(czlluk1);
+				}
+				else if(przedmiot.getNazwa()=="Mantra")
+				{
+				//textarea3.setText("Powtarzaj do skutku...");
+				iv2.setImage(czlluk2);
+				postac.Grafika(czlluk2);
+				}
+				else if(przedmiot.getNazwa()=="Czwarty Muszkieter")
+				{
+				//textarea3.setText("Jednym na wszystkich...");
+				iv2.setImage(czlluk3);
+				postac.Grafika(czlluk3);
+				}
+				else if(przedmiot.getNazwa()=="Gałąź Wisielca")
+				{
+				//textarea3.setText("Podobno okrywa ją klątwa...");
+				iv2.setImage(czlkusza1);
+				postac.Grafika(czlkusza1);
+				}
+				else if(przedmiot.getNazwa()=="Magiczne Ustrojstwo")
+				{
+				//textarea3.setText("Obsługa do końca nie jest bezpieczna...");
+				iv2.setImage(czlkusza2);
+				postac.Grafika(czlkusza2);
+				}
+				else if(przedmiot.getNazwa()=="Dar Losu")
+				{
+				//textarea3.setText("Kto nie strzela, ten nie trafia...");
+				iv2.setImage(czlkusza3);
+				postac.Grafika(czlkusza3);
+				}
+				else if(przedmiot.getNazwa()=="Pierwsza Dama")
+				{
+				//textarea3.setText("Jej życzenie może stać się rozkazem...");
+				iv2.setImage(czlwend1);
+				postac.Grafika(czlwend1);
+				}
+				else if(przedmiot.getNazwa()=="Wdowa")
+				{
+				//textarea3.setText("Bo to zła kobieta była...");
+				iv2.setImage(czlwend2);
+				postac.Grafika(czlwend2);
+				}
+				else if(przedmiot.getNazwa()=="Morowa Dziewica")
+				{
+				//textarea3.setText("Od powietrza, głodu, ognia i wojny...");
+				iv2.setImage(czlwend3);
+				postac.Grafika(czlwend3);
+				}
+				else if(przedmiot.getNazwa()=="Konar Potencjału")
+				{
+				//textarea3.setText("Legenda głosi, że kiedyś zapłonie...");
+				iv2.setImage(czlkostur1);
+				postac.Grafika(czlkostur1);
+				}
+				else if(przedmiot.getNazwa()=="Kostur Zaparcia")
+				{
+				//textarea3.setText("W kupie siła...");
+				iv2.setImage(czlkostur2);
+				postac.Grafika(czlkostur2);
+				}
+				else if(przedmiot.getNazwa()=="Noga Enta")
+				{
+				//textarea3.setText("Szybciej! Szybciej!");
+				iv2.setImage(czlkostur3);
+				postac.Grafika(czlkostur3);
+				}
+			}
+			else if(postac.getRasa()=="Ork")
+			{
+				if(przedmiot.getNazwa()=="Wampirze Gardło")
+				{
+				//textarea3.setText("Z każdą kolejna kroplą, stajesz się silniejszy...");
+				iv2.setImage(orkmiecz1);
+				postac.Grafika(orkmiecz1);
+				}
+				else if(przedmiot.getNazwa()=="Zapomniane Ostrze")
+				{
+				//textarea3.setText("Nikt nie pamięta jego historii, ale każdy może poznać jego siłę...");
+				iv2.setImage(orkmiecz2);
+				postac.Grafika(orkmiecz2);
+				}
+				else if(przedmiot.getNazwa()=="Promień Nadziei")
+				{
+				//textarea3.setText("Tym razem to ty umrzesz ostatni...");
+				iv2.setImage(orkmiecz3);
+				postac.Grafika(orkmiecz3);
+				}
+				else if(przedmiot.getNazwa()=="Młot Grabarza")
+				{
+				//textarea3.setText("Następny cios jest gwoździem do trumny...");
+				iv2.setImage(orktopor1);
+				postac.Grafika(orktopor1);
+				}
+				else if(przedmiot.getNazwa()=="Sekator")
+				{
+				//textarea3.setText("Nie daj się zwieść...");
+				iv2.setImage(orktopor2);
+				postac.Grafika(orktopor2);
+				}
+				else if(przedmiot.getNazwa()=="Bukiet Strachu")
+				{
+				//textarea3.setText("Dobry prezent na każdą okazję..");
+				iv2.setImage(orktopor3);
+				postac.Grafika(orktopor3);
+				}
+				else if(przedmiot.getNazwa()=="Ostatnie Życzenie")
+				{
+				//textarea3.setText("Wypowiedz szybko...");
+				iv2.setImage(orkluk1);
+				postac.Grafika(orkluk1);
+				}
+				else if(przedmiot.getNazwa()=="Mantra")
+				{
+				//textarea3.setText("Powtarzaj do skutku...");
+				iv2.setImage(orkluk2);
+				postac.Grafika(orkluk2);
+				}
+				else if(przedmiot.getNazwa()=="Czwarty Muszkieter")
+				{
+				//textarea3.setText("Jednym na wszystkich...");
+				iv2.setImage(orkluk3);
+				postac.Grafika(orkluk3);
+				}
+				else if(przedmiot.getNazwa()=="Gałąź Wisielca")
+				{
+				//textarea3.setText("Podobno okrywa ją klątwa...");
+				iv2.setImage(orkkusza1);
+				postac.Grafika(orkkusza1);
+				}
+				else if(przedmiot.getNazwa()=="Magiczne Ustrojstwo")
+				{
+				//textarea3.setText("Obsługa do końca nie jest bezpieczna...");
+				iv2.setImage(orkkusza2);
+				postac.Grafika(orkkusza2);
+				}
+				else if(przedmiot.getNazwa()=="Dar Losu")
+				{
+				//textarea3.setText("Kto nie strzela, ten nie trafia...");
+				iv2.setImage(orkkusza3);
+				postac.Grafika(orkkusza3);
+				}
+				else if(przedmiot.getNazwa()=="Pierwsza Dama")
+				{
+				//textarea3.setText("Jej życzenie może stać się rozkazem...");
+				iv2.setImage(orkwend1);
+				postac.Grafika(orkwend1);
+				}
+				else if(przedmiot.getNazwa()=="Wdowa")
+				{
+				//textarea3.setText("Bo to zła kobieta była...");
+				iv2.setImage(orkwend2);
+				postac.Grafika(orkwend2);
+				}
+				else if(przedmiot.getNazwa()=="Morowa Dziewica")
+				{
+				//textarea3.setText("Od powietrza, głodu, ognia i wojny...");
+				iv2.setImage(orkwend3);
+				postac.Grafika(orkwend3);
+				}
+				else if(przedmiot.getNazwa()=="Konar Potencjału")
+				{
+				//textarea3.setText("Legenda głosi, że kiedyś zapłonie...");
+				iv2.setImage(orkkostur1);
+				postac.Grafika(orkkostur1);
+				}
+				else if(przedmiot.getNazwa()=="Kostur Zaparcia")
+				{
+				//textarea3.setText("W kupie siła...");
+				iv2.setImage(orkkostur2);
+				postac.Grafika(orkkostur2);
+				}
+				else if(przedmiot.getNazwa()=="Noga Enta")
+				{
+				//textarea3.setText("Szybciej! Szybciej!");
+				iv2.setImage(orkkostur3);
+				postac.Grafika(orkkostur3);
+				}
+			}
+			else
+			{
+				if(przedmiot.getNazwa()=="Wampirze Gardło")
+				{
+				//textarea3.setText("Z każdą kolejna kroplą, stajesz się silniejszy...");
+				iv2.setImage(elfmiecz1);
+				postac.Grafika(elfmiecz1);
+				}
+				else if(przedmiot.getNazwa()=="Zapomniane Ostrze")
+				{
+				//textarea3.setText("Nikt nie pamięta jego historii, ale każdy może poznać jego siłę...");
+				iv2.setImage(elfmiecz2);
+				postac.Grafika(elfmiecz2);
+				}
+				else if(przedmiot.getNazwa()=="Promień Nadziei")
+				{
+				//textarea3.setText("Tym razem to ty umrzesz ostatni...");
+				iv2.setImage(elfmiecz3);
+				postac.Grafika(elfmiecz3);
+				}
+				else if(przedmiot.getNazwa()=="Młot Grabarza")
+				{
+				//textarea3.setText("Następny cios jest gwoździem do trumny...");
+				iv2.setImage(elftopor1);
+				postac.Grafika(elftopor1);
+				}
+				else if(przedmiot.getNazwa()=="Sekator")
+				{
+				//textarea3.setText("Nie daj się zwieść...");
+				iv2.setImage(elftopor2);
+				postac.Grafika(elftopor2);
+				}
+				else if(przedmiot.getNazwa()=="Bukiet Strachu")
+				{
+				//textarea3.setText("Dobry prezent na każdą okazję..");
+				iv2.setImage(elftopor3);
+				postac.Grafika(elftopor3);
+				}
+				else if(przedmiot.getNazwa()=="Ostatnie Życzenie")
+				{
+				//textarea3.setText("Wypowiedz szybko...");
+				iv2.setImage(elfluk1);
+				postac.Grafika(elfluk1);
+				}
+				else if(przedmiot.getNazwa()=="Mantra")
+				{
+				//textarea3.setText("Powtarzaj do skutku...");
+				iv2.setImage(elfluk2);
+				postac.Grafika(elfluk2);
+				}
+				else if(przedmiot.getNazwa()=="Czwarty Muszkieter")
+				{
+				//textarea3.setText("Jednym na wszystkich...");
+				iv2.setImage(elfluk3);
+				postac.Grafika(elfluk2);
+				}
+				else if(przedmiot.getNazwa()=="Gałąź Wisielca")
+				{
+				//textarea3.setText("Podobno okrywa ją klątwa...");
+				iv2.setImage(elfkusza1);
+				postac.Grafika(elfkusza1);
+				}
+				else if(przedmiot.getNazwa()=="Magiczne Ustrojstwo")
+				{
+				//textarea3.setText("Obsługa do końca nie jest bezpieczna...");
+				iv2.setImage(elfkusza2);
+				postac.Grafika(elfkusza2);
+				}
+				else if(przedmiot.getNazwa()=="Dar Losu")
+				{
+				//textarea3.setText("Kto nie strzela, ten nie trafia...");
+				iv2.setImage(elfkusza3);
+				postac.Grafika(elfkusza3);
+				}
+				else if(przedmiot.getNazwa()=="Pierwsza Dama")
+				{
+				//textarea3.setText("Jej życzenie może stać się rozkazem...");
+				iv2.setImage(elfwend1);
+				postac.Grafika(elfwend1);
+				}
+				else if(przedmiot.getNazwa()=="Wdowa")
+				{
+				//textarea3.setText("Bo to zła kobieta była...");
+				iv2.setImage(elfwend2);
+				postac.Grafika(elfwend2);
+				}
+				else if(przedmiot.getNazwa()=="Morowa Dziewica")
+				{
+				//textarea3.setText("Od powietrza, głodu, ognia i wojny...");
+				iv2.setImage(elfwend3);
+				postac.Grafika(elfwend3);
+				}
+				else if(przedmiot.getNazwa()=="Konar Potencjału")
+				{
+				//textarea3.setText("Legenda głosi, że kiedyś zapłonie...");
+				iv2.setImage(elfkostur1);
+				postac.Grafika(elfkostur1);
+				}
+				else if(przedmiot.getNazwa()=="Kostur Zaparcia")
+				{
+				//textarea3.setText("W kupie siła...");
+				iv2.setImage(elfkostur2);
+				postac.Grafika(elfkostur2);
+				}
+				else if(przedmiot.getNazwa()=="Noga Enta")
+				{
+				//textarea3.setText("Szybciej! Szybciej!");
+				iv2.setImage(elfkostur3);
+				postac.Grafika(elfkostur3);
+				}
+			}
+		iv2.setPreserveRatio(true);
+		iv2.setSmooth(true);
+		iv2.setFitHeight(500);
+		iv2.setFitWidth(200);
+		iv2.setLayoutX(550);
+		iv2.setLayoutY(100);
+		
+		TextArea textarea3 = new TextArea();
+		textarea3.setLayoutX(20);
+		textarea3.setLayoutY(90);
+		textarea3.setPrefWidth(340);
+		textarea3.setPrefHeight(380);
+		textarea3.setStyle("-fx-font: 30 verdana; -fx-base: #b6e7c9;");
+		//textarea3.setText("Imię:  \t"+ postac.nazwa + "\nRasa:  \t" + postac.rasa + "\nKlasa:  \t" + postac.klasa + "\nPrzedmiot:" + przedmiot.rodzaj + "\nNazwa:\t"
+		//		+ przedmiot.nazwa);
+
+		root.getChildren().add(iv1);
+		root.getChildren().add(text1);
+		root.getChildren().add(textarea3);
+		root.getChildren().add(powrot);
+		root.getChildren().add(dalej);
+		root.getChildren().add(iv2);
+		root.getChildren().add(cb1);
+
+
+		primaryStage.setTitle("Demigoods Strife");
+		primaryStage.setScene(scene);
+		primaryStage.show();
+			
+	}
+	*/
 
 	static Postac TworzeniePostaci(Stage primaryStage) throws FileNotFoundException {
 		Postac postac = new Postac();
@@ -288,6 +892,8 @@ public class OknoKreatora extends Ramka {
 		textarea1.setLayoutY(60);
 		textarea1.setPrefWidth(200);
 		textarea1.setPrefHeight(20);
+		
+		
 
 		ChoiceBox cb1 = new ChoiceBox(FXCollections.observableArrayList("Człowiek", "Elf", "Ork"));
 		cb1.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
