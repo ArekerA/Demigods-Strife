@@ -27,7 +27,7 @@ public class Hex extends ImageView {
 		setOnMouseEntered(new EventHandler<MouseEvent>(){
 			@Override
 			public void handle(MouseEvent event) {
-					setImage(im_hex3);
+				setImage(im_hex3);
 			}
 		});
 		setOnMouseExited(new EventHandler<MouseEvent>(){
