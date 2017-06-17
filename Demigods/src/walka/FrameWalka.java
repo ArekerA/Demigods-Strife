@@ -144,6 +144,7 @@ public class FrameWalka extends Application {
 	{
 		for(int i = 0; i < poleWalki.size(); i++)
 		{
+			poleWalki.get(i).setAktywny(true);
 			poleWalki.get(i).setDostepny(false);
 		}
 		for(int i = 0; i < gracz1.size(); i++)
@@ -179,7 +180,8 @@ public class FrameWalka extends Application {
 			ArrayList<Hex> t2 = new ArrayList<Hex>();
 			for(int j = 0; j < t.size(); j++)
 			{
-				t2.addAll(t.get(j).Polaczenia());
+				if(t.get(j).isAktywny())
+					t2.addAll(t.get(j).Polaczenia());
 			}
 			dostepne.addAll(t2);
 		}
@@ -231,7 +233,6 @@ public class FrameWalka extends Application {
 
             @Override
             public void handle(ActionEvent event) {
-                Reset();
                 if(gracz)
                 	if(postacie[1] < gracz2.size()-1)
                 		postacie[1]++;
@@ -244,6 +245,7 @@ public class FrameWalka extends Application {
                 		postacie[0]=0;
                 gracz = !gracz;
                 aktywna = gracz?gracz2.get(postacie[1]):gracz1.get(postacie[0]);
+                Reset();
                 Aktywuj(aktywna.getPosX(), aktywna.getPosY(), aktywna.getSzybkosc());
             }
         });

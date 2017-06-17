@@ -118,7 +118,7 @@ public class Hex extends ImageView {
 	}
 
 	/**
-	 * Ustawia dostępność
+	 * Ustawia dostępność jeśli aktywny
 	 * 
 	 * @param boolean
 	 *            dostepny
