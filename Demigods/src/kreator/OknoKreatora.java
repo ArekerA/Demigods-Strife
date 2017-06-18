@@ -35,6 +35,31 @@ public class OknoKreatora extends Ramka {
 	int choice21 = 0;
 	int choice22 = 0;
 	int choice23 = 0;
+
+
+	static Image miecz1 = new Image("img/miecz1.png");
+	static Image miecz2 = new Image("img/miecz2.png");
+	static Image miecz3 = new Image("img/miecz3.png");
+	
+	static Image topor1 = new Image("img/topor1.png");
+	static Image topor2 = new Image("img/topor2.png");
+	static Image topor3 = new Image("img/topor3.png");
+	
+	static Image luk1 = new Image("img/łuk1.png");
+	static Image luk2 = new Image("img/łuk2.png");
+	static Image luk3 = new Image("img/łuk3.png");
+
+	static Image kusza1 = new Image("img/łuk4.png");
+	static Image kusza2 = new Image("img/łuk5.png");
+	static Image kusza3 = new Image("img/łuk6.png");
+
+	static Image kostur1 = new Image("img/kostur1.png");
+	static Image kostur2 = new Image("img/kostur2.png");
+	static Image kostur3 = new Image("img/kostur3.png");
+
+	static Image wend1 = new Image("img/wend1.png");
+	static Image wend2= new Image("img/wend2.png");
+	static Image wend3 = new Image("img/wend3.png");
 	@Override
 	public void start(Stage primaryStage) {
 		
@@ -178,7 +203,7 @@ public class OknoKreatora extends Ramka {
 		});
 		
 
-		btn10.setOnAction(new EventHandler<ActionEvent>() {
+		btn11.setOnAction(new EventHandler<ActionEvent>() {
 
 			@Override
 			public void handle(ActionEvent event) {
@@ -330,64 +355,7 @@ public class OknoKreatora extends Ramka {
 		iv2.setFitWidth(250);
 		iv2.setLayoutX(500);
 		iv2.setLayoutY(75);
-		root.getChildren().add(iv2);
 		HBox box1 = new HBox();
-		/*zatwierdz.setOnAction(new EventHandler<ActionEvent>() {
-
-			@Override
-			public void handle(ActionEvent event) {
-				try {
-					if (postac.rasa == "Ork" && postac.klasa == "Wojownik") {
-						iv2.setImage(orkwoj);
-						postac.setAtak(13);
-						postac.setObrona(6);
-					} else if (postac.rasa == "Ork" && postac.klasa == "Łucznik") {
-						iv2.setImage(orklucz);
-						postac.setSzybkosc(5);
-						postac.setObrona(6);
-					} else if (postac.rasa == "Ork" && postac.klasa == "Mag") {
-						iv2.setImage(orkmag);
-						postac.setMana(23);
-						postac.setObrona(6);
-					} else if (postac.rasa == "Człowiek" && postac.klasa == "Wojownik") {
-						iv2.setImage(czlwoj);
-						postac.setAtak(13);
-						postac.setHp(60);
-					} else if (postac.rasa == "Człowiek" && postac.klasa == "Łucznik") {
-						iv2.setImage(czllucz);
-						postac.setSzybkosc(6);
-						postac.setHp(60);
-					} else if (postac.rasa == "Człowiek" && postac.klasa == "Mag") {
-						iv2.setImage(czlmag);
-						postac.setHp(60);
-						postac.setMana(30);
-					} else if (postac.rasa == "Elf" && postac.klasa == "Wojownik") {
-						iv2.setImage(elfwoj);
-						postac.setAtak(10);
-						postac.setSzybkosc(7);
-					} else if (postac.rasa == "Elf" && postac.klasa == "Łucznik") {
-						iv2.setImage(elflucz);
-						postac.setSzybkosc(8);
-					} else if (postac.rasa == "Elf" && postac.klasa == "Mag") {
-						iv2.setImage(elfmag);
-						postac.setMana(23);
-						postac.setSzybkosc(7);
-					}
-
-					textarea3.setText(postac.rasa + " " + postac.klasa + " to idealny wybór..\nAtak :"
-							+ postac.getAtak() + "\n" + "HP: " + postac.getHp() + "\n" + "Mana: " + postac.getMana()
-							+ "\n" + "Obrona: " + postac.getObrona() + "\n" + "Szybkość: " + postac.getSzybkosc());
-
-					
-					root.getChildren().add(dalej);
-					postac.nazwa = textarea1.getText();
-
-				} catch (Exception e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			}
-		});*/
 		cb1.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
 			public void changed(ObservableValue ov, Number value, Number new_value) {
 				postac.rasa = Postac.rasy[new_value.intValue()];
@@ -395,37 +363,46 @@ public class OknoKreatora extends Ramka {
 					iv2.setImage(orkwoj);
 					postac.setAtak(13);
 					postac.setObrona(6);
+					root.getChildren().add(dalej);
 				} else if (postac.rasa == "Ork" && postac.klasa == "Łucznik") {
 					iv2.setImage(orklucz);
 					postac.setSzybkosc(5);
 					postac.setObrona(6);
+					root.getChildren().add(dalej);
 				} else if (postac.rasa == "Ork" && postac.klasa == "Mag") {
 					iv2.setImage(orkmag);
 					postac.setMana(23);
 					postac.setObrona(6);
+					root.getChildren().add(dalej);
 				} else if (postac.rasa == "Człowiek" && postac.klasa == "Wojownik") {
 					iv2.setImage(czlwoj);
 					postac.setAtak(13);
 					postac.setHp(60);
+					root.getChildren().add(dalej);
 				} else if (postac.rasa == "Człowiek" && postac.klasa == "Łucznik") {
 					iv2.setImage(czllucz);
 					postac.setSzybkosc(6);
 					postac.setHp(60);
+					root.getChildren().add(dalej);
 				} else if (postac.rasa == "Człowiek" && postac.klasa == "Mag") {
 					iv2.setImage(czlmag);
 					postac.setHp(60);
 					postac.setMana(30);
+					root.getChildren().add(dalej);
 				} else if (postac.rasa == "Elf" && postac.klasa == "Wojownik") {
 					iv2.setImage(elfwoj);
 					postac.setAtak(10);
 					postac.setSzybkosc(7);
+					root.getChildren().add(dalej);
 				} else if (postac.rasa == "Elf" && postac.klasa == "Łucznik") {
 					iv2.setImage(elflucz);
 					postac.setSzybkosc(8);
+					root.getChildren().add(dalej);
 				} else if (postac.rasa == "Elf" && postac.klasa == "Mag") {
 					iv2.setImage(elfmag);
 					postac.setMana(23);
 					postac.setSzybkosc(7);
+					root.getChildren().add(dalej);
 				}
 
 				textarea3.setText(postac.rasa + " " + postac.klasa + " to idealny wybór..\nAtak :"
@@ -447,37 +424,46 @@ public class OknoKreatora extends Ramka {
 					iv2.setImage(orkwoj);
 					postac.setAtak(13);
 					postac.setObrona(6);
+					root.getChildren().add(dalej);
 				} else if (postac.rasa == "Ork" && postac.klasa == "Łucznik") {
 					iv2.setImage(orklucz);
 					postac.setSzybkosc(5);
 					postac.setObrona(6);
+					root.getChildren().add(dalej);
 				} else if (postac.rasa == "Ork" && postac.klasa == "Mag") {
 					iv2.setImage(orkmag);
 					postac.setMana(23);
 					postac.setObrona(6);
+					root.getChildren().add(dalej);
 				} else if (postac.rasa == "Człowiek" && postac.klasa == "Wojownik") {
 					iv2.setImage(czlwoj);
 					postac.setAtak(13);
+					root.getChildren().add(dalej);
 					postac.setHp(60);
 				} else if (postac.rasa == "Człowiek" && postac.klasa == "Łucznik") {
 					iv2.setImage(czllucz);
 					postac.setSzybkosc(6);
 					postac.setHp(60);
+					root.getChildren().add(dalej);
 				} else if (postac.rasa == "Człowiek" && postac.klasa == "Mag") {
 					iv2.setImage(czlmag);
 					postac.setHp(60);
 					postac.setMana(30);
+					root.getChildren().add(dalej);
 				} else if (postac.rasa == "Elf" && postac.klasa == "Wojownik") {
 					iv2.setImage(elfwoj);
 					postac.setAtak(10);
 					postac.setSzybkosc(7);
+					root.getChildren().add(dalej);
 				} else if (postac.rasa == "Elf" && postac.klasa == "Łucznik") {
 					iv2.setImage(elflucz);
 					postac.setSzybkosc(8);
+					root.getChildren().add(dalej);
 				} else if (postac.rasa == "Elf" && postac.klasa == "Mag") {
 					iv2.setImage(elfmag);
 					postac.setMana(23);
 					postac.setSzybkosc(7);
+					root.getChildren().add(dalej);
 				}
 
 				textarea3.setText(postac.rasa + " " + postac.klasa + " to idealny wybór..\nAtak :"
@@ -502,6 +488,26 @@ public class OknoKreatora extends Ramka {
 				}
 			}
 		});
+		powrot.setOnAction(new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(ActionEvent event) {
+				try {
+					
+					OknoKreatora kr = new OknoKreatora();
+					try {
+						kr.start(primaryStage);
+					} catch (Exception e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		});
 
 		root.getChildren().add(iv1);
 		root.getChildren().add(text1);
@@ -510,6 +516,7 @@ public class OknoKreatora extends Ramka {
 		root.getChildren().add(text4);
 		root.getChildren().add(textarea1);
 		root.getChildren().add(powrot);
+		root.getChildren().add(iv2);
 
 		root.getChildren().add(cb1);
 		root.getChildren().add(cb2);
@@ -1022,7 +1029,7 @@ public class OknoKreatora extends Ramka {
 		textarea3.setLayoutY(90);
 		textarea3.setPrefWidth(340);
 		textarea3.setPrefHeight(380);
-		textarea3.setStyle("-fx-font: 30 verdana; -fx-base: #b6e7c9;");
+		textarea3.setStyle("-fx-font: 22 verdana; -fx-base: #b6e7c9;");
 		textarea3.setText("Imię:  \t"+ postac.nazwa + "\nRasa:  \t" + postac.rasa + "\nKlasa:  \t" + postac.klasa + "\nPrzedmiot:" + przedmiot.rodzaj + "\nNazwa:\t"
 				+ przedmiot.nazwa);
 
@@ -1039,7 +1046,99 @@ public class OknoKreatora extends Ramka {
 		primaryStage.show();
 			
 	}
-
+	static void wybor(Przedmiot przedmiot, TextArea textarea3, ImageView iv2)
+	{
+				if(przedmiot.getNazwa()=="Wampirze Gardło")
+					{
+					textarea3.setText("Z każdą kolejna kroplą, stajesz się silniejszy...");
+					iv2.setImage(miecz1);
+					}
+					else if(przedmiot.getNazwa()=="Zapomniane Ostrze")
+					{
+					textarea3.setText("Nikt nie pamięta jego historii, ale każdy może poznać jego siłę...");
+					iv2.setImage(miecz2);
+					}
+					else if(przedmiot.getNazwa()=="Promień Nadziei")
+					{
+					textarea3.setText("Tym razem to ty umrzesz ostatni...");
+					iv2.setImage(miecz3);
+					}
+					else if(przedmiot.getNazwa()=="Młot Grabarza")
+					{
+					textarea3.setText("Następny cios jest gwoździem do trumny...");
+					iv2.setImage(topor1);
+					}
+					else if(przedmiot.getNazwa()=="Sekator")
+					{
+					textarea3.setText("Nie daj się zwieść...");
+					iv2.setImage(topor2);
+					}
+					else if(przedmiot.getNazwa()=="Bukiet Strachu")
+					{
+					textarea3.setText("Dobry prezent na każdą okazję..");
+					iv2.setImage(topor3);
+					}
+					else if(przedmiot.getNazwa()=="Ostatnie Życzenie")
+					{
+					textarea3.setText("Wypowiedz szybko...");
+					iv2.setImage(luk1);
+					}
+					else if(przedmiot.getNazwa()=="Mantra")
+					{
+					textarea3.setText("Powtarzaj do skutku...");
+					iv2.setImage(luk2);
+					}
+					else if(przedmiot.getNazwa()=="Czwarty Muszkieter")
+					{
+					textarea3.setText("Jednym na wszystkich...");
+					iv2.setImage(luk3);
+					}
+					else if(przedmiot.getNazwa()=="Gałąź Wisielca")
+					{
+					textarea3.setText("Podobno okrywa ją klątwa...");
+					iv2.setImage(kusza1);
+					}
+					else if(przedmiot.getNazwa()=="Magiczne Ustrojstwo")
+					{
+					textarea3.setText("Obsługa do końca nie jest bezpieczna...");
+					iv2.setImage(kusza2);
+					}
+					else if(przedmiot.getNazwa()=="Dar Losu")
+					{
+					textarea3.setText("Kto nie strzela, ten nie trafia...");
+					iv2.setImage(kusza3);
+					}
+					else if(przedmiot.getNazwa()=="Pierwsza Dama")
+					{
+					textarea3.setText("Jej życzenie może stać się rozkazem...");
+					iv2.setImage(wend1);
+					}
+					else if(przedmiot.getNazwa()=="Wdowa")
+					{
+					textarea3.setText("Bo to zła kobieta była...");
+					iv2.setImage(wend2);
+					}
+					else if(przedmiot.getNazwa()=="Morowa Dziewica")
+					{
+					textarea3.setText("Od powietrza, głodu, ognia i wojny...");
+					iv2.setImage(wend3);
+					}
+					else if(przedmiot.getNazwa()=="Konar Potencjału")
+					{
+					textarea3.setText("Legenda głosi, że kiedyś zapłonie...");
+					iv2.setImage(kostur1);
+					}
+					else if(przedmiot.getNazwa()=="Kostur Zaparcia")
+					{
+					textarea3.setText("W kupie siła...");
+					iv2.setImage(kostur2);
+					}
+					else if(przedmiot.getNazwa()=="Noga Enta")
+					{
+					textarea3.setText("Szybciej! Szybciej!");
+					iv2.setImage(kostur3);
+					}
+		}
 	static void WyborBroni(Postac postac, Stage primaryStage) {
 		Pane root = new Pane();
 		Scene scene = new Scene(root, 800, 600);
@@ -1097,6 +1196,7 @@ public class OknoKreatora extends Ramka {
 			}
 		});
 
+		ImageView iv2 = new ImageView();
 		Button dalej = new Button();
 		dalej.setText("Dalej");
 		dalej.setLayoutX(270);
@@ -1125,7 +1225,31 @@ public class OknoKreatora extends Ramka {
 			cb1.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
 				public void changed(ObservableValue ov, Number value, Number new_value) {
 					// Label.setText(postac.rasy[new_value.intValue()]);
-					przedmiot.rodzaj = przedmiot.broniewojownik[new_value.intValue()];
+					przedmiot.rodzaj = przedmiot.broniewojownik[new_value.intValue()];ChoiceBox cb2 = null;
+					if (przedmiot.rodzaj == "Miecz") {
+						cb2 = new ChoiceBox(FXCollections.observableArrayList("Wampirze Gardło", "Zapomniane Ostrze",
+								"Promień Nadziei"));
+						cb2.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+							public void changed(ObservableValue ov, Number value, Number new_value) {
+								przedmiot.setNazwa(przedmiot.miecze[new_value.intValue()]);
+								wybor(przedmiot, textarea3, iv2);
+							}
+						});
+					} else {
+						cb2 = new ChoiceBox(
+								FXCollections.observableArrayList("Młot Grabarze", "Sekator", "Bukiet Strachu"));
+						cb2.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+							public void changed(ObservableValue ov, Number value, Number new_value) {
+								przedmiot.setNazwa(przedmiot.topory[new_value.intValue()]);
+								wybor(przedmiot, textarea3, iv2);
+							}
+						});
+					}
+					root.getChildren().add(cb2);
+					cb2.setLayoutX(150);
+					cb2.setLayoutY(230);
+					cb2.setPrefWidth(200);
+					cb2.setPrefHeight(40);
 				}
 			});
 		} else if (postac.klasa == "Łucznik") {
@@ -1133,7 +1257,31 @@ public class OknoKreatora extends Ramka {
 			cb1.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
 				public void changed(ObservableValue ov, Number value, Number new_value) {
 					// Label.setText(postac.rasy[new_value.intValue()]);
-					przedmiot.rodzaj = przedmiot.bronielucznik[new_value.intValue()];
+					przedmiot.rodzaj = przedmiot.bronielucznik[new_value.intValue()];ChoiceBox cb2 = null;
+					if (przedmiot.rodzaj == "Łuk") {
+						cb2 = new ChoiceBox(
+								FXCollections.observableArrayList("Ostatnie Życzenie", "Mantra", "Czwarty Muszkieter"));
+						cb2.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+							public void changed(ObservableValue ov, Number value, Number new_value) {
+								przedmiot.setNazwa(przedmiot.luki[new_value.intValue()]);
+								wybor(przedmiot, textarea3, iv2);
+							}
+						});
+					} else {
+						cb2 = new ChoiceBox(
+								FXCollections.observableArrayList("Gałąź Wisielca", "Magiczne Ustrojstwo", "Dar Losu"));
+						cb2.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+							public void changed(ObservableValue ov, Number value, Number new_value) {
+								przedmiot.setNazwa(przedmiot.kusze[new_value.intValue()]);
+								wybor(przedmiot, textarea3, iv2);
+							}
+						});
+					}					
+					root.getChildren().add(cb2);
+					cb2.setLayoutX(150);
+					cb2.setLayoutY(230);
+					cb2.setPrefWidth(200);
+					cb2.setPrefHeight(40);
 				}
 			});
 		} else {
@@ -1141,7 +1289,34 @@ public class OknoKreatora extends Ramka {
 			cb1.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
 				public void changed(ObservableValue ov, Number value, Number new_value) {
 					// Label.setText(postac.rasy[new_value.intValue()]);
-					przedmiot.rodzaj = przedmiot.broniemag[new_value.intValue()];
+					przedmiot.rodzaj = przedmiot.broniemag[new_value.intValue()];ChoiceBox cb2 = null;
+					if (przedmiot.rodzaj == "Kostur") {
+						cb2 = new ChoiceBox(
+								FXCollections.observableArrayList("Pierwsza Dama", "Wdowa", "Morowa Dziewica"));
+						cb2.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+							public void changed(ObservableValue ov, Number value, Number new_value) {
+								przedmiot.setNazwa(przedmiot.kostury[new_value.intValue()]);
+								wybor(przedmiot, textarea3, iv2);
+							}
+						});
+					} else
+					{
+						cb2 = new ChoiceBox(
+								FXCollections.observableArrayList("Konar Potencjału", "Kostur Zaparcia", "Noga Enta"));
+						cb2.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+							public void changed(ObservableValue ov, Number value, Number new_value) {
+								przedmiot.setNazwa(przedmiot.laski[new_value.intValue()]);
+								wybor(przedmiot, textarea3, iv2);
+							}
+						});
+					}
+
+					
+					root.getChildren().add(cb2);
+					cb2.setLayoutX(150);
+					cb2.setLayoutY(230);
+					cb2.setPrefWidth(200);
+					cb2.setPrefHeight(40);
 				}
 			});
 		}
@@ -1151,142 +1326,8 @@ public class OknoKreatora extends Ramka {
 		cb1.setPrefWidth(200);
 		cb1.setPrefHeight(40);
 
-		Image miecz1 = new Image("img/miecz1.png");
-		Image miecz2 = new Image("img/miecz2.png");
-		Image miecz3 = new Image("img/miecz3.png");
+
 		
-		Image topor1 = new Image("img/topor1.png");
-		Image topor2 = new Image("img/topor2.png");
-		Image topor3 = new Image("img/topor3.png");
-		
-		Image luk1 = new Image("img/łuk1.png");
-		Image luk2 = new Image("img/łuk2.png");
-		Image luk3 = new Image("img/łuk3.png");
-
-		Image kusza1 = new Image("img/łuk4.png");
-		Image kusza2 = new Image("img/łuk5.png");
-		Image kusza3 = new Image("img/łuk6.png");
-
-		Image kostur1 = new Image("img/kostur1.png");
-		Image kostur2 = new Image("img/kostur2.png");
-		Image kostur3 = new Image("img/kostur3.png");
-
-		Image wend1 = new Image("img/wend1.png");
-		Image wend2= new Image("img/wend2.png");
-		Image wend3 = new Image("img/wend3.png");
-
-		ImageView iv2 = new ImageView();
-
-		zatwierdz.setOnAction(new EventHandler<ActionEvent>() {
-
-			@Override
-			public void handle(ActionEvent event) {
-				try {
-					if(przedmiot.getNazwa()=="Wampirze Gardło")
-						{
-						textarea3.setText("Z każdą kolejna kroplą, stajesz się silniejszy...");
-						iv2.setImage(miecz1);
-						}
-						else if(przedmiot.getNazwa()=="Zapomniane Ostrze")
-						{
-						textarea3.setText("Nikt nie pamięta jego historii, ale każdy może poznać jego siłę...");
-						iv2.setImage(miecz2);
-						}
-						else if(przedmiot.getNazwa()=="Promień Nadziei")
-						{
-						textarea3.setText("Tym razem to ty umrzesz ostatni...");
-						iv2.setImage(miecz3);
-						}
-						else if(przedmiot.getNazwa()=="Młot Grabarza")
-						{
-						textarea3.setText("Następny cios jest gwoździem do trumny...");
-						iv2.setImage(topor1);
-						}
-						else if(przedmiot.getNazwa()=="Sekator")
-						{
-						textarea3.setText("Nie daj się zwieść...");
-						iv2.setImage(topor2);
-						}
-						else if(przedmiot.getNazwa()=="Bukiet Strachu")
-						{
-						textarea3.setText("Dobry prezent na każdą okazję..");
-						iv2.setImage(topor3);
-						}
-						else if(przedmiot.getNazwa()=="Ostatnie Życzenie")
-						{
-						textarea3.setText("Wypowiedz szybko...");
-						iv2.setImage(luk1);
-						}
-						else if(przedmiot.getNazwa()=="Mantra")
-						{
-						textarea3.setText("Powtarzaj do skutku...");
-						iv2.setImage(luk2);
-						}
-						else if(przedmiot.getNazwa()=="Czwarty Muszkieter")
-						{
-						textarea3.setText("Jednym na wszystkich...");
-						iv2.setImage(luk3);
-						}
-						else if(przedmiot.getNazwa()=="Gałąź Wisielca")
-						{
-						textarea3.setText("Podobno okrywa ją klątwa...");
-						iv2.setImage(kusza1);
-						}
-						else if(przedmiot.getNazwa()=="Magiczne Ustrojstwo")
-						{
-						textarea3.setText("Obsługa do końca nie jest bezpieczna...");
-						iv2.setImage(kusza2);
-						}
-						else if(przedmiot.getNazwa()=="Dar Losu")
-						{
-						textarea3.setText("Kto nie strzela, ten nie trafia...");
-						iv2.setImage(kusza3);
-						}
-						else if(przedmiot.getNazwa()=="Pierwsza Dama")
-						{
-						textarea3.setText("Jej życzenie może stać się rozkazem...");
-						iv2.setImage(wend1);
-						}
-						else if(przedmiot.getNazwa()=="Wdowa")
-						{
-						textarea3.setText("Bo to zła kobieta była...");
-						iv2.setImage(wend2);
-						}
-						else if(przedmiot.getNazwa()=="Morowa Dziewica")
-						{
-						textarea3.setText("Od powietrza, głodu, ognia i wojny...");
-						iv2.setImage(wend3);
-						}
-						else if(przedmiot.getNazwa()=="Konar Potencjału")
-						{
-						textarea3.setText("Legenda głosi, że kiedyś zapłonie...");
-						iv2.setImage(kostur1);
-						}
-						else if(przedmiot.getNazwa()=="Kostur Zaparcia")
-						{
-						textarea3.setText("W kupie siła...");
-						iv2.setImage(kostur2);
-						}
-						else if(przedmiot.getNazwa()=="Noga Enta")
-						{
-						textarea3.setText("Szybciej! Szybciej!");
-						iv2.setImage(kostur3);
-						}
-					
-					iv2.setPreserveRatio(true);
-					iv2.setSmooth(true);
-					iv2.setFitHeight(400);
-					iv2.setFitWidth(100);
-					iv2.setLayoutX(550);
-					iv2.setLayoutY(100);
-					root.getChildren().add(iv2);
-
-				} catch (Exception e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			}
-		});
 
 		dalej.setOnAction(new EventHandler<ActionEvent>() {
 
@@ -1305,6 +1346,13 @@ public class OknoKreatora extends Ramka {
 		
 		
 
+		
+		iv2.setPreserveRatio(true);
+		iv2.setSmooth(true);
+		iv2.setFitHeight(400);
+		iv2.setFitWidth(100);
+		iv2.setLayoutX(550);
+		iv2.setLayoutY(100);
 		root.getChildren().add(iv1);
 		root.getChildren().add(text1);
 		root.getChildren().add(text3);
@@ -1312,87 +1360,14 @@ public class OknoKreatora extends Ramka {
 		root.getChildren().add(textarea3);
 		root.getChildren().add(powrot);
 		root.getChildren().add(cb1);
-		root.getChildren().add(zatwierdz1);
+		root.getChildren().add(iv2);
 		root.getChildren().add(dalej);
-
-		zatwierdz1.setOnAction(new EventHandler<ActionEvent>() {
-
-			@Override
-			public void handle(ActionEvent event) {
-				try {
-
-					ChoiceBox cb2 = null;
-					if (przedmiot.rodzaj == "Miecz") {
-						cb2 = new ChoiceBox(FXCollections.observableArrayList("Wampirze Gardło", "Zapomniane Ostrze",
-								"Promień Nadziei"));
-						cb2.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
-							public void changed(ObservableValue ov, Number value, Number new_value) {
-								przedmiot.setNazwa(przedmiot.miecze[new_value.intValue()]);
-							}
-						});
-					} else if (przedmiot.rodzaj == "Topór") {
-						cb2 = new ChoiceBox(
-								FXCollections.observableArrayList("Młot Grabarze", "Sekator", "Bukiet Strachu"));
-						cb2.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
-							public void changed(ObservableValue ov, Number value, Number new_value) {
-								przedmiot.setNazwa(przedmiot.topory[new_value.intValue()]);
-							}
-						});
-					} else if (przedmiot.rodzaj == "Łuk") {
-						cb2 = new ChoiceBox(
-								FXCollections.observableArrayList("Ostatnie Życzenie", "Mantra", "Czwarty Muszkieter"));
-						cb2.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
-							public void changed(ObservableValue ov, Number value, Number new_value) {
-								przedmiot.setNazwa(przedmiot.luki[new_value.intValue()]);
-							}
-						});
-					} else if (przedmiot.rodzaj == "Kusza") {
-						cb2 = new ChoiceBox(
-								FXCollections.observableArrayList("Gałąź Wisielca", "Magiczne Ustrojstwo", "Dar Losu"));
-						cb2.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
-							public void changed(ObservableValue ov, Number value, Number new_value) {
-								przedmiot.setNazwa(przedmiot.kusze[new_value.intValue()]);
-							}
-						});
-					} else if (przedmiot.rodzaj == "Kostur") {
-						cb2 = new ChoiceBox(
-								FXCollections.observableArrayList("Pierwsza Dama", "Wdowa", "Morowa Dziewica"));
-						cb2.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
-							public void changed(ObservableValue ov, Number value, Number new_value) {
-								przedmiot.setNazwa(przedmiot.kostury[new_value.intValue()]);
-							}
-						});
-					} else // if(przedmiot.rodzaj=="Laska")
-					{
-						cb2 = new ChoiceBox(
-								FXCollections.observableArrayList("Konar Potencjału", "Kostur Zaparcia", "Noga Enta"));
-						cb2.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
-							public void changed(ObservableValue ov, Number value, Number new_value) {
-								przedmiot.setNazwa(przedmiot.laski[new_value.intValue()]);
-							}
-						});
-					}
-
-					
-					root.getChildren().add(cb2);
-					cb2.setLayoutX(150);
-					cb2.setLayoutY(230);
-					cb2.setPrefWidth(200);
-					cb2.setPrefHeight(40);
-					root.getChildren().add(zatwierdz);
-
-				} catch (Exception e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			}
-		});
 
 		primaryStage.setTitle("Demigoods Strife");
 		primaryStage.setScene(scene);
 		primaryStage.show();
 	}
-
+	
 	public static void main(String[] args) {
 		Application.launch(args);
 	}
