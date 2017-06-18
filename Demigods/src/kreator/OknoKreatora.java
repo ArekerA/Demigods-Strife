@@ -28,6 +28,13 @@ public class OknoKreatora extends Ramka {
 	
 	static ArrayList<Postac> gracz1 = new ArrayList<Postac>();
 	static ArrayList<Postac> gracz2 = new ArrayList<Postac>();
+
+	int choice11 = 0;
+	int choice12 = 0;
+	int choice13 = 0;
+	int choice21 = 0;
+	int choice22 = 0;
+	int choice23 = 0;
 	@Override
 	public void start(Stage primaryStage) {
 		
@@ -35,27 +42,8 @@ public class OknoKreatora extends Ramka {
 
 		Image Obraz = new Image("img/tło.png");
 
-		Button btn1 = new Button();
-		Button btn2 = new Button();
-		Button btn3 = new Button();
-		Button btn4 = new Button();
-		Button btn5 = new Button();
-		Button btn6 = new Button();
-		Button btn7 = new Button();
-		Button btn8 = new Button();
-		Button btn9 = new Button();
 		Button btn10 = new Button();
 		Button btn11 = new Button();
-		Button btn12 = new Button();
-		Button btn13 = new Button();
-		Button btn14 = new Button();
-		Button btn15 = new Button();
-		Button btn16 = new Button();
-		Button btn17 = new Button();
-		Button btn18 = new Button();
-		Button btn19 = new Button();
-		Button btn20 = new Button();
-		Button btn21 = new Button();
 
 		Text text1 = new Text();
 		Text text2 = new Text();
@@ -84,12 +72,7 @@ public class OknoKreatora extends Ramka {
 		text4.setLayoutY(280);
 		text4.setStyle("-fx-font: 25 arial; -fx-base: #b6e7c9;");
 
-		btn1.setText("Losowa Drużyna");
-		btn1.setLayoutX(20);
-		btn1.setLayoutY(50);
-		btn1.setPrefWidth(200);
-		btn1.setPrefHeight(50);
-		btn1.setOnAction(new EventHandler<ActionEvent>() {
+		/*btn1.setOnAction(new EventHandler<ActionEvent>() {
 
 			@Override
 			public void handle(ActionEvent event) {
@@ -102,107 +85,20 @@ public class OknoKreatora extends Ramka {
 					e.printStackTrace();
 				}
 			}
-		});
-		btn2.setText("Wczytaj Drużynę");
-		btn2.setLayoutX(20);
-		btn2.setLayoutY(120);
-		btn2.setPrefWidth(200);
-		btn2.setPrefHeight(50);
-		btn3.setText("Zapisz Drużynę");
-		btn3.setLayoutX(20);
-		btn3.setLayoutY(190);
-		btn3.setPrefWidth(200);
-		btn3.setPrefHeight(50);
-		btn4.setText("Losowa Drużyna");
-		btn4.setLayoutX(20);
-		btn4.setLayoutY(310);
-		btn4.setPrefWidth(200);
-		btn4.setPrefHeight(50);
-		btn5.setText("Wczytaj Drużynę");
-		btn5.setLayoutX(20);
-		btn5.setLayoutY(380);
-		btn5.setPrefWidth(200);
-		btn5.setPrefHeight(50);
-		btn6.setText("Zapisz Drużynę");
-		btn6.setLayoutX(20);
-		btn6.setLayoutY(450);
-		btn6.setPrefWidth(200);
-		btn6.setPrefHeight(50);
-		btn7.setText("Powrót");
-		btn7.setLayoutX(20);
-		btn7.setLayoutY(530);
-		btn7.setPrefWidth(150);
-		btn7.setPrefHeight(35);
-		btn8.setText("Graj...");
-		btn8.setLayoutX(630);
-		btn8.setLayoutY(530);
-		btn8.setPrefWidth(150);
-		btn8.setPrefHeight(35);
-		btn9.setText("Losuj Postać");
-		btn9.setLayoutX(550);
-		btn9.setLayoutY(60);
-		btn9.setPrefWidth(90);
-		btn9.setPrefHeight(40);
+		});*/
 		btn10.setText("Edytuj Postać");
 		btn10.setLayoutX(660);
 		btn10.setLayoutY(60);
 		btn10.setPrefWidth(90);
 		btn10.setPrefHeight(40);
-		btn11.setText("Losuj Postać");
-		btn11.setLayoutX(550);
-		btn11.setLayoutY(200);
-		btn11.setPrefWidth(90);
-		btn11.setPrefHeight(40);
-		btn12.setText("Edytuj Postać");
-		btn12.setLayoutX(660);
-		btn12.setLayoutY(200);
-		btn12.setPrefWidth(90);
-		btn12.setPrefHeight(40);
-		btn13.setText("Losuj Postać");
-		btn13.setLayoutX(550);
-		btn13.setLayoutY(130);
-		btn13.setPrefWidth(90);
-		btn13.setPrefHeight(40);
-		btn14.setText("Edytuj Postać");
-		btn14.setLayoutX(660);
-		btn14.setLayoutY(130);
-		btn14.setPrefWidth(90);
-		btn14.setPrefHeight(40);
-		btn15.setText("Losuj Postać");
-		btn15.setLayoutX(550);
-		btn15.setLayoutY(320);
-		btn15.setPrefWidth(90);
-		btn15.setPrefHeight(40);
-		btn16.setText("Edytuj Postać");
-		btn16.setLayoutX(660);
-		btn16.setLayoutY(320);
-		btn16.setPrefWidth(90);
-		btn16.setPrefHeight(40);
-		btn17.setText("Losuj Postać");
-		btn17.setLayoutX(550);
-		btn17.setLayoutY(460);
-		btn17.setPrefWidth(90);
-		btn17.setPrefHeight(40);
-		btn19.setText("Edytuj Postać");
-		btn19.setLayoutX(660);
-		btn19.setLayoutY(460);
-		btn19.setPrefWidth(90);
-		btn19.setPrefHeight(40);
-		btn20.setText("Losuj Postać");
-		btn20.setLayoutX(550);
-		btn20.setLayoutY(390);
-		btn20.setPrefWidth(90);
-		btn20.setPrefHeight(40);
-		btn21.setText("Edytuj Postać");
-		btn21.setLayoutX(660);
-		btn21.setLayoutY(390);
-		btn21.setPrefWidth(90);
-		btn21.setPrefHeight(40);
+		btn11.setText("Graj");
+		btn11.setLayoutX(70);
+		btn11.setLayoutY(480);
+		btn11.setPrefWidth(120);
+		btn11.setPrefHeight(50);
 
 		text1.setText("Gracz 1:");
 		text2.setText("Gracz 2:");
-		text3.setText("Nazwa Drużyny:");
-		text4.setText("Nazwa Drużyny:");
 		textarea1.setLayoutX(550);
 		textarea1.setLayoutY(0);
 		textarea1.setPrefWidth(200);
@@ -216,106 +112,72 @@ public class OknoKreatora extends Ramka {
 		iv1.setImage(Obraz);
 		iv1.setPreserveRatio(true);
 		iv1.setSmooth(true);
+		iv1.setFitWidth(600);
 
 		HBox box = new HBox();
 		box.getChildren().add(iv1);
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-			
-		
-		
-		ChoiceBox cb1 = new ChoiceBox(FXCollections.observableArrayList(Dane.odczyt()));
-		cb1.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+		ChoiceBox cb11 = new ChoiceBox(FXCollections.observableArrayList(Dane.odczyt()));
+		cb11.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
 			public void changed(ObservableValue ov, Number value, Number new_value) {
-				gracz1.add(Dane.odczytp(new_value.intValue()));				
+				choice11 = new_value.intValue();				
 			}
 		});
+		cb11.setLayoutX(30);
+		cb11.setLayoutY(40);
+		cb11.setPrefWidth(200);
+		cb11.setPrefHeight(40);
+		ChoiceBox cb12 = new ChoiceBox(FXCollections.observableArrayList(Dane.odczyt()));
+		cb12.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+			public void changed(ObservableValue ov, Number value, Number new_value) {
+				choice12 = new_value.intValue();				
+			}
+		});
+		cb12.setLayoutX(30);
+		cb12.setLayoutY(100);
+		cb12.setPrefWidth(200);
+		cb12.setPrefHeight(40);
+		ChoiceBox cb13 = new ChoiceBox(FXCollections.observableArrayList(Dane.odczyt()));
+		cb13.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+			public void changed(ObservableValue ov, Number value, Number new_value) {
+				choice13 = new_value.intValue();				
+			}
+		});
+		cb13.setLayoutX(30);
+		cb13.setLayoutY(160);
+		cb13.setPrefWidth(200);
+		cb13.setPrefHeight(40);
+		ChoiceBox cb21 = new ChoiceBox(FXCollections.observableArrayList(Dane.odczyt()));
+		cb21.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+			public void changed(ObservableValue ov, Number value, Number new_value) {
+				choice21 = new_value.intValue();				
+			}
+		});
+		cb21.setLayoutX(30);
+		cb21.setLayoutY(300);
+		cb21.setPrefWidth(200);
+		cb21.setPrefHeight(40);
+		ChoiceBox cb22 = new ChoiceBox(FXCollections.observableArrayList(Dane.odczyt()));
+		cb12.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+			public void changed(ObservableValue ov, Number value, Number new_value) {
+				choice22 = new_value.intValue();				
+			}
+		});
+		cb22.setLayoutX(30);
+		cb22.setLayoutY(360);
+		cb22.setPrefWidth(200);
+		cb22.setPrefHeight(40);
+		ChoiceBox cb23 = new ChoiceBox(FXCollections.observableArrayList(Dane.odczyt()));
+		cb13.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+			public void changed(ObservableValue ov, Number value, Number new_value) {
+				choice23 = new_value.intValue();				
+			}
+		});
+		cb23.setLayoutX(30);
+		cb23.setLayoutY(420);
+		cb23.setPrefWidth(200);
+		cb23.setPrefHeight(40);
+		
 
-		cb1.setLayoutX(150);
-		cb1.setLayoutY(160);
-		cb1.setPrefWidth(200);
-		cb1.setPrefHeight(40);
-		
-		
-		
-		
-
-		Pane root = new Pane();
-		
-		root.getChildren().add(box);
-		root.getChildren().add(btn1);
-		root.getChildren().add(text1);
-		root.getChildren().add(btn2);
-		root.getChildren().add(btn3);
-		root.getChildren().add(btn4);
-		root.getChildren().add(text2);
-		root.getChildren().add(btn5);
-
-		root.getChildren().add(btn6);
-		root.getChildren().add(btn7);
-		root.getChildren().add(btn8);
-		root.getChildren().add(btn9);
-		root.getChildren().add(btn10);
-		root.getChildren().add(btn11);
-		root.getChildren().add(btn12);
-		root.getChildren().add(btn13);
-		root.getChildren().add(btn14);
-		root.getChildren().add(btn15);
-		root.getChildren().add(btn16);
-		root.getChildren().add(btn17);
-		root.getChildren().add(btn18);
-		root.getChildren().add(btn19);
-		root.getChildren().add(btn20);
-		root.getChildren().add(btn21);
-		root.getChildren().add(text3);
-		root.getChildren().add(text4);
-		root.getChildren().add(textarea1);
-		root.getChildren().add(textarea2);
-		root.getChildren().add(rect1);
-		root.getChildren().add(rect2);
-		root.getChildren().add(cb1);
-		
-	
-
-		Scene scene = new Scene(root, 800, 600);
-
-		primaryStage.setTitle("Demigoods Strife");
-		primaryStage.setScene(scene);
-		primaryStage.show();
 		btn10.setOnAction(new EventHandler<ActionEvent>() {
 
 			@Override
@@ -328,6 +190,66 @@ public class OknoKreatora extends Ramka {
 				}
 			}
 		});
+		
+
+		btn10.setOnAction(new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(ActionEvent event) {
+				dodaj1(choice11);
+				dodaj1(choice12);
+				dodaj1(choice13);
+				dodaj2(choice21);
+				dodaj2(choice22);
+				dodaj2(choice23);
+				
+				FrameWalka walka = new FrameWalka(gracz1,gracz2);
+				try {
+					walka.start(primaryStage);
+				} catch (Exception e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+		});
+		
+		
+
+		Pane root = new Pane();
+		
+		root.getChildren().add(box);
+		root.getChildren().add(text1);
+		root.getChildren().add(text2);
+		root.getChildren().add(btn10);
+		root.getChildren().add(btn11);
+		root.getChildren().add(text3);
+		root.getChildren().add(text4);
+		root.getChildren().add(textarea1);
+		root.getChildren().add(textarea2);
+		root.getChildren().add(rect1);
+		root.getChildren().add(rect2);
+		root.getChildren().add(cb11);
+		root.getChildren().add(cb12);
+		root.getChildren().add(cb13);
+		root.getChildren().add(cb21);
+		root.getChildren().add(cb22);
+		root.getChildren().add(cb23);
+		
+	
+
+		Scene scene = new Scene(root, 800, 600);
+
+		primaryStage.setTitle("Demigoods Strife");
+		primaryStage.setScene(scene);
+		primaryStage.show();
+	}
+	void dodaj1(int i)
+	{
+		gracz1.add(Dane.odczytp(i));
+	}
+	void dodaj2(int i)
+	{
+		gracz2.add(Dane.odczytp(i));
 	}
 	
 	/*static void dodajp(Stage primaryStage) {

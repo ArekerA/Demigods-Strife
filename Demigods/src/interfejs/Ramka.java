@@ -1,6 +1,7 @@
 package interfejs;
 
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
@@ -17,23 +18,22 @@ public class Ramka extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		Button btn1 = new Button();
-		Button btn2 = new Button();
 		Button btn3 = new Button();
-		Image Obraz = new Image("img/tło.png");
-		btn1.setText("Stwórz postaci");
-		btn2.setText("Wybierz postaci");
+		Image Obraz = new Image("img/tlo1.png");
+		btn1.setText("Graj");
 		btn3.setText("Wyjdź");
 		btn3.setOnAction(new EventHandler<ActionEvent>() {
 
 			@Override
 			public void handle(ActionEvent event) {
-				 System.out.println("Goodbay World!");
+				 Platform.exit();
 			}
 		});
 		
 
 		ImageView iv1 = new ImageView();
 		iv1.setImage(Obraz);
+		iv1.setFitWidth(800);
 		iv1.setPreserveRatio(true);
 		iv1.setSmooth(true);
 		
@@ -45,22 +45,16 @@ public class Ramka extends Application {
 		Pane root = new Pane();
 		root.getChildren().add(box);
 		root.getChildren().add(btn1);
-		root.getChildren().add(btn2);
 		root.getChildren().add(btn3);
-		btn1.setLayoutX(250);
-		btn1.setLayoutY(100);
-		btn1.setPrefWidth(300);
-		btn1.setPrefHeight(80);
+		btn1.setLayoutX(300);
+		btn1.setLayoutY(280);
+		btn1.setPrefWidth(200);
+		btn1.setPrefHeight(60);
 		btn1.setStyle("-fx-font: 25 arial; -fx-base: #b6e7c9;");
-		btn2.setLayoutX(250);
-		btn2.setLayoutY(250);
-		btn2.setPrefWidth(300);
-		btn2.setPrefHeight(80);
-		btn2.setStyle("-fx-font: 25 arial; -fx-base: #b6e7c9;");
-		btn3.setLayoutX(250);
-		btn3.setLayoutY(400);
-		btn3.setPrefWidth(300);
-		btn3.setPrefHeight(80);
+		btn3.setLayoutX(300);
+		btn3.setLayoutY(360);
+		btn3.setPrefWidth(200);
+		btn3.setPrefHeight(60);
 		btn3.setStyle("-fx-font: 25 arial; -fx-base: #b6e7c9;");
 		btn1.setOnAction(new EventHandler<ActionEvent>() {
 
