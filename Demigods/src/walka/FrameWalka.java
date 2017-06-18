@@ -77,22 +77,26 @@ public class FrameWalka extends Application {
 				hex.setOnMouseClicked(new EventHandler<MouseEvent>(){
 					@Override
 					public void handle(MouseEvent event) {
-						Animacja1(aktywna, hex);
+						if(hex.dostepny)
+							Animacja1(aktywna, hex);
 					}
 				});
 				hexPane.getChildren().add(hex);
 			}
 		hexPane.setLayoutX(20);
 		hexPane.setLayoutY(80);
-		root.getChildren().add(hexPane);
 		gracz1.get(0).setPosX(0);
 		gracz1.get(0).setPosY(0);
 		gracz1.get(1).setPosX(-2);
 		gracz1.get(1).setPosY(5);
+		gracz1.get(2).setPosX(-2);
+		gracz1.get(2).setPosY(10);
 		gracz2.get(0).setPosX(14);
 		gracz2.get(0).setPosY(0);
 		gracz2.get(1).setPosX(11);
 		gracz2.get(1).setPosY(5);
+		gracz2.get(2).setPosX(5);
+		gracz2.get(2).setPosY(10);
 
 		for(int i = 0; i < poleWalki.size(); i++)
 		{
@@ -106,7 +110,7 @@ public class FrameWalka extends Application {
 			gracz1.get(i).setFitHeight(57);
 			gracz1.get(i).setLayoutX((int)(gracz1.get(i).getPosX()+gracz1.get(i).getPosY()/2)* 49 + (gracz1.get(i).getPosY() % 2) * 25);
 			gracz1.get(i).setLayoutY(gracz1.get(i).getPosY() * 42 - gracz1.get(i).getFitWidth()-20);
-			hexPane.getChildren().add(gracz1.get(i));
+			
 		}
 		for(int i = 0; i < gracz2.size(); i++)
 		{
@@ -114,10 +118,11 @@ public class FrameWalka extends Application {
 			gracz2.get(i).setScaleX(-1);
 			gracz2.get(i).setLayoutX((int)(gracz2.get(i).getPosX()+gracz2.get(i).getPosY()/2)* 49 + (gracz2.get(i).getPosY() % 2) * 25);
 			gracz2.get(i).setLayoutY(gracz2.get(i).getPosY() * 42 - gracz2.get(i).getFitWidth()-20);
-			hexPane.getChildren().add(gracz2.get(i));
+			
 		}
-		
-
+		hexPane.getChildren().addAll(gracz1);
+		hexPane.getChildren().addAll(gracz2);
+		root.getChildren().add(hexPane);
 		Aktywuj(gracz1.get(0).getPosX(), gracz1.get(0).getPosY(), gracz1.get(0).getSzybkosc());
 		Scene scene = new Scene(root, 800, 600);
 		// primaryStage.initStyle(StageStyle.UNDECORATED);

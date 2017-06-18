@@ -17,7 +17,7 @@ public final class Dane {
 	 static ArrayList<Postac> tab = new ArrayList();
      // dodanie elementu (obiektu) do listy
      public static void dodaj(Postac p){
-    odczyt();
+	 odczyt();
 	 tab.add(p);
     
      try {
@@ -78,22 +78,5 @@ public final class Dane {
     	{
     		System.out.println(tab.get(i));
     	}
-    }
-     
-    public static void main(String[] args)
-    {
-    	Postac pierwsza=new Postac();
-    	pierwsza.setNazwa("Janusz");
-    	pierwsza.setRasa("Ork");
-    	pierwsza.setKlasa("Wojownik");
-    	Postac druga=new Postac();
-    	druga.setNazwa("Jan");
-    	druga.setRasa("Człowiek");
-    	druga.setKlasa("Wojownik");
-    	dodaj(pierwsza);
-    	dodaj(druga);
-    	odczyt();
-    	PokazWszystkie(tab, tab.size());
-    	
     }
 }

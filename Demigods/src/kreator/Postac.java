@@ -13,9 +13,7 @@ import javafx.scene.image.ImageView;
 public class Postac extends ImageView implements Serializable {
 	@Override
 	public String toString() {
-		return "Postac [id=" + id + ", atak=" + atak + ", obrona=" + obrona + ", hp=" + hp + ", mana=" + mana
-				+ ", szybkosc=" + szybkosc + ", nazwa=" + nazwa + ", opis=" + opis +  ", rasa="
-				+ rasa + ", klasa=" + klasa + "]" + "\n";
+		return nazwa + " " + rasa + " " + klasa + "\n";
 	}
 
 	private static int maxId = 0;

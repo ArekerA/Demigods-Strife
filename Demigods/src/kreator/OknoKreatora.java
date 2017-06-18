@@ -97,11 +97,12 @@ public class OknoKreatora extends Ramka {
 		text4.setLayoutY(280);
 		text4.setStyle("-fx-font: 25 arial; -fx-base: #b6e7c9;");
 		
-		btn10.setText("Edytuj Postać");
-		btn10.setLayoutX(660);
+		btn10.setText("Stwórz i Graj");
+		btn10.setLayoutX(460);
 		btn10.setLayoutY(60);
-		btn10.setPrefWidth(90);
-		btn10.setPrefHeight(40);
+		btn10.setPrefWidth(290);
+		btn10.setPrefHeight(480);
+		btn10.setStyle("-fx-font: 30 verdana; -fx-base: #b6e7c9;");
 		btn11.setText("Graj");
 		btn11.setLayoutX(70);
 		btn11.setLayoutY(480);
@@ -168,7 +169,7 @@ public class OknoKreatora extends Ramka {
 		cb21.setPrefWidth(200);
 		cb21.setPrefHeight(40);
 		ChoiceBox cb22 = new ChoiceBox(FXCollections.observableArrayList(Dane.odczyt()));
-		cb12.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+		cb22.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
 			public void changed(ObservableValue ov, Number value, Number new_value) {
 				choice22 = new_value.intValue();				
 			}
@@ -178,7 +179,7 @@ public class OknoKreatora extends Ramka {
 		cb22.setPrefWidth(200);
 		cb22.setPrefHeight(40);
 		ChoiceBox cb23 = new ChoiceBox(FXCollections.observableArrayList(Dane.odczyt()));
-		cb13.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+		cb23.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
 			public void changed(ObservableValue ov, Number value, Number new_value) {
 				choice23 = new_value.intValue();				
 			}
@@ -233,12 +234,12 @@ public class OknoKreatora extends Ramka {
 		root.getChildren().add(text2);
 		root.getChildren().add(btn10);
 		root.getChildren().add(btn11);
-		root.getChildren().add(text3);
-		root.getChildren().add(text4);
-		root.getChildren().add(textarea1);
-		root.getChildren().add(textarea2);
-		root.getChildren().add(rect1);
-		root.getChildren().add(rect2);
+		//root.getChildren().add(text3);
+		//root.getChildren().add(text4);
+		//root.getChildren().add(textarea1);
+		//root.getChildren().add(textarea2);
+		//root.getChildren().add(rect1);
+		//root.getChildren().add(rect2);
 		root.getChildren().add(cb11);
 		root.getChildren().add(cb12);
 		root.getChildren().add(cb13);
@@ -583,20 +584,20 @@ public class OknoKreatora extends Ramka {
 			@Override
 			public void handle(ActionEvent event) {
 				try {
-					if (gracz1.size()<2)
+					if (gracz1.size()<3)
 					{
 						gracz1.add(postac);
 						Dane.dodaj(postac);
 						OknoKreatora.TworzeniePostaci(primaryStage);
 						
 					}
-						else if(gracz2.size()<2)
+					else if(gracz2.size()<3)
 					{
 						gracz2.add(postac);
 						Dane.dodaj(postac);
 						OknoKreatora.TworzeniePostaci(primaryStage);
 					}
-					else
+					else if (gracz1.size()>2 && gracz2.size()>2)
 					{
 					FrameWalka walka=new FrameWalka(gracz1, gracz2);
 					walka.start(primaryStage);
@@ -1065,7 +1066,7 @@ public class OknoKreatora extends Ramka {
 					}
 					else if(przedmiot.getNazwa()=="Młot Grabarza")
 					{
-					textarea3.setText("Następny cios jest gwoździem do trumny...");
+					textarea3.setText("Zapewnia niewidzialność...");
 					iv2.setImage(topor1);
 					}
 					else if(przedmiot.getNazwa()=="Sekator")
@@ -1237,7 +1238,7 @@ public class OknoKreatora extends Ramka {
 						});
 					} else {
 						cb2 = new ChoiceBox(
-								FXCollections.observableArrayList("Młot Grabarze", "Sekator", "Bukiet Strachu"));
+								FXCollections.observableArrayList("Młot Grabarza", "Sekator", "Bukiet Strachu"));
 						cb2.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
 							public void changed(ObservableValue ov, Number value, Number new_value) {
 								przedmiot.setNazwa(przedmiot.topory[new_value.intValue()]);

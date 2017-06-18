@@ -20,8 +20,8 @@ class Przedmiot {
     String[] topory={"Młot Grabarze", "Sekator", "Bukiet Strachu"};
     String[] luki={"Ostatnie Życzenie", "Mantra", "Czwarty Muszkieter"};
     String[] kusze={"Gałąź Wisielca", "Magiczne Ustrojstwo", "Dar Losu"};
-    String[] laski={"Pierwsza Dama", "Wdowa", "Morowa Dziewica"};
-    String[] kostury={"Konar Potencjału","Kostur Zaparcia", "Noga Enta"};
+    String[] kostury={"Pierwsza Dama", "Wdowa", "Morowa Dziewica"};
+    String[] laski={"Konar Potencjału","Kostur Zaparcia", "Noga Enta"};
     
 
     public Przedmiot()
