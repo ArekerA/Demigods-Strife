@@ -222,6 +222,9 @@ public class OknoKreatora extends Ramka {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
+				/**
+				 * Po dokonaniu wyboru gracz zostaje przeniesiony na pole walki
+				 */
 			}
 		});
 		
@@ -339,6 +342,9 @@ public class OknoKreatora extends Ramka {
 
 		HBox box = new HBox();
 		box.getChildren().add(iv1);
+		/**
+		 * Dodanie scieżek do odpowiednich grafik
+		 */
 		Image orkwoj = new Image("img/ork-woj.png");
 		Image orklucz = new Image("img/ork-strzelec.png");
 		Image orkmag = new Image("img/ork-mag.png");
@@ -348,6 +354,7 @@ public class OknoKreatora extends Ramka {
 		Image elfwoj = new Image("img/elf-woj.png");
 		Image elflucz = new Image("img/elf-strzelec.png");
 		Image elfmag = new Image("img/elf-mag.png");
+		
 
 		ImageView iv2 = new ImageView();
 		iv2.setPreserveRatio(true);
@@ -360,6 +367,9 @@ public class OknoKreatora extends Ramka {
 		cb1.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
 			public void changed(ObservableValue ov, Number value, Number new_value) {
 				postac.rasa = Postac.rasy[new_value.intValue()];
+				/**
+				 * Kontrola klas i ras
+				 */
 				if (postac.rasa == "Ork" && postac.klasa == "Wojownik") {
 					iv2.setImage(orkwoj);
 					postac.setAtak(13);
@@ -480,7 +490,9 @@ public class OknoKreatora extends Ramka {
 			@Override
 			public void handle(ActionEvent event) {
 				try {
-
+					/**
+					 * @param dalej przenosi nas do Okna z w którym wybieramy broń
+					 */
 					OknoKreatora.WyborBroni(postac, primaryStage);
 
 				} catch (Exception e) {
@@ -494,7 +506,9 @@ public class OknoKreatora extends Ramka {
 			@Override
 			public void handle(ActionEvent event) {
 				try {
-					
+					/**
+					 * @param powrot przenosi nas do poprzedniego okna
+					 */
 					OknoKreatora kr = new OknoKreatora();
 					try {
 						kr.start(primaryStage);
@@ -509,7 +523,9 @@ public class OknoKreatora extends Ramka {
 				}
 			}
 		});
-
+		/**
+		 * dodajemy poszczególne elementy
+		 */
 		root.getChildren().add(iv1);
 		root.getChildren().add(text1);
 		root.getChildren().add(text2);
@@ -684,7 +700,9 @@ public class OknoKreatora extends Ramka {
 		Image elfwend3 = new Image("img/elf-mag-wend3.png");
 
 
-
+		/**
+		 * kolejny mechanizm kontroli
+		 */
 	    if(postac.getRasa()=="Człowiek")
 			{
 				if(przedmiot.getNazwa()=="Wampirze Gardło")
