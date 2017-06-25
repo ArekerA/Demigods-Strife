@@ -3,6 +3,11 @@ package walka;
 import kreator.Umiejetnosc;
 import kreator.Postac;
 
+/**
+ * Interfejs niewykorzystany
+ * 
+ * @author Zespół
+ */
 public interface InterfejsPostaci {
     public void Ruch(Hex h);
     public void setPozycja(Hex h);

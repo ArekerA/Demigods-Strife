@@ -1,5 +1,9 @@
 package interfejs;
-
+/**
+ * Klasa niewykorzystana
+ * 
+ * @author Zespół
+ */
 class Tekst{
     private String tekst;
     private int x;

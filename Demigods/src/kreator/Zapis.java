@@ -1,5 +1,9 @@
 package kreator;
-
+/**
+ * Klasa niewykorzystana
+ * 
+ * @author Zespół
+ */
 public class Zapis{
  /* public static void zapis(Postac p) throws FileNotFoundException{
       PrintWriter zapis = new PrintWriter("Postaci.txt");

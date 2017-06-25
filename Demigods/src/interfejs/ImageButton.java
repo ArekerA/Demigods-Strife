@@ -1,5 +1,9 @@
 package interfejs;
-
+/**
+ * Klasa niewykorzystana
+ * 
+ * @author Zespół
+ */
 class ImageButton extends Button {
     private String obraz;
     private String obrazAktywny;

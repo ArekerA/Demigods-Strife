@@ -1,7 +1,11 @@
 package interfejs;
 
 import java.util.ArrayList;
-
+/**
+ * Klasa niewykorzystana
+ * 
+ * @author Zespół
+ */
 class Tabela{
     private ArrayList<ArrayList<String>> tekst = new ArrayList<ArrayList<String>>();
     private int x;

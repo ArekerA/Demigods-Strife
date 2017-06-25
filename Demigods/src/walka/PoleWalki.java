@@ -2,6 +2,11 @@ package walka;
 
 import java.util.ArrayList;
 
+/**
+ * Klasa niewykorzystana
+ * 
+ * @author Zespół
+ */
 class PoleWalki {
     private int[][] pole = new int[12][20];//+7
     private PostacWalcząca[] postacieGracz1;

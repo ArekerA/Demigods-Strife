@@ -3,6 +3,11 @@ package walka;
 import kreator.Postac;
 import kreator.Umiejetnosc;
 
+/**
+ * Klasa niewykorzystana
+ * 
+ * @author Zespół
+ */
 public class PostacWalcząca extends Postac {
     private int x;
     private int y;

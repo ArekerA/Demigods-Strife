@@ -1,5 +1,9 @@
 package kreator;
-
+/**
+ * Klasa niewykorzystana
+ * 
+ * @author Zespół
+ */
 
 public class Umiejetnosc {
     private String nazwa;

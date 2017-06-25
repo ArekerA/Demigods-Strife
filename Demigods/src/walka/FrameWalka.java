@@ -17,7 +17,11 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import kreator.Postac;
-
+/**
+ * Klasa będąca oknem walki dziedzicząca po javafx.application.Application;
+ * 
+ * @author Zespół
+ */
 public class FrameWalka extends Application {
 	ArrayList<Hex> poleWalki = new ArrayList<Hex>();
 	ArrayList<Postac> gracz1 = new ArrayList<Postac>();
@@ -45,6 +49,9 @@ public class FrameWalka extends Application {
 		this.gracz1 = gracz1;
 		this.gracz2 = gracz2;
 	}
+	/**
+	 * Funkcja zawiera układ elementów na ekranie
+	 */
 	public void start(Stage primaryStage) throws Exception {
 		Pane root = new Pane();
 		Pane hexPane = new Pane();
@@ -133,17 +140,8 @@ public class FrameWalka extends Application {
 		
 	}
 
-	public static void main(String[] args) {
-		Application.launch(args);
-	}
-
 	/**
-	 * Aktywuje hexy
-	 * 
-	 * @param int x pozycja x
-	 * @param int y pozycja y
-	 * @param int r zasięg
-	 * @return void
+	 * Resetuje aktywne hexy
 	 */
 	public void Reset()
 	{
@@ -167,6 +165,15 @@ public class FrameWalka extends Application {
 			}
 		}
 	}
+
+	/**
+	 * Aktywuje hexy
+	 * 
+	 * @param int x pozycja x
+	 * @param int y pozycja y
+	 * @param int r zasięg
+	 * @return void
+	 */
 	public void Aktywuj(int x, int y, int r)
 	{
 		Hex temp = null;
@@ -196,6 +203,14 @@ public class FrameWalka extends Application {
 		}
 		//animateUsingScaleTransition(temp);
 	}
+
+	/**
+	 * Animacja postaci (zwęrzanie)
+	 * 
+	 * @param Postac p Postać do animacji
+	 * @param Hex h Hex docelowy
+	 * @return void
+	 */
 	private void Animacja1(Postac p,Hex h) {
         ScaleTransition scaleTransition = new ScaleTransition(Duration.seconds(.5f), p);
         if(gracz)
@@ -221,6 +236,12 @@ public class FrameWalka extends Application {
             }
         });
     }
+	/**
+	 * Animacja postaci (rozszerzanie)
+	 * 
+	 * @param Postac p Postać do animacji
+	 * @return void
+	 */
 	private void Animacja2(Postac p) {
         ScaleTransition scaleTransition = new ScaleTransition(Duration.seconds(.5f), p);
         scaleTransition.setFromX(0);

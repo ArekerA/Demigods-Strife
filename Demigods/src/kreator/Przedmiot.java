@@ -1,6 +1,10 @@
 package kreator;
 
-
+/**
+ * Klasa niewykorzystana;
+ * 
+ * @author Zespół
+ */
 class Przedmiot {
     String nazwa;
     private String opis;
@@ -23,7 +27,6 @@ class Przedmiot {
     String[] kostury={"Pierwsza Dama", "Wdowa", "Morowa Dziewica"};
     String[] laski={"Konar Potencjału","Kostur Zaparcia", "Noga Enta"};
     
-
     public Przedmiot()
     {
         

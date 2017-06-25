@@ -24,6 +24,11 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import walka.FrameWalka;
 
+/**
+ * Klasa będąca oknem kreatora dziedzicząca po javafx.application.Application;
+ * 
+ * @author Zespół
+ */
 public class OknoKreatora extends Ramka {
 	
 	static ArrayList<Postac> gracz1 = new ArrayList<Postac>();
@@ -60,6 +65,9 @@ public class OknoKreatora extends Ramka {
 	static Image wend1 = new Image("img/wend1.png");
 	static Image wend2= new Image("img/wend2.png");
 	static Image wend3 = new Image("img/wend3.png");
+	/**
+	 * Funkcja zawiera układ elementów na ekranie
+	 */
 	@Override
 	public void start(Stage primaryStage) {
 		
@@ -258,15 +266,37 @@ public class OknoKreatora extends Ramka {
 		primaryStage.setScene(scene);
 		primaryStage.show();
 	}
+
+
+	/**
+	 * Dodaje postać gracza 1 z pamięci
+	 * 
+	 * @param int i pozycja w pliku z danymi
+	 * @return void
+	 */
 	void dodaj1(int i)
 	{
 		gracz1.add(Dane.odczytp(i));
 	}
+	/**
+	 * Dodaje postać gracza 2 z pamięci
+	 * 
+	 * @param int i pozycja w pliku z danymi
+	 * @return void
+	 */
 	void dodaj2(int i)
 	{
 		gracz2.add(Dane.odczytp(i));
 	}
 
+
+	/**
+	 *
+	 * Funkcja zawiera układ elementów na ekranie przy tworzeniu postaci
+	 * @param primaryStage
+	 * @return
+	 * @throws FileNotFoundException
+	 */
 	static Postac TworzeniePostaci(Stage primaryStage) throws FileNotFoundException {
 		Postac postac = new Postac();
 		Pane root = new Pane();
@@ -546,6 +576,13 @@ public class OknoKreatora extends Ramka {
 		return postac;
 	}
 
+	/**
+	 * Funkcja zawiera układ elementów na ekranie podsumowania
+	 *
+	 * @param postac
+	 * @param primaryStage
+	 * @param przedmiot
+	 */
 	static void Podsumowanie(Postac postac, Stage primaryStage, Przedmiot przedmiot) {
 		Pane root = new Pane();
 		Scene scene = new Scene(root, 800, 600);
@@ -1065,6 +1102,14 @@ public class OknoKreatora extends Ramka {
 		primaryStage.show();
 			
 	}
+
+	/**
+	 * Funkcja generująca opisy przedmiotów
+	 * 
+	 * @param przedmiot
+	 * @param textarea3
+	 * @param iv2
+	 */
 	static void wybor(Przedmiot przedmiot, TextArea textarea3, ImageView iv2)
 	{
 				if(przedmiot.getNazwa()=="Wampirze Gardło")
@@ -1158,6 +1203,13 @@ public class OknoKreatora extends Ramka {
 					iv2.setImage(kostur3);
 					}
 		}
+
+	/**
+	 * Funkcja zawiera układ elementów na ekranie służący wyborowi przedmiotu
+	 *
+	 * @param postac
+	 * @param primaryStage
+	 */
 	static void WyborBroni(Postac postac, Stage primaryStage) {
 		Pane root = new Pane();
 		Scene scene = new Scene(root, 800, 600);
@@ -1386,7 +1438,10 @@ public class OknoKreatora extends Ramka {
 		primaryStage.setScene(scene);
 		primaryStage.show();
 	}
-	
+	/**
+	 * 
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		Application.launch(args);
 	}

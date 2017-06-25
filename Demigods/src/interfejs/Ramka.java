@@ -12,10 +12,16 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import kreator.OknoKreatora;
-
+/**
+ * Klasa będąca oknem głównym po javafx.application.Application;
+ * 
+ * @author Zespół
+ */
 public class Ramka extends Application {
-
 	@Override
+	/**
+	 * Funkcja zawiera układ elementów na ekranie
+	 */
 	public void start(Stage primaryStage) {
 		Button btn1 = new Button();
 		Button btn3 = new Button();
@@ -83,6 +89,9 @@ public class Ramka extends Application {
 		primaryStage.show();
 	}
 
+	/**
+	 * Funkcja main
+	 */
 	public static void main(String[] args) {
 		Application.launch(args);
 	}

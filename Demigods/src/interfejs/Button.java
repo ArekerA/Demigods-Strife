@@ -1,5 +1,9 @@
 package interfejs;
-
+/**
+ * Klasa niewykorzystana
+ * 
+ * @author Zespół
+ */
 class Button{
     private int x;
     private int y;

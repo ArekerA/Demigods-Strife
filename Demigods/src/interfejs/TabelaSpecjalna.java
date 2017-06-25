@@ -1,7 +1,11 @@
 package interfejs;
 
 import java.util.ArrayList;
-
+/**
+ * Klasa niewykorzystana
+ * 
+ * @author Zespół
+ */
 class TabelaSpecialna extends Tabela{
     private int[] kolorTłaDrugi = new int[4];
     private int[] kolorObramowaniaWewnłtrzny = new int[4];

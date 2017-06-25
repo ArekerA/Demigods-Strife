@@ -135,10 +135,22 @@ public class Hex extends ImageView {
 		}
 	}
 
+	/**
+	 * Sprawdza czy hex aktywny
+	 * 
+	 * @return boolean czy aktywny
+	 */
 	public boolean isAktywny() {
 		return aktywny;
 	}
 
+
+	/**
+	 * Ustawia aktywność
+	 * 
+	 * @param boolean aktywny
+	 * @return void
+	 */
 	public void setAktywny(boolean aktywny) {
 		this.aktywny = aktywny;
 	}

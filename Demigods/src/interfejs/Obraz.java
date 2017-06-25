@@ -9,7 +9,11 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
-
+/**
+ * Klasa niewykorzystana
+ * 
+ * @author Zespół
+ */
 public class Obraz extends JPanel{
     private String grafika;
     private int x;
